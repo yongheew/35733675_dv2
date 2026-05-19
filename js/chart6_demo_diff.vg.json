@@ -1,0 +1,163 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 750,
+    "height": 420,
+    "padding": {
+        "left": 100,
+        "right": 30,
+        "top": 30,
+        "bottom": 40
+    },
+    "title": {
+        "text": "Where Smokers and Non-Smokers Differ Most",
+        "subtitle": "Percentage share by demographic subgroup",
+        "anchor": "start",
+        "fontSize": 20,
+        "subtitleFontSize": 14
+    },
+    "data": {
+        "url": "data/socio_demographic_overall_cleaned.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "params": [
+        {
+            "name": "CategorySelect",
+            "value": "Gender",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "Gender",
+                    "Ethnicity",
+                    "Age",
+                    "Education level",
+                    "Marital status"
+                ],
+                "name": "Choose demographic group: "
+            }
+        }
+    ],
+    "transform": [
+        {
+            "filter": "datum.category == CategorySelect"
+        },
+        {
+            "filter": "datum.smoking_status != 'Total'"
+        },
+        {
+            "filter": "datum.category != 'E-cig user'"
+        },
+        {
+            "calculate": "toNumber(datum.percentage)",
+            "as": "pct"
+        }
+    ],
+    "layer": [
+        {
+            "mark": {
+                "type": "line",
+                "strokeWidth": 3,
+                "color": "#CFC7BE"
+            },
+            "encoding": {
+                "x": {
+                    "field": "pct",
+                    "type": "quantitative",
+                    "title": "Percentage (%)",
+                    "scale": {
+                        "domain": [
+                            0,
+                            100
+                        ]
+                    }
+                },
+                "y": {
+                    "field": "subgroup",
+                    "type": "nominal",
+                    "title": null,
+                    "axis": {
+                        "labelLimit": 220
+                    }
+                },
+                "detail": {
+                    "field": "subgroup"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "circle",
+                "size": 150
+            },
+            "encoding": {
+                "x": {
+                    "field": "pct",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "subgroup",
+                    "type": "nominal",
+                    "title": null
+                },
+                "color": {
+                    "field": "smoking_status",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "Ever Smoker",
+                            "Non-Smoker"
+                        ],
+                        "range": [
+                            "#B54A3A",
+                            "#BDBDBD"
+                        ]
+                    },
+                    "legend": {
+                        "title": "Smoking Status",
+                        "orient": "top"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "category",
+                        "title": "Category"
+                    },
+                    {
+                        "field": "subgroup",
+                        "title": "Subgroup"
+                    },
+                    {
+                        "field": "smoking_status",
+                        "title": "Smoking status"
+                    },
+                    {
+                        "field": "pct",
+                        "title": "Percentage",
+                        "format": ".1f"
+                    },
+                    {
+                        "field": "count",
+                        "title": "Count",
+                        "format": ","
+                    }
+                ]
+            }
+        }
+    ],
+    "config": {
+        "background": "white",
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "gridColor": "#E8E0D5",
+            "gridDash": [
+                2,
+                3
+            ]
+        }
+    }
+}

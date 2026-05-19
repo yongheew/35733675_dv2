@@ -1,0 +1,111 @@
+year,country,trade_type,product_group,rank,volume_tonnes,value_rm,origin_country,destination_country,origin_lat,origin_lon,destination_lat,destination_lon,is_summary_row
+2010,Argentina,Import,Tobacco Raw,1,1204.05,22421711.0,Argentina,Malaysia,-38.4161,-63.6167,4.2105,101.9758,False
+2011,Argentina,Import,Tobacco Raw,1,1385.02,25850895.0,Argentina,Malaysia,-38.4161,-63.6167,4.2105,101.9758,False
+2012,Argentina,Import,Tobacco Raw,1,665.4,12081856.0,Argentina,Malaysia,-38.4161,-63.6167,4.2105,101.9758,False
+2013,Argentina,Import,Tobacco Raw,1,0.0,0.0,Argentina,Malaysia,-38.4161,-63.6167,4.2105,101.9758,False
+2014,Argentina,Import,Tobacco Raw,1,16.15,317674.0,Argentina,Malaysia,-38.4161,-63.6167,4.2105,101.9758,False
+2015,Argentina,Import,Tobacco Raw,1,99.115,2464511.0,Argentina,Malaysia,-38.4161,-63.6167,4.2105,101.9758,False
+2016,Argentina,Import,Tobacco Raw,1,145.72,3331594.0,Argentina,Malaysia,-38.4161,-63.6167,4.2105,101.9758,False
+2017,Argentina,Import,Tobacco Raw,1,12.2,346847.0,Argentina,Malaysia,-38.4161,-63.6167,4.2105,101.9758,False
+2018,Argentina,Import,Tobacco Raw,1,30.4,146965.0,Argentina,Malaysia,-38.4161,-63.6167,4.2105,101.9758,False
+2019,Argentina,Import,Tobacco Raw,1,1092.42,2452528.0,Argentina,Malaysia,-38.4161,-63.6167,4.2105,101.9758,False
+2020,Argentina,Import,Tobacco Raw,1,2147.9,4995378.0,Argentina,Malaysia,-38.4161,-63.6167,4.2105,101.9758,False
+2010,Brazil,Import,Tobacco Raw,2,4692.4998,91637197.0,Brazil,Malaysia,-14.235,-51.9253,4.2105,101.9758,False
+2011,Brazil,Import,Tobacco Raw,2,7166.2832,152043322.0,Brazil,Malaysia,-14.235,-51.9253,4.2105,101.9758,False
+2012,Brazil,Import,Tobacco Raw,2,12046.2617,266241683.0,Brazil,Malaysia,-14.235,-51.9253,4.2105,101.9758,False
+2013,Brazil,Import,Tobacco Raw,2,10131.708,221729470.0,Brazil,Malaysia,-14.235,-51.9253,4.2105,101.9758,False
+2014,Brazil,Import,Tobacco Raw,2,8764.2382,183970992.0,Brazil,Malaysia,-14.235,-51.9253,4.2105,101.9758,False
+2015,Brazil,Import,Tobacco Raw,2,6198.37,150232917.0,Brazil,Malaysia,-14.235,-51.9253,4.2105,101.9758,False
+2016,Brazil,Import,Tobacco Raw,2,3963.7214,90620081.0,Brazil,Malaysia,-14.235,-51.9253,4.2105,101.9758,False
+2017,Brazil,Import,Tobacco Raw,2,800.0299,7201917.0,Brazil,Malaysia,-14.235,-51.9253,4.2105,101.9758,False
+2018,Brazil,Import,Tobacco Raw,2,550.09,1772087.0,Brazil,Malaysia,-14.235,-51.9253,4.2105,101.9758,False
+2019,Brazil,Import,Tobacco Raw,2,1764.2797500000001,4191460.0,Brazil,Malaysia,-14.235,-51.9253,4.2105,101.9758,False
+2020,Brazil,Import,Tobacco Raw,2,2201.64,4252028.0,Brazil,Malaysia,-14.235,-51.9253,4.2105,101.9758,False
+2010,Germany,Import,Tobacco Raw,3,495.94958,8527401.0,Germany,Malaysia,51.1657,10.4515,4.2105,101.9758,False
+2011,Germany,Import,Tobacco Raw,3,756.42436,17679627.0,Germany,Malaysia,51.1657,10.4515,4.2105,101.9758,False
+2012,Germany,Import,Tobacco Raw,3,903.2301799999999,21393195.0,Germany,Malaysia,51.1657,10.4515,4.2105,101.9758,False
+2013,Germany,Import,Tobacco Raw,3,2227.84184,53483643.0,Germany,Malaysia,51.1657,10.4515,4.2105,101.9758,False
+2014,Germany,Import,Tobacco Raw,3,2380.7909799999993,63202924.0,Germany,Malaysia,51.1657,10.4515,4.2105,101.9758,False
+2015,Germany,Import,Tobacco Raw,3,2787.1694,84753531.0,Germany,Malaysia,51.1657,10.4515,4.2105,101.9758,False
+2016,Germany,Import,Tobacco Raw,3,2615.7452699999994,72588575.0,Germany,Malaysia,51.1657,10.4515,4.2105,101.9758,False
+2017,Germany,Import,Tobacco Raw,3,838.9204599999999,19734698.0,Germany,Malaysia,51.1657,10.4515,4.2105,101.9758,False
+2018,Germany,Import,Tobacco Raw,3,108.39212,312346.0,Germany,Malaysia,51.1657,10.4515,4.2105,101.9758,False
+2019,Germany,Import,Tobacco Raw,3,429.84000000000003,581686.0,Germany,Malaysia,51.1657,10.4515,4.2105,101.9758,False
+2020,Germany,Import,Tobacco Raw,3,240.18,583000.0,Germany,Malaysia,51.1657,10.4515,4.2105,101.9758,False
+2010,India,Import,Tobacco Raw,4,4274.29,68306961.0,India,Malaysia,20.5937,78.9629,4.2105,101.9758,False
+2011,India,Import,Tobacco Raw,4,3889.48,54567208.0,India,Malaysia,20.5937,78.9629,4.2105,101.9758,False
+2012,India,Import,Tobacco Raw,4,4165.1296,52845152.0,India,Malaysia,20.5937,78.9629,4.2105,101.9758,False
+2013,India,Import,Tobacco Raw,4,6083.8854,80305966.0,India,Malaysia,20.5937,78.9629,4.2105,101.9758,False
+2014,India,Import,Tobacco Raw,4,5825.22,92933160.0,India,Malaysia,20.5937,78.9629,4.2105,101.9758,False
+2015,India,Import,Tobacco Raw,4,5895.392,94724959.0,India,Malaysia,20.5937,78.9629,4.2105,101.9758,False
+2016,India,Import,Tobacco Raw,4,6297.22,105306291.0,India,Malaysia,20.5937,78.9629,4.2105,101.9758,False
+2017,India,Import,Tobacco Raw,4,765.216,8163668.0,India,Malaysia,20.5937,78.9629,4.2105,101.9758,False
+2018,India,Import,Tobacco Raw,4,331.284,2901273.0,India,Malaysia,20.5937,78.9629,4.2105,101.9758,False
+2019,India,Import,Tobacco Raw,4,1101.362,2968253.0,India,Malaysia,20.5937,78.9629,4.2105,101.9758,False
+2020,India,Import,Tobacco Raw,4,106.77000000000001,1086648.0,India,Malaysia,20.5937,78.9629,4.2105,101.9758,False
+2010,Indonesia,Import,Tobacco Raw,5,9628.807399999998,213480791.0,Indonesia,Malaysia,-0.7893,113.9213,4.2105,101.9758,False
+2011,Indonesia,Import,Tobacco Raw,5,10435.23503,207232767.0,Indonesia,Malaysia,-0.7893,113.9213,4.2105,101.9758,False
+2012,Indonesia,Import,Tobacco Raw,5,11567.617059999999,254205521.0,Indonesia,Malaysia,-0.7893,113.9213,4.2105,101.9758,False
+2013,Indonesia,Import,Tobacco Raw,5,10061.93954,195605048.0,Indonesia,Malaysia,-0.7893,113.9213,4.2105,101.9758,False
+2014,Indonesia,Import,Tobacco Raw,5,12200.10967,259755998.0,Indonesia,Malaysia,-0.7893,113.9213,4.2105,101.9758,False
+2015,Indonesia,Import,Tobacco Raw,5,11343.5,287967580.0,Indonesia,Malaysia,-0.7893,113.9213,4.2105,101.9758,False
+2016,Indonesia,Import,Tobacco Raw,5,5370.87261,127071701.0,Indonesia,Malaysia,-0.7893,113.9213,4.2105,101.9758,False
+2017,Indonesia,Import,Tobacco Raw,5,769.326,22772783.0,Indonesia,Malaysia,-0.7893,113.9213,4.2105,101.9758,False
+2018,Indonesia,Import,Tobacco Raw,5,65.4007,587385.0,Indonesia,Malaysia,-0.7893,113.9213,4.2105,101.9758,False
+2019,Indonesia,Import,Tobacco Raw,5,473.9295,7417091.0,Indonesia,Malaysia,-0.7893,113.9213,4.2105,101.9758,False
+2020,Indonesia,Import,Tobacco Raw,5,112.3325,235477.0,Indonesia,Malaysia,-0.7893,113.9213,4.2105,101.9758,False
+2010,Jordan,Import,Tobacco Raw,6,0.0,0.0,Jordan,Malaysia,30.5852,36.2384,4.2105,101.9758,False
+2011,Jordan,Import,Tobacco Raw,6,0.0,0.0,Jordan,Malaysia,30.5852,36.2384,4.2105,101.9758,False
+2012,Jordan,Import,Tobacco Raw,6,0.0,0.0,Jordan,Malaysia,30.5852,36.2384,4.2105,101.9758,False
+2013,Jordan,Import,Tobacco Raw,6,0.0,0.0,Jordan,Malaysia,30.5852,36.2384,4.2105,101.9758,False
+2014,Jordan,Import,Tobacco Raw,6,0.0,0.0,Jordan,Malaysia,30.5852,36.2384,4.2105,101.9758,False
+2015,Jordan,Import,Tobacco Raw,6,0.0,0.0,Jordan,Malaysia,30.5852,36.2384,4.2105,101.9758,False
+2016,Jordan,Import,Tobacco Raw,6,0.0,0.0,Jordan,Malaysia,30.5852,36.2384,4.2105,101.9758,False
+2017,Jordan,Import,Tobacco Raw,6,0.0,0.0,Jordan,Malaysia,30.5852,36.2384,4.2105,101.9758,False
+2018,Jordan,Import,Tobacco Raw,6,0.0,0.0,Jordan,Malaysia,30.5852,36.2384,4.2105,101.9758,False
+2019,Jordan,Import,Tobacco Raw,6,0.5,8742.0,Jordan,Malaysia,30.5852,36.2384,4.2105,101.9758,False
+2020,Jordan,Import,Tobacco Raw,6,2.0,154822.0,Jordan,Malaysia,30.5852,36.2384,4.2105,101.9758,False
+2010,South Korea,Import,Tobacco Raw,7,700.308,616035.0,South Korea,Malaysia,35.9078,127.7669,4.2105,101.9758,False
+2011,South Korea,Import,Tobacco Raw,7,437.79,858294.0,South Korea,Malaysia,35.9078,127.7669,4.2105,101.9758,False
+2012,South Korea,Import,Tobacco Raw,7,227.683,1033621.0,South Korea,Malaysia,35.9078,127.7669,4.2105,101.9758,False
+2013,South Korea,Import,Tobacco Raw,7,584.8893,2640968.0,South Korea,Malaysia,35.9078,127.7669,4.2105,101.9758,False
+2014,South Korea,Import,Tobacco Raw,7,251.656,1421129.0,South Korea,Malaysia,35.9078,127.7669,4.2105,101.9758,False
+2015,South Korea,Import,Tobacco Raw,7,621.43,3563804.0,South Korea,Malaysia,35.9078,127.7669,4.2105,101.9758,False
+2016,South Korea,Import,Tobacco Raw,7,563.7796,2350873.0,South Korea,Malaysia,35.9078,127.7669,4.2105,101.9758,False
+2017,South Korea,Import,Tobacco Raw,7,369.38,330863.0,South Korea,Malaysia,35.9078,127.7669,4.2105,101.9758,False
+2018,South Korea,Import,Tobacco Raw,7,220.39,189873.0,South Korea,Malaysia,35.9078,127.7669,4.2105,101.9758,False
+2019,South Korea,Import,Tobacco Raw,7,132.85399999999998,117260.0,South Korea,Malaysia,35.9078,127.7669,4.2105,101.9758,False
+2020,South Korea,Import,Tobacco Raw,7,163.97,132809.0,South Korea,Malaysia,35.9078,127.7669,4.2105,101.9758,False
+2010,Malawi,Import,Tobacco Raw,8,1054.135,12811409.0,Malawi,Malaysia,-13.2543,34.3015,4.2105,101.9758,False
+2011,Malawi,Import,Tobacco Raw,8,1958.1487,22159805.0,Malawi,Malaysia,-13.2543,34.3015,4.2105,101.9758,False
+2012,Malawi,Import,Tobacco Raw,8,765.38,11023997.0,Malawi,Malaysia,-13.2543,34.3015,4.2105,101.9758,False
+2013,Malawi,Import,Tobacco Raw,8,103.21,1460574.0,Malawi,Malaysia,-13.2543,34.3015,4.2105,101.9758,False
+2014,Malawi,Import,Tobacco Raw,8,332.0,4591514.0,Malawi,Malaysia,-13.2543,34.3015,4.2105,101.9758,False
+2015,Malawi,Import,Tobacco Raw,8,227.89,5129964.0,Malawi,Malaysia,-13.2543,34.3015,4.2105,101.9758,False
+2016,Malawi,Import,Tobacco Raw,8,1098.19,14849332.0,Malawi,Malaysia,-13.2543,34.3015,4.2105,101.9758,False
+2017,Malawi,Import,Tobacco Raw,8,694.38,3460022.0,Malawi,Malaysia,-13.2543,34.3015,4.2105,101.9758,False
+2018,Malawi,Import,Tobacco Raw,8,964.6700000000001,4194052.0,Malawi,Malaysia,-13.2543,34.3015,4.2105,101.9758,False
+2019,Malawi,Import,Tobacco Raw,8,308.88,1135436.0,Malawi,Malaysia,-13.2543,34.3015,4.2105,101.9758,False
+2020,Malawi,Import,Tobacco Raw,8,302.44,1073864.0,Malawi,Malaysia,-13.2543,34.3015,4.2105,101.9758,False
+2010,Mexico,Import,Tobacco Raw,9,222.8,4144337.0,Mexico,Malaysia,23.6345,-102.5528,4.2105,101.9758,False
+2011,Mexico,Import,Tobacco Raw,9,139.6,2057958.0,Mexico,Malaysia,23.6345,-102.5528,4.2105,101.9758,False
+2012,Mexico,Import,Tobacco Raw,9,118.4,1572828.0,Mexico,Malaysia,23.6345,-102.5528,4.2105,101.9758,False
+2013,Mexico,Import,Tobacco Raw,9,81.8,1195672.0,Mexico,Malaysia,23.6345,-102.5528,4.2105,101.9758,False
+2014,Mexico,Import,Tobacco Raw,9,153.6,2292836.0,Mexico,Malaysia,23.6345,-102.5528,4.2105,101.9758,False
+2015,Mexico,Import,Tobacco Raw,9,0.0,0.0,Mexico,Malaysia,23.6345,-102.5528,4.2105,101.9758,False
+2016,Mexico,Import,Tobacco Raw,9,237.6,453683.0,Mexico,Malaysia,23.6345,-102.5528,4.2105,101.9758,False
+2017,Mexico,Import,Tobacco Raw,9,249.48,495046.0,Mexico,Malaysia,23.6345,-102.5528,4.2105,101.9758,False
+2018,Mexico,Import,Tobacco Raw,9,106.92,196754.0,Mexico,Malaysia,23.6345,-102.5528,4.2105,101.9758,False
+2019,Mexico,Import,Tobacco Raw,9,356.4,735891.0,Mexico,Malaysia,23.6345,-102.5528,4.2105,101.9758,False
+2020,Mexico,Import,Tobacco Raw,9,47.04,154622.0,Mexico,Malaysia,23.6345,-102.5528,4.2105,101.9758,False
+2010,New Zealand,Import,Tobacco Raw,10,0.0,0.0,New Zealand,Malaysia,-40.9006,174.886,4.2105,101.9758,False
+2011,New Zealand,Import,Tobacco Raw,10,0.0,0.0,New Zealand,Malaysia,-40.9006,174.886,4.2105,101.9758,False
+2012,New Zealand,Import,Tobacco Raw,10,0.0,0.0,New Zealand,Malaysia,-40.9006,174.886,4.2105,101.9758,False
+2013,New Zealand,Import,Tobacco Raw,10,0.0,0.0,New Zealand,Malaysia,-40.9006,174.886,4.2105,101.9758,False
+2014,New Zealand,Import,Tobacco Raw,10,0.0,0.0,New Zealand,Malaysia,-40.9006,174.886,4.2105,101.9758,False
+2015,New Zealand,Import,Tobacco Raw,10,0.0,0.0,New Zealand,Malaysia,-40.9006,174.886,4.2105,101.9758,False
+2016,New Zealand,Import,Tobacco Raw,10,0.0,0.0,New Zealand,Malaysia,-40.9006,174.886,4.2105,101.9758,False
+2017,New Zealand,Import,Tobacco Raw,10,0.0,0.0,New Zealand,Malaysia,-40.9006,174.886,4.2105,101.9758,False
+2018,New Zealand,Import,Tobacco Raw,10,0.0,0.0,New Zealand,Malaysia,-40.9006,174.886,4.2105,101.9758,False
+2019,New Zealand,Import,Tobacco Raw,10,0.0,0.0,New Zealand,Malaysia,-40.9006,174.886,4.2105,101.9758,False
+2020,New Zealand,Import,Tobacco Raw,10,0.02,1050.0,New Zealand,Malaysia,-40.9006,174.886,4.2105,101.9758,False

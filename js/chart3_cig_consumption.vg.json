@@ -1,0 +1,138 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 850,
+    "height": 420,
+    "padding": {
+        "left": 100,
+        "right": 30,
+        "top": 30,
+        "bottom": 40
+    },
+    "title": {
+        "text": "Daily Cigarette Consumption Fell, Then Plateaued",
+        "subtitle": "Cigarettes consumed per smoker per day in Malaysia, 1980–2012",
+        "anchor": "start",
+        "fontSize": 22,
+        "subtitleFontSize": 14
+    },
+    "data": {
+        "url": "data/consumption-per-smoker-per-day.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "transform": [
+        {
+            "filter": "datum.Entity === 'Malaysia'"
+        },
+        {
+            "calculate": "toNumber(datum['Cigarette consumption per smoker per day'])",
+            "as": "consumption"
+        }
+    ],
+    "layer": [
+        {
+            "mark": {
+                "type": "area",
+                "color": "#C9732F",
+                "opacity": 0.22,
+                "interpolate": "monotone"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "quantitative",
+                    "axis": {
+                        "format": "d",
+                        "grid": false
+                    },
+                    "title": null
+                },
+                "y": {
+                    "field": "consumption",
+                    "type": "quantitative",
+                    "title": "Cigarettes per smoker per day",
+                    "scale": {
+                        "zero": true
+                    }
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "line",
+                "color": "#9E4F14",
+                "strokeWidth": 3.5,
+                "interpolate": "monotone"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "consumption",
+                    "type": "quantitative"
+                },
+                "tooltip": [
+                    {
+                        "field": "Year",
+                        "title": "Year",
+                        "format": "d"
+                    },
+                    {
+                        "field": "consumption",
+                        "title": "Cigarettes per smoker/day",
+                        "format": ".1f"
+                    }
+                ]
+            }
+        },
+        {
+            "data": {
+                "values": [
+                    {
+                        "Year": 2001,
+                        "consumption": 17.5,
+                        "note": "After 2000, consumption stayed near 16 cigarettes per smoker per day."
+                    }
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "color": "#2A2A2A"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "consumption",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "note"
+                }
+            }
+        }
+    ],
+    "config": {
+        "background": "white",
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "gridColor": "#E8E0D5",
+            "gridDash": [
+                2,
+                3
+            ]
+        }
+    }
+}

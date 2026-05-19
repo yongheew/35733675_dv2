@@ -1,0 +1,134 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Southeast Asia Smoking Behaviour Has Changed.",
+        "subtitle": "Cigarettes consumed per smoker per day",
+        "anchor": "start",
+        "fontSize": 22,
+        "subtitleFontSize": 14
+    },
+    "width": 800,
+    "height": 580,
+    "padding": {
+        "left": 100,
+        "right": 30,
+        "top": 30,
+        "bottom": 40
+    },
+    "params": [
+        {
+            "name": "year_selection",
+            "value": 2012,
+            "bind": {
+                "input": "range",
+                "min": 1980,
+                "max": 2012,
+                "step": 1,
+                "name": "Year: "
+            }
+        }
+    ],
+    "projection": {
+        "type": "mercator",
+        "center": [115, 5],
+        "scale": 1000
+    },
+    "layer": [
+        {
+            "data": {"sphere": true},
+            "mark": {"type": "geoshape", "fill": "#D6E8F0", "stroke": "none"}
+        },
+        {
+            "data": {"graticule": {"step": [10, 10]}},
+            "mark": {
+                "type": "geoshape",
+                "filled": false,
+                "stroke": "#B8D4E0",
+                "strokeWidth": 0.4,
+                "strokeDash": [3, 3]
+            }
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+                "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+            },
+            "transform": [
+                {
+                    "calculate": "'Data is not available for ' + datum.properties.NAME",
+                    "as": "note"
+                }
+            ],
+            "mark": {
+                "type": "geoshape",
+                "fill": "#EDE8DF",
+                "stroke": "#C4B8AC",
+                "strokeWidth": 0.5
+            },
+            "encoding": {"tooltip": {"field": "note"}}
+        },
+        {
+            "data": {
+                "url": "data/sea_consumption.csv",
+                "format": {"type": "csv"}
+            },
+            "transform": [
+                {
+                    "lookup": "country",
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+                            "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+                        },
+                        "key": "properties.NAME"
+                    },
+                    "as": "geo"
+                },
+                {
+                    "filter": "datum.year == year_selection"
+                },
+                {
+                    "calculate": "toNumber(datum.consumption)",
+                    "as": "consumption_num"
+                }
+            ],
+            "mark": {"type": "geoshape", "stroke": "#7A6E66", "strokeWidth": 0.8},
+            "encoding": {
+                "shape": {"field": "geo", "type": "geojson"},
+                "color": {
+                    "field": "consumption_num",
+                    "type": "quantitative",
+                    "scale": {
+                        "scheme": "orangered",
+                        "domain": [5, 30]
+                    },
+                    "legend": {
+                        "title": "Cigarettes per smoker/day",
+                        "orient": "bottom-right",
+                        "gradientLength": 150
+                    }
+                },
+                "stroke": {
+                    "test": "datum.country == Malaysia",
+                    "value": "#7A3F10"
+                },
+                "strokeWidth": {
+                    "condition": {
+                        "test": "datum.country == 'Malaysia'",
+                        "value": 3
+                    },
+                    "value": 0.5
+                },
+                "tooltip": [
+                    {"field": "country", "title": "Country"},
+                    {"field": "consumption_num", "title": "Cigarettes per smoker/day", "format": ".1f"},
+                    {"field": "year", "title": "Year"}
+                ]
+            }
+        }
+    ],
+    "config": {
+        "background": "white",
+        "view": {"stroke": "transparent"}
+    }
+}

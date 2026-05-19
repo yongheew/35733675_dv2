@@ -1,0 +1,104 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 250,
+    "padding": {
+        "left": 80,
+        "top": 50
+    },
+    "title": {
+        "text": "Smokers Are More Likely to See E-Cigarettes as Helpful",
+        "subtitle": "Agreement vs disagreement by smoking status — click legend to highlight",
+        "anchor": "start",
+        "fontSize": 22,
+        "subtitleFontSize": 14
+    },
+    "data": {
+        "url": "data/perception_overall_cleaned.csv",
+        "format": {"type": "csv"}
+    },
+    "params": [
+        {
+            "name": "highlight",
+            "select": {"type": "point", "fields": ["smoking_status"]},
+            "bind": "legend"
+        },
+        {
+            "name": "category_selection",
+            "value": "Quit Smoking Aid",
+            "bind": {
+                "input": "radio",
+                "options": ["Quit Smoking Aid", "Harmfulness", "Regulations", "Reasons to Use"],
+                "name": "Category: "
+            }
+        }
+    ],
+    "transform": [
+        {"filter": "datum.smoking_status == 'Ever Smoker' || datum.smoking_status == 'Non-Smoker'"},
+        {"filter": "datum.response == 'Agree' || datum.response == 'Do Not Agree'"},
+        {"filter": "datum.category == category_selection"},
+        {
+            "calculate": "datum.response == 'Agree' ? datum.percentage : -datum.percentage",
+            "as": "div_value"
+        }
+    ],
+    "mark": {"type": "bar", "cornerRadius": 2},
+    "encoding": {
+        "y": {
+            "field": "question",
+            "type": "nominal",
+            "sort": {"field": "div_value", "op": "sum", "order": "descending"},
+            "axis": {
+                "title": null,
+                "labelFontSize": 13,
+                "labelLimit": 500
+            }
+        },
+        "x": {
+            "field": "div_value",
+            "type": "quantitative",
+            "axis": {
+                "title": "← Do Not Agree          Agree →",
+                "titleFontSize": 11,
+                "grid": true,
+                "format": ".0f"
+            }
+        },
+        "color": {
+            "field": "smoking_status",
+            "type": "nominal",
+            "scale": {
+                "domain": ["Ever Smoker", "Non-Smoker"],
+                "range": ["#B54A3A", "#BDBDBD"]
+            },
+            "legend": {
+                "title": "Smoking Status",
+                "orient": "top",
+                "labelFontSize": 14,
+                "titleFontSize": 14,
+                "symbolSize": 200,
+                "symbolStrokeWidth": 3
+            }
+        },
+        "opacity": {
+            "condition": {"param": "highlight", "value": 0.9},
+            "value": 0.15
+        },
+        "tooltip": [
+            {"field": "question", "title": "Statement"},
+            {"field": "smoking_status", "title": "Status"},
+            {"field": "response", "title": "Response"},
+            {"field": "percentage", "title": "Percentage (%)", "format": ".1f"}
+        ]
+    },
+    "config": {
+        "background": "white",
+        "view": {"stroke": "transparent"},
+        "axis": {
+            "labelFontSize": 11,
+            "titleFontSize": 13,
+            "gridColor": "#E8E0D5",
+            "gridDash": [2, 3]
+        }
+    }
+}

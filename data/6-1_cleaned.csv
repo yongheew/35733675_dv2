@@ -1,0 +1,133 @@
+year,product_type,trade_type,metric,value
+2010,Tobacco Raw,Import,Quantity ('000 T),45.9
+2010,Tobacco Raw,Import,Value (RM Million),762.88
+2010,Tobacco Raw,Export,Quantity ('000 T),2.9264635
+2010,Tobacco Raw,Export,Value (RM Million),60.380003
+2010,Tobacco Products,Import,Quantity ('000 T),12.36
+2010,Tobacco Products,Import,Value (RM Million),430.74
+2010,Tobacco Products,Export,Quantity ('000 T),36.17224421
+2010,Tobacco Products,Export,Value (RM Million),974.570059
+2010,Total,Import,Quantity ('000 T),58.26
+2010,Total,Import,Value (RM Million),1193.62
+2010,Total,Export,Quantity ('000 T),39.09870771
+2010,Total,Export,Value (RM Million),1034.950062
+2011,Tobacco Raw,Import,Quantity ('000 T),55.4
+2011,Tobacco Raw,Import,Value (RM Million),892.26
+2011,Tobacco Raw,Export,Quantity ('000 T),2.86353
+2011,Tobacco Raw,Export,Value (RM Million),65.009496
+2011,Tobacco Products,Import,Quantity ('000 T),12.18
+2011,Tobacco Products,Import,Value (RM Million),456.96
+2011,Tobacco Products,Export,Quantity ('000 T),37.067762009999996
+2011,Tobacco Products,Export,Value (RM Million),993.639129
+2011,Total,Import,Quantity ('000 T),67.58
+2011,Total,Import,Value (RM Million),1349.22
+2011,Total,Export,Quantity ('000 T),39.93129201
+2011,Total,Export,Value (RM Million),1058.648625
+2012,Tobacco Raw,Import,Quantity ('000 T),63.55
+2012,Tobacco Raw,Import,Value (RM Million),1092.66
+2012,Tobacco Raw,Export,Quantity ('000 T),10.62400399
+2012,Tobacco Raw,Export,Value (RM Million),220.373724
+2012,Tobacco Products,Import,Quantity ('000 T),16.53
+2012,Tobacco Products,Import,Value (RM Million),630.19
+2012,Tobacco Products,Export,Quantity ('000 T),48.202840439999996
+2012,Tobacco Products,Export,Value (RM Million),1353.974675
+2012,Total,Import,Quantity ('000 T),80.08
+2012,Total,Import,Value (RM Million),1722.8500000000001
+2012,Total,Export,Quantity ('000 T),58.82684443
+2012,Total,Export,Value (RM Million),1574.348399
+2013,Tobacco Raw,Import,Quantity ('000 T),52.86
+2013,Tobacco Raw,Import,Value (RM Million),861.45
+2013,Tobacco Raw,Export,Quantity ('000 T),0.80014738
+2013,Tobacco Raw,Export,Value (RM Million),18.450832
+2013,Tobacco Products,Import,Quantity ('000 T),15.37
+2013,Tobacco Products,Import,Value (RM Million),811.91
+2013,Tobacco Products,Export,Quantity ('000 T),43.1086075
+2013,Tobacco Products,Export,Value (RM Million),1192.383334
+2013,Total,Import,Quantity ('000 T),68.23
+2013,Total,Import,Value (RM Million),1673.3600000000001
+2013,Total,Export,Quantity ('000 T),43.908754880000004
+2013,Total,Export,Value (RM Million),1210.834166
+2014,Tobacco Raw,Import,Quantity ('000 T),52.91
+2014,Tobacco Raw,Import,Value (RM Million),871.84
+2014,Tobacco Raw,Export,Quantity ('000 T),0.575248
+2014,Tobacco Raw,Export,Value (RM Million),11.546657
+2014,Tobacco Products,Import,Quantity ('000 T),17.42
+2014,Tobacco Products,Import,Value (RM Million),889.43
+2014,Tobacco Products,Export,Quantity ('000 T),40.24645459
+2014,Tobacco Products,Export,Value (RM Million),1269.16289
+2014,Total,Import,Quantity ('000 T),70.33
+2014,Total,Import,Value (RM Million),1761.27
+2014,Total,Export,Quantity ('000 T),40.82170259
+2014,Total,Export,Value (RM Million),1280.7095470000002
+2015,Tobacco Raw,Import,Quantity ('000 T),54.3327725
+2015,Tobacco Raw,Import,Value (RM Million),998.933072
+2015,Tobacco Raw,Export,Quantity ('000 T),7.2652859
+2015,Tobacco Raw,Export,Value (RM Million),120.618681
+2015,Tobacco Products,Import,Quantity ('000 T),16.26843608
+2015,Tobacco Products,Import,Value (RM Million),926.349558
+2015,Tobacco Products,Export,Quantity ('000 T),38.22261461
+2015,Tobacco Products,Export,Value (RM Million),1352.95146
+2015,Total,Import,Quantity ('000 T),70.60120857999999
+2015,Total,Import,Value (RM Million),1925.2826300000002
+2015,Total,Export,Quantity ('000 T),45.48790051
+2015,Total,Export,Value (RM Million),1473.570141
+2016,Tobacco Raw,Import,Quantity ('000 T),44.49213627
+2016,Tobacco Raw,Import,Value (RM Million),762.286241
+2016,Tobacco Raw,Export,Quantity ('000 T),11.99227458
+2016,Tobacco Raw,Export,Value (RM Million),256.517764
+2016,Tobacco Products,Import,Quantity ('000 T),15.55079488
+2016,Tobacco Products,Import,Value (RM Million),909.632074
+2016,Tobacco Products,Export,Quantity ('000 T),39.21653193
+2016,Tobacco Products,Export,Value (RM Million),1277.653278
+2016,Total,Import,Quantity ('000 T),60.04293115
+2016,Total,Import,Value (RM Million),1671.918315
+2016,Total,Export,Quantity ('000 T),51.20880651
+2016,Total,Export,Value (RM Million),1534.171042
+2017,Tobacco Raw,Import,Quantity ('000 T),17.31291959
+2017,Tobacco Raw,Import,Value (RM Million),174.492856
+2017,Tobacco Raw,Export,Quantity ('000 T),9.65274874
+2017,Tobacco Raw,Export,Value (RM Million),209.241666
+2017,Tobacco Products,Import,Quantity ('000 T),14.244086470000003
+2017,Tobacco Products,Import,Value (RM Million),889.750641
+2017,Tobacco Products,Export,Quantity ('000 T),26.3317974
+2017,Tobacco Products,Export,Value (RM Million),867.769268
+2017,Total,Import,Quantity ('000 T),31.557006060000003
+2017,Total,Import,Value (RM Million),1064.243497
+2017,Total,Export,Quantity ('000 T),35.984546140000006
+2017,Total,Export,Value (RM Million),1077.010934
+2018,Tobacco Raw,Import,Quantity ('000 T),11.80655494
+2018,Tobacco Raw,Import,Value (RM Million),41.301528
+2018,Tobacco Raw,Export,Quantity ('000 T),6.865349659999999
+2018,Tobacco Raw,Export,Value (RM Million),136.118009
+2018,Tobacco Products,Import,Quantity ('000 T),16.230668270000002
+2018,Tobacco Products,Import,Value (RM Million),1100.419814
+2018,Tobacco Products,Export,Quantity ('000 T),17.33859069
+2018,Tobacco Products,Export,Value (RM Million),544.373183
+2018,Total,Import,Quantity ('000 T),28.03722321
+2018,Total,Import,Value (RM Million),1141.721342
+2018,Total,Export,Quantity ('000 T),24.20394035
+2018,Total,Export,Value (RM Million),680.4911920000001
+2019,Tobacco Raw,Import,Quantity ('000 T),12.01973795
+2019,Tobacco Raw,Import,Value (RM Million),44.300911
+2019,Tobacco Raw,Export,Quantity ('000 T),0.015523480000000001
+2019,Tobacco Raw,Export,Value (RM Million),1.098459
+2019,Tobacco Products,Import,Quantity ('000 T),16.88812521
+2019,Tobacco Products,Import,Value (RM Million),1121.228568
+2019,Tobacco Products,Export,Quantity ('000 T),49.06486506
+2019,Tobacco Products,Export,Value (RM Million),567.98841
+2019,Total,Import,Quantity ('000 T),28.907863159999998
+2019,Total,Import,Value (RM Million),1165.529479
+2019,Total,Export,Quantity ('000 T),49.08038854
+2019,Total,Export,Value (RM Million),569.0868690000001
+2020,Tobacco Raw,Import,Quantity ('000 T),7.8277019
+2020,Tobacco Raw,Import,Value (RM Million),16.647641
+2020,Tobacco Raw,Export,Quantity ('000 T),0.09794360000000002
+2020,Tobacco Raw,Export,Value (RM Million),1.76506
+2020,Tobacco Products,Import,Quantity ('000 T),13.787711270000003
+2020,Tobacco Products,Import,Value (RM Million),860.797275
+2020,Tobacco Products,Export,Quantity ('000 T),11.90075721
+2020,Tobacco Products,Export,Value (RM Million),327.42352200000005
+2020,Total,Import,Quantity ('000 T),21.615413170000004
+2020,Total,Import,Value (RM Million),877.444916
+2020,Total,Export,Quantity ('000 T),11.99870081
+2020,Total,Export,Value (RM Million),329.18858200000005

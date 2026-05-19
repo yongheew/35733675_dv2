@@ -1,0 +1,129 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "How Do Smokers and Non-Smokers View E-Cigarettes?",
+        "subtitle": "Percentage of respondents by response and smoking status",
+        "anchor": "start",
+        "fontSize": 22,
+        "subtitleFontSize": 14
+    },
+    "width": 600,
+    "height": 300,
+    "padding": {
+        "left": 50
+    },
+    "params": [
+        {
+            "name": "category_selection",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "Quit Smoking Aid",
+                    "Harmfulness",
+                    "Regulations",
+                    "Reasons to Use"
+                ],
+                "name": "Category: "
+            },
+            "value": "Quit Smoking Aid"
+        }
+    ],
+    "data": {
+        "url": "data/perception_overall_cleaned.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "transform": [
+        {
+            "filter": "datum.category == category_selection"
+        },
+        {
+            "filter": "datum.smoking_status == 'Ever Smoker' || datum.smoking_status == 'Non-Smoker'"
+        },
+        {
+            "calculate": "datum.smoking_status + '  ·  ' + datum.response",
+            "as": "col_label"
+        }
+    ],
+    "mark": {
+        "type": "rect",
+        "cornerRadius": 2
+    },
+    "encoding": {
+        "y": {
+            "field": "question",
+            "type": "nominal",
+            "axis": {
+                "title": null,
+                "labelLimit": 500,
+                "labelFontSize": 11
+            }
+        },
+        "x": {
+            "field": "col_label",
+            "type": "nominal",
+            "sort": null,
+            "axis": {
+                "title": null,
+                "labelAngle": -30,
+                "labelFontSize": 10,
+                "labelLimit": 200
+            }
+        },
+        "color": {
+            "field": "percentage",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "orangered",
+                "domain": [
+                    0,
+                    80
+                ]
+            },
+            "legend": {
+                "title": "Respondents (%)",
+                "gradientLength": 150
+            }
+        },
+        "tooltip": [
+            {
+                "field": "question",
+                "title": "Statement"
+            },
+            {
+                "field": "smoking_status",
+                "title": "Smoking status"
+            },
+            {
+                "field": "response",
+                "title": "Response"
+            },
+            {
+                "field": "percentage",
+                "title": "Percentage (%)",
+                "format": ".1f"
+            },
+            {
+                "field": "count",
+                "title": "Count",
+                "format": ",.0f"
+            }
+        ]
+    },
+    "config": {
+        "background": "white",
+        "view": {
+            "stroke": "transparent"
+        },
+        "axisY": {
+            "labelLimit": 400,
+            "labelFontSize": 11
+        },
+        "axisX": {
+            "labelAngle": -25,
+            "labelFontSize": 11,
+            "labelLimit": 150
+        }
+    }
+}

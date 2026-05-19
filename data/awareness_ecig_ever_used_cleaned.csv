@@ -1,0 +1,31 @@
+question,smoking_status,answer,count,percentage
+E-cig more harmful compare to tobacco cigarette,Ever Smoker,Yes,30,25.4
+E-cig more harmful compare to tobacco cigarette,Non-Smoker,Yes,0,0
+E-cig more harmful compare to tobacco cigarette,Total,Yes,30,25
+E-cig more harmful compare to tobacco cigarette,Ever Smoker,No,29,24.6
+E-cig more harmful compare to tobacco cigarette,Non-Smoker,No,1,50
+E-cig more harmful compare to tobacco cigarette,Total,No,30,25
+E-cig more harmful compare to tobacco cigarette,Ever Smoker,Same,19,16.1
+E-cig more harmful compare to tobacco cigarette,Non-Smoker,Same,0,0
+E-cig more harmful compare to tobacco cigarette,Total,Same,19,15.8
+E-cig more harmful compare to tobacco cigarette,Ever Smoker,Don't know,40,33.9
+E-cig more harmful compare to tobacco cigarette,Non-Smoker,Don't know,1,50
+E-cig more harmful compare to tobacco cigarette,Total,Don't know,41,34.2
+E-cig contain nicotine,Ever Smoker,Yes,66,55.9
+E-cig contain nicotine,Non-Smoker,Yes,0,0
+E-cig contain nicotine,Total,Yes,66,55
+E-cig contain nicotine,Ever Smoker,No,29,24.6
+E-cig contain nicotine,Non-Smoker,No,1,50
+E-cig contain nicotine,Total,No,30,25
+E-cig contain nicotine,Ever Smoker,Don't know,23,19.5
+E-cig contain nicotine,Non-Smoker,Don't know,1,50
+E-cig contain nicotine,Total,Don't know,24,20
+E-cig can be used in non-smoking area,Ever Smoker,Yes,47,39.8
+E-cig can be used in non-smoking area,Non-Smoker,Yes,1,50
+E-cig can be used in non-smoking area,Total,Yes,48,40
+E-cig can be used in non-smoking area,Ever Smoker,No,44,37.3
+E-cig can be used in non-smoking area,Non-Smoker,No,0,0
+E-cig can be used in non-smoking area,Total,No,44,36.7
+E-cig can be used in non-smoking area,Ever Smoker,Don't know,27,22.9
+E-cig can be used in non-smoking area,Non-Smoker,Don't know,1,50
+E-cig can be used in non-smoking area,Total,Don't know,28,23.3

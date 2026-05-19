@@ -1,0 +1,245 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Tax Pressure Rose After Consumption Had Already Plateaued",
+        "subtitle": "Tax data begins in 2008, after daily cigarette consumption had already stabilised",
+        "anchor": "start",
+        "fontSize": 22,
+        "subtitleFontSize": 14
+    },
+    "vconcat": [
+        {
+            "width": 850,
+            "height": 220,
+            "padding": {
+                "left": 150,
+                "right": 30,
+                "top": 30,
+                "bottom": 40
+            },
+            "data": {
+                "url": "data/taxes-as-a-share-of-cigarette-price.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.Entity === 'Malaysia'"
+                },
+                {
+                    "calculate": "toNumber(datum['Taxes as a share of cigarette price'])",
+                    "as": "tax"
+                }
+            ],
+            "layer": [
+                {
+                    "mark": {
+                        "type": "line",
+                        "color": "#2A6B72",
+                        "strokeWidth": 3,
+                        "interpolate": "monotone"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Year",
+                            "type": "quantitative",
+                            "title": null,
+                            "scale": {
+                                "domain": [
+                                    1980, 2024
+                                ]
+                            },
+                            "axis": {
+                                "format": "d",
+                                "grid": false
+                            }
+                        },
+                        "y": {
+                            "field": "tax",
+                            "type": "quantitative",
+                            "title": "Tax share (%)",
+                            "scale": {
+                                "zero": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "circle",
+                        "size": 120,
+                        "color": "#2A6B72"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Year",
+                            "type": "quantitative"
+                        },
+                        "y": {
+                            "field": "tax",
+                            "type": "quantitative"
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Year",
+                                "title": "Year",
+                                "format": "d"
+                            },
+                            {
+                                "field": "tax",
+                                "title": "Tax share of cigarette price (%)",
+                                "format": ".2f"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "width": 850,
+            "height": 220,
+            "data": {
+                "url": "data/consumption-per-smoker-per-day.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.Entity === 'Malaysia'"
+                },
+                {
+                    "calculate": "toNumber(datum['Cigarette consumption per smoker per day'])",
+                    "as": "consumption"
+                }
+            ],
+            "layer": [
+                {
+                    "mark": {
+                        "type": "area",
+                        "color": "#C9732F",
+                        "opacity": 0.18,
+                        "interpolate": "monotone"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Year",
+                            "type": "quantitative",
+                            "title": null,
+                            "axis": {
+                                "format": "d",
+                                "grid": false
+                            }
+                        },
+                        "y": {
+                            "field": "consumption",
+                            "type": "quantitative",
+                            "title": "Cigarettes/day",
+                            "scale": {
+                                "zero": true
+                            }
+                        }
+                    }
+                },
+                {
+                    "data": {"values": [{"x": 2008, "y1": 0, "y2": 25}]},
+                    "mark": {
+                        "type": "rule",
+                        "color": "#9BA8B0",
+                        "strokeDash": [4, 3],
+                        "strokeWidth": 1.5
+                    },
+                    "encoding": {
+                        "x": {"field": "x", "type": "quantitative"},
+                        "y": {"field": "y1", "type": "quantitative"},
+                        "y2": {"field": "y2"}
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "line",
+                        "color": "#C9732F",
+                        "strokeWidth": 3,
+                        "interpolate": "monotone"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Year",
+                            "type": "quantitative"
+                        },
+                        "y": {
+                            "field": "consumption",
+                            "type": "quantitative"
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Year",
+                                "title": "Year",
+                                "format": "d"
+                            },
+                            {
+                                "field": "consumption",
+                                "title": "Cigarettes per smoker/day",
+                                "format": ".1f"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "data": {
+                        "values": [
+                            {
+                                "Year": 2008,
+                                "consumption": 16.1,
+                                "note": "Tax data starts here"
+                            }
+                        ]
+                    },
+                    "mark": {
+                        "type": "text",
+                        "align": "left",
+                        "dx": 8,
+                        "dy": -8,
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                        "color": "#2A2A2A"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Year",
+                            "type": "quantitative"
+                        },
+                        "y": {
+                            "field": "consumption",
+                            "type": "quantitative"
+                        },
+                        "text": {
+                            "field": "note"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "resolve": {
+        "scale": {
+            "x": "shared"
+        }
+    },
+    "config": {
+        "background": "white",
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "gridColor": "#E8E0D5",
+            "gridDash": [
+                2,
+                3
+            ]
+        }
+    }
+}

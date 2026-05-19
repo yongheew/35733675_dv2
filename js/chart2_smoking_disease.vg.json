@@ -1,0 +1,127 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 900,
+    "height": 430,
+    "padding": {
+        "left": 100,
+        "right": 30,
+        "top": 30,
+        "bottom": 40
+    },
+    "title": {
+        "text": "Top 10 Diseases Attributable to Smoking",
+        "subtitle": "Estimated smoking-attributable deaths in Malaysia, 2023",
+        "anchor": "start",
+        "fontSize": 22,
+        "subtitleFontSize": 14
+    },
+    "data": {
+        "url": "data/IHME-GBD_2023_DATA-bccf9300-1.csv",
+        "format": {"type": "csv"}
+    },
+    "transform": [
+        {"calculate": "toNumber(datum.year)", "as": "year_num"},
+        {"calculate": "toNumber(datum.val)", "as": "death_num"},
+        {"filter": "datum.measure_name === 'Deaths'"},
+        {"filter": "datum.metric_name === 'Number'"},
+        {"filter": "datum.year_num === 2023"},
+        {"filter": "datum.death_num > 0"},
+        {
+        "aggregate": [
+            {"op": "sum", "field": "death_num", "as": "deaths"}
+        ],
+        "groupby": ["cause_name"]
+        },
+        {
+        "window": [
+            {"op": "rank", "as": "rank"}
+        ],
+        "sort": [
+            {"field": "deaths", "order": "descending"}
+        ]
+        },
+        {"filter": "datum.rank <= 10"},
+        {"calculate": "0", "as": "zero"}
+    ],
+    "layer": [
+        {
+        "mark": {
+            "type": "bar",
+            "height": 3,
+            "color": "#DDD3C7"
+        },
+        "encoding": {
+            "x": {
+            "field": "zero",
+            "type": "quantitative",
+            "title": "Estimated deaths",
+            "axis": {"format": ",.0f"}
+            },
+            "x2": {"field": "deaths"},
+            "y": {
+            "field": "cause_name",
+            "type": "nominal",
+            "sort": {"field": "deaths", "order": "descending"},
+            "title": null,
+            "axis": {"labelLimit": 280}
+            }
+        }
+        },
+        {
+        "mark": {
+            "type": "circle",
+            "size": 220,
+            "color": "#C9732F"
+        },
+        "encoding": {
+            "x": {
+            "field": "deaths",
+            "type": "quantitative"
+            },
+            "y": {
+            "field": "cause_name",
+            "type": "nominal",
+            "sort": {"field": "deaths", "order": "descending"}
+            },
+            "tooltip": [
+            {"field": "rank", "title": "Rank"},
+            {"field": "cause_name", "title": "Disease"},
+            {"field": "deaths", "title": "Estimated deaths", "format": ",.0f"}
+            ]
+        }
+        },
+        {
+        "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 10,
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#3A332D"
+        },
+        "encoding": {
+            "x": {"field": "deaths", "type": "quantitative"},
+            "y": {
+            "field": "cause_name",
+            "type": "nominal",
+            "sort": {"field": "deaths", "order": "descending"}
+            },
+            "text": {
+            "field": "deaths",
+            "type": "quantitative",
+            "format": ",.0f"
+            }
+        }
+        }
+    ],
+    "config": {
+        "background": "white",
+        "view": {"stroke": "transparent"},
+        "axis": {
+        "labelFontSize": 12,
+        "titleFontSize": 13,
+        "gridColor": "#ECE4D9",
+        "gridDash": [2, 4]
+        }
+    }
+}

@@ -1,0 +1,213 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "padding": {
+        "left": 100,
+        "right": 30,
+        "top": 50,
+        "bottom": 40
+    },
+    "title": {
+        "text": "Awareness of E-Cigarette Facts Remains Low",
+        "subtitle": "Percentage of ever-smokers by response to each awareness question",
+        "anchor": "start",
+        "fontSize": 22,
+        "subtitleFontSize": 14
+    },
+    "data": {
+        "url": "data/awareness_ecig_ever_used_cleaned.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "transform": [
+        {
+            "filter": "datum.smoking_status == 'Ever Smoker'"
+        },
+        {
+            "joinaggregate": [
+                {
+                    "op": "sum",
+                    "field": "count",
+                    "as": "total_count"
+                }
+            ],
+            "groupby": [
+                "question",
+                "smoking_status"
+            ]
+        },
+        {
+            "calculate": "round(datum.count / datum.total_count * 100 * 10) / 10",
+            "as": "pct"
+        }
+    ],
+    "facet": {
+        "field": "question",
+        "type": "nominal",
+        "columns": 3,
+        "header": {
+            "title": null,
+            "labelFontSize": 12,
+            "labelLimit": 400,
+            "labelAngle": 0,
+            "labelAlign": "center",
+            "labelExpr": "datum.label == 'E-cig can be used in non-smoking area' ? 'E-cig can be used in non-smoking area' : datum.label == 'E-cig more harmful compare to tobacco cigarette' ? 'E-cig more harmful compare to tobacco cigarette' : datum.label"
+        }
+    },
+    "spacing": 80,
+    "spec": {
+        "width": 280,
+        "height": 280,
+        "layer": [
+            {
+                "mark": {
+                    "type": "arc",
+                    "innerRadius": 85,
+                    "outerRadius": 130,
+                    "tooltip": true
+                },
+                "encoding": {
+                    "theta": {
+                        "field": "pct",
+                        "type": "quantitative",
+                        "stack": true
+                    },
+                    "color": {
+                        "field": "answer",
+                        "type": "nominal",
+                        "scale": {
+                            "domain": [
+                                "Yes",
+                                "No",
+                                "Same",
+                                "Don't know"
+                            ],
+                            "range": [
+                                "#4A7FB5",
+                                "#B54A3A",
+                                "#C8962A",
+                                "#8B9DAB"
+                            ]
+                        },
+                        "legend": {
+                            "title": "Response",
+                            "orient": "bottom",
+                            "labelFontSize": 12,
+                            "titleFontSize": 12,
+                            "symbolSize": 120
+                        }
+                    },
+                    "tooltip": [
+                        {
+                            "field": "question",
+                            "title": "Question"
+                        },
+                        {
+                            "field": "answer",
+                            "title": "Response"
+                        },
+                        {
+                            "field": "pct",
+                            "title": "Percentage (%)",
+                            "format": ".1f"
+                        },
+                        {
+                            "field": "count",
+                            "title": "Count",
+                            "format": ",.0f"
+                        }
+                    ]
+                }
+            },
+            {
+                "transform": [
+                    {
+                        "filter": "datum.answer == 'Yes'"
+                    }
+                ],
+                "mark": {
+                    "type": "text",
+                    "radius": 0,
+                    "fontSize": 28,
+                    "fontWeight": "bold",
+                    "color": "#1C1917",
+                    "dy": -16,
+                    "aria": false
+                },
+                "encoding": {
+                    "text": {
+                        "field": "pct",
+                        "type": "quantitative",
+                        "format": ".0f"
+                    },
+                    "tooltip": [
+                        {
+                            "field": "question",
+                            "title": "Question"
+                        },
+                        {
+                            "field": "answer",
+                            "title": "Response"
+                        },
+                        {
+                            "field": "pct",
+                            "title": "Percentage (%)",
+                            "format": ".1f"
+                        },
+                        {
+                            "field": "count",
+                            "title": "Count",
+                            "format": ",.0f"
+                        }
+                    ]
+                }
+            },
+            {
+                "transform": [
+                    {
+                        "filter": "datum.answer == 'Yes'"
+                    }
+                ],
+                "mark": {
+                    "type": "text",
+                    "radius": 0,
+                    "fontSize": 13,
+                    "color": "#7A6E66",
+                    "dy": 14,
+                    "aria": false
+                },
+                "encoding": {
+                    "text": {
+                        "value": "said Yes"
+                    },
+                    "tooltip": [
+                        {
+                            "field": "question",
+                            "title": "Question"
+                        },
+                        {
+                            "field": "answer",
+                            "title": "Response"
+                        },
+                        {
+                            "field": "pct",
+                            "title": "Percentage (%)",
+                            "format": ".1f"
+                        },
+                        {
+                            "field": "count",
+                            "title": "Count",
+                            "format": ",.0f"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "config": {
+        "background": "white",
+        "view": {
+            "stroke": "transparent"
+        }
+    }
+}

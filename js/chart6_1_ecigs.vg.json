@@ -1,0 +1,190 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 560,
+    "height": 260,
+    "padding": {
+        "left": 100,
+        "right": 30,
+        "top": 30,
+        "bottom": 40
+    },
+    "title": {
+        "text": "E-Cigarette Use Remains Concentrated Among Smokers",
+        "subtitle": "Comparison between ever-smokers and non-smokers",
+        "anchor": "start",
+        "fontSize": 22,
+        "subtitleFontSize": 14
+    },
+    "data": {
+        "url": "data/socio_demographic_overall_cleaned.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "transform": [
+        {
+            "filter": "datum.category === 'E-cig user'"
+        },
+        {
+            "filter": "datum.smoking_status !== 'Total'"
+        },
+        {
+            "calculate": "datum.subgroup === 'Ever use' ? 'Uses e-cigarettes' : 'Does not use e-cigarettes'",
+            "as": "usage_group"
+        },
+        {
+            "calculate": "toNumber(datum.percentage)",
+            "as": "pct"
+        }
+    ],
+    "layer": [
+        {
+            "mark": {
+                "type": "circle",
+                "opacity": 0.9,
+                "stroke": "white",
+                "strokeWidth": 2
+            },
+            "encoding": {
+                "x": {
+                    "field": "usage_group",
+                    "type": "nominal",
+                    "title": null,
+                    "axis": {
+                        "labelAngle": 0,
+                        "labelFontSize": 13
+                    }
+                },
+                "y": {
+                    "field": "smoking_status",
+                    "type": "nominal",
+                    "title": null,
+                    "axis": {
+                        "labelFontSize": 13
+                    }
+                },
+                "size": {
+                    "field": "pct",
+                    "type": "quantitative",
+                    "scale": {
+                        "range": [
+                            300,
+                            5000
+                        ]
+                    },
+                    "legend": null
+                },
+                "color": {
+                    "field": "smoking_status",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "Ever Smoker",
+                            "Non-Smoker"
+                        ],
+                        "range": [
+                            "#B54A3A",
+                            "#D6D6D6"
+                        ]
+                    },
+                    "legend": {
+                        "title": "Smoking Status",
+                        "orient": "top"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "smoking_status",
+                        "title": "Smoking status"
+                    },
+                    {
+                        "field": "usage_group",
+                        "title": "E-cigarette behaviour"
+                    },
+                    {
+                        "field": "pct",
+                        "title": "Percentage",
+                        "format": ".1f"
+                    },
+                    {
+                        "field": "count",
+                        "title": "Count",
+                        "format": ","
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "fontWeight": "bold",
+                "fontSize": 12,
+                "dy": 2,
+                "color": "#2B2B2B"
+            },
+            "encoding": {
+                "x": {
+                    "field": "usage_group",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "smoking_status",
+                    "type": "nominal"
+                },
+                "text": {
+                    "condition": {
+                        "test": "datum.pct > 3",
+                        "field": "pct",
+                        "type": "quantitative",
+                        "format": ".1f"
+                    },
+                    "value": ""
+                }
+            }
+        },
+        {
+            "data": {
+                "values": [
+                    {
+                        "x": "Uses e-cigarettes",
+                        "y": "Ever Smoker",
+                        "note": "E-cigarette use remains heavily concentrated among smokers."
+                    }
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 140,
+                "dy": -45,
+                "fontSize": 13,
+                "fontWeight": "bold",
+                "color": "#4A4A4A"
+            },
+            "encoding": {
+                "x": {
+                    "field": "x",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "y",
+                    "type": "nominal"
+                },
+                "text": {
+                    "field": "note"
+                }
+            }
+        }
+    ],
+    "config": {
+        "background": "white",
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "grid": false,
+            "labelFontSize": 12,
+            "titleFontSize": 13
+        }
+    }
+}

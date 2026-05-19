@@ -1,0 +1,221 @@
+year,country,trade_type,product_group,rank,volume_tonnes,value_rm,origin_country,destination_country,origin_lat,origin_lon,destination_lat,destination_lon,is_summary_row
+2010,Singapore,Export,Tobacco Products,1,7163.36301,207834974.0,Malaysia,Singapore,4.2105,101.9758,1.3521,103.8198,False
+2011,Singapore,Export,Tobacco Products,1,7302.1034,213643781.0,Malaysia,Singapore,4.2105,101.9758,1.3521,103.8198,False
+2012,Singapore,Export,Tobacco Products,1,8211.873710000002,242515984.0,Malaysia,Singapore,4.2105,101.9758,1.3521,103.8198,False
+2013,Singapore,Export,Tobacco Products,1,5586.228909999999,182775773.0,Malaysia,Singapore,4.2105,101.9758,1.3521,103.8198,False
+2014,Singapore,Export,Tobacco Products,1,5579.56967,193351617.0,Malaysia,Singapore,4.2105,101.9758,1.3521,103.8198,False
+2015,Singapore,Export,Tobacco Products,1,6793.37965,254906937.0,Malaysia,Singapore,4.2105,101.9758,1.3521,103.8198,False
+2016,Singapore,Export,Tobacco Products,1,5992.571879999999,240555346.0,Malaysia,Singapore,4.2105,101.9758,1.3521,103.8198,False
+2017,Singapore,Export,Tobacco Products,1,4261.449459999999,222501789.0,Malaysia,Singapore,4.2105,101.9758,1.3521,103.8198,False
+2018,Singapore,Export,Tobacco Products,1,1946.017020000001,151145795.0,Malaysia,Singapore,4.2105,101.9758,1.3521,103.8198,False
+2019,Singapore,Export,Tobacco Products,1,1936.6883399999997,149898929.0,Malaysia,Singapore,4.2105,101.9758,1.3521,103.8198,False
+2020,Singapore,Export,Tobacco Products,1,933.2985399999998,115333980.0,Malaysia,Singapore,4.2105,101.9758,1.3521,103.8198,False
+2010,Thailand,Export,Tobacco Products,2,2102.120929999999,108366502.0,Malaysia,Thailand,4.2105,101.9758,15.87,100.9925,False
+2011,Thailand,Export,Tobacco Products,2,1626.2511399999996,102190387.0,Malaysia,Thailand,4.2105,101.9758,15.87,100.9925,False
+2012,Thailand,Export,Tobacco Products,2,2324.3864399999998,128437186.0,Malaysia,Thailand,4.2105,101.9758,15.87,100.9925,False
+2013,Thailand,Export,Tobacco Products,2,2795.202,140620294.0,Malaysia,Thailand,4.2105,101.9758,15.87,100.9925,False
+2014,Thailand,Export,Tobacco Products,2,3266.70627,161834578.0,Malaysia,Thailand,4.2105,101.9758,15.87,100.9925,False
+2015,Thailand,Export,Tobacco Products,2,3508.81081,162601061.0,Malaysia,Thailand,4.2105,101.9758,15.87,100.9925,False
+2016,Thailand,Export,Tobacco Products,2,3731.32966,177984343.0,Malaysia,Thailand,4.2105,101.9758,15.87,100.9925,False
+2017,Thailand,Export,Tobacco Products,2,1317.38632,72782714.0,Malaysia,Thailand,4.2105,101.9758,15.87,100.9925,False
+2018,Thailand,Export,Tobacco Products,2,1612.4139199999995,79321880.0,Malaysia,Thailand,4.2105,101.9758,15.87,100.9925,False
+2019,Thailand,Export,Tobacco Products,2,1196.1699600000002,72587889.0,Malaysia,Thailand,4.2105,101.9758,15.87,100.9925,False
+2020,Thailand,Export,Tobacco Products,2,844.4175600000001,47710593.0,Malaysia,Thailand,4.2105,101.9758,15.87,100.9925,False
+2010,Netherlands,Export,Tobacco Products,3,1094.5666299999998,7632486.0,Malaysia,Netherlands,4.2105,101.9758,52.1326,5.2913,False
+2011,Netherlands,Export,Tobacco Products,3,2.23223,81692.0,Malaysia,Netherlands,4.2105,101.9758,52.1326,5.2913,False
+2012,Netherlands,Export,Tobacco Products,3,0.31707,30144.0,Malaysia,Netherlands,4.2105,101.9758,52.1326,5.2913,False
+2013,Netherlands,Export,Tobacco Products,3,58.87618,568290.0,Malaysia,Netherlands,4.2105,101.9758,52.1326,5.2913,False
+2014,Netherlands,Export,Tobacco Products,3,717.5946,6295396.0,Malaysia,Netherlands,4.2105,101.9758,52.1326,5.2913,False
+2015,Netherlands,Export,Tobacco Products,3,854.37673,6111733.0,Malaysia,Netherlands,4.2105,101.9758,52.1326,5.2913,False
+2016,Netherlands,Export,Tobacco Products,3,886.83245,7248117.0,Malaysia,Netherlands,4.2105,101.9758,52.1326,5.2913,False
+2017,Netherlands,Export,Tobacco Products,3,1028.11466,8211394.0,Malaysia,Netherlands,4.2105,101.9758,52.1326,5.2913,False
+2018,Netherlands,Export,Tobacco Products,3,10.616459999999998,1192067.0,Malaysia,Netherlands,4.2105,101.9758,52.1326,5.2913,False
+2019,Netherlands,Export,Tobacco Products,3,1.1431999999999998,121576.0,Malaysia,Netherlands,4.2105,101.9758,52.1326,5.2913,False
+2020,Netherlands,Export,Tobacco Products,3,3311.57799,40476624.0,Malaysia,Netherlands,4.2105,101.9758,52.1326,5.2913,False
+2010,Philippines,Export,Tobacco Products,4,2144.3330899999996,17638334.0,Malaysia,Philippines,4.2105,101.9758,12.8797,121.774,False
+2011,Philippines,Export,Tobacco Products,4,4819.29287,40989619.0,Malaysia,Philippines,4.2105,101.9758,12.8797,121.774,False
+2012,Philippines,Export,Tobacco Products,4,6858.64069,85414611.0,Malaysia,Philippines,4.2105,101.9758,12.8797,121.774,False
+2013,Philippines,Export,Tobacco Products,4,8611.04925,140401765.0,Malaysia,Philippines,4.2105,101.9758,12.8797,121.774,False
+2014,Philippines,Export,Tobacco Products,4,5675.183109999999,80736662.0,Malaysia,Philippines,4.2105,101.9758,12.8797,121.774,False
+2015,Philippines,Export,Tobacco Products,4,4157.00806,65885659.0,Malaysia,Philippines,4.2105,101.9758,12.8797,121.774,False
+2016,Philippines,Export,Tobacco Products,4,6908.621390000001,168275027.0,Malaysia,Philippines,4.2105,101.9758,12.8797,121.774,False
+2017,Philippines,Export,Tobacco Products,4,5413.213090000001,164481668.0,Malaysia,Philippines,4.2105,101.9758,12.8797,121.774,False
+2018,Philippines,Export,Tobacco Products,4,2810.0939199999993,28340334.0,Malaysia,Philippines,4.2105,101.9758,12.8797,121.774,False
+2019,Philippines,Export,Tobacco Products,4,4680.315599999999,49628174.0,Malaysia,Philippines,4.2105,101.9758,12.8797,121.774,False
+2020,Philippines,Export,Tobacco Products,4,3275.35574,37549824.0,Malaysia,Philippines,4.2105,101.9758,12.8797,121.774,False
+2010,United Arab Emirates,Export,Tobacco Products,5,632.0444,16679033.0,Malaysia,United Arab Emirates,4.2105,101.9758,23.4241,53.8478,False
+2011,United Arab Emirates,Export,Tobacco Products,5,595.74825,16467525.0,Malaysia,United Arab Emirates,4.2105,101.9758,23.4241,53.8478,False
+2012,United Arab Emirates,Export,Tobacco Products,5,753.85892,25546498.0,Malaysia,United Arab Emirates,4.2105,101.9758,23.4241,53.8478,False
+2013,United Arab Emirates,Export,Tobacco Products,5,387.4018000000001,23784176.0,Malaysia,United Arab Emirates,4.2105,101.9758,23.4241,53.8478,False
+2014,United Arab Emirates,Export,Tobacco Products,5,884.66876,40717053.0,Malaysia,United Arab Emirates,4.2105,101.9758,23.4241,53.8478,False
+2015,United Arab Emirates,Export,Tobacco Products,5,1209.406,54057272.0,Malaysia,United Arab Emirates,4.2105,101.9758,23.4241,53.8478,False
+2016,United Arab Emirates,Export,Tobacco Products,5,1180.8304,56078097.0,Malaysia,United Arab Emirates,4.2105,101.9758,23.4241,53.8478,False
+2017,United Arab Emirates,Export,Tobacco Products,5,828.0923999999999,62676358.0,Malaysia,United Arab Emirates,4.2105,101.9758,23.4241,53.8478,False
+2018,United Arab Emirates,Export,Tobacco Products,5,848.9303599999997,54895462.0,Malaysia,United Arab Emirates,4.2105,101.9758,23.4241,53.8478,False
+2019,United Arab Emirates,Export,Tobacco Products,5,27454.2944,43440883.0,Malaysia,United Arab Emirates,4.2105,101.9758,23.4241,53.8478,False
+2020,United Arab Emirates,Export,Tobacco Products,5,479.23711000000003,27726773.0,Malaysia,United Arab Emirates,4.2105,101.9758,23.4241,53.8478,False
+2010,Viet Nam,Export,Tobacco Products,6,2449.67881,74532463.0,Malaysia,Viet Nam,4.2105,101.9758,14.0583,108.2772,False
+2011,Viet Nam,Export,Tobacco Products,6,1143.0937999999999,54989602.0,Malaysia,Viet Nam,4.2105,101.9758,14.0583,108.2772,False
+2012,Viet Nam,Export,Tobacco Products,6,1540.10669,69920364.0,Malaysia,Viet Nam,4.2105,101.9758,14.0583,108.2772,False
+2013,Viet Nam,Export,Tobacco Products,6,1378.4754599999999,57149851.0,Malaysia,Viet Nam,4.2105,101.9758,14.0583,108.2772,False
+2014,Viet Nam,Export,Tobacco Products,6,2525.93251,93842496.0,Malaysia,Viet Nam,4.2105,101.9758,14.0583,108.2772,False
+2015,Viet Nam,Export,Tobacco Products,6,1102.97703,58528049.0,Malaysia,Viet Nam,4.2105,101.9758,14.0583,108.2772,False
+2016,Viet Nam,Export,Tobacco Products,6,1264.8438800000001,69503675.0,Malaysia,Viet Nam,4.2105,101.9758,14.0583,108.2772,False
+2017,Viet Nam,Export,Tobacco Products,6,1393.4218999999998,91785256.0,Malaysia,Viet Nam,4.2105,101.9758,14.0583,108.2772,False
+2018,Viet Nam,Export,Tobacco Products,6,1996.21147,106343440.0,Malaysia,Viet Nam,4.2105,101.9758,14.0583,108.2772,False
+2019,Viet Nam,Export,Tobacco Products,6,1353.9447699999998,86197646.0,Malaysia,Viet Nam,4.2105,101.9758,14.0583,108.2772,False
+2020,Viet Nam,Export,Tobacco Products,6,226.39351,14606901.0,Malaysia,Viet Nam,4.2105,101.9758,14.0583,108.2772,False
+2010,Indonesia,Export,Tobacco Products,7,8821.88424,222436436.0,Malaysia,Indonesia,4.2105,101.9758,-0.7893,113.9213,False
+2011,Indonesia,Export,Tobacco Products,7,9878.92414,232379155.0,Malaysia,Indonesia,4.2105,101.9758,-0.7893,113.9213,False
+2012,Indonesia,Export,Tobacco Products,7,10514.65445,232282101.0,Malaysia,Indonesia,4.2105,101.9758,-0.7893,113.9213,False
+2013,Indonesia,Export,Tobacco Products,7,3164.8176200000003,42150452.0,Malaysia,Indonesia,4.2105,101.9758,-0.7893,113.9213,False
+2014,Indonesia,Export,Tobacco Products,7,3276.35399,47402051.0,Malaysia,Indonesia,4.2105,101.9758,-0.7893,113.9213,False
+2015,Indonesia,Export,Tobacco Products,7,1625.9064900000003,28307285.0,Malaysia,Indonesia,4.2105,101.9758,-0.7893,113.9213,False
+2016,Indonesia,Export,Tobacco Products,7,2070.2654899999998,34864491.0,Malaysia,Indonesia,4.2105,101.9758,-0.7893,113.9213,False
+2017,Indonesia,Export,Tobacco Products,7,2283.9252700000006,62507157.0,Malaysia,Indonesia,4.2105,101.9758,-0.7893,113.9213,False
+2018,Indonesia,Export,Tobacco Products,7,2122.3264299999996,23470039.0,Malaysia,Indonesia,4.2105,101.9758,-0.7893,113.9213,False
+2019,Indonesia,Export,Tobacco Products,7,701.8632199999998,11368341.0,Malaysia,Indonesia,4.2105,101.9758,-0.7893,113.9213,False
+2020,Indonesia,Export,Tobacco Products,7,1016.8734000000001,12366380.0,Malaysia,Indonesia,4.2105,101.9758,-0.7893,113.9213,False
+2010,Switzerland,Export,Tobacco Products,8,309.94972,2573056.0,Malaysia,Switzerland,4.2105,101.9758,46.8182,8.2275,False
+2011,Switzerland,Export,Tobacco Products,8,0.90699,41421.0,Malaysia,Switzerland,4.2105,101.9758,46.8182,8.2275,False
+2012,Switzerland,Export,Tobacco Products,8,0.7405700000000001,68079.0,Malaysia,Switzerland,4.2105,101.9758,46.8182,8.2275,False
+2013,Switzerland,Export,Tobacco Products,8,0.10831,32759.0,Malaysia,Switzerland,4.2105,101.9758,46.8182,8.2275,False
+2014,Switzerland,Export,Tobacco Products,8,78.80162,679702.0,Malaysia,Switzerland,4.2105,101.9758,46.8182,8.2275,False
+2015,Switzerland,Export,Tobacco Products,8,77.96283,643121.0,Malaysia,Switzerland,4.2105,101.9758,46.8182,8.2275,False
+2016,Switzerland,Export,Tobacco Products,8,0.053,1190.0,Malaysia,Switzerland,4.2105,101.9758,46.8182,8.2275,False
+2017,Switzerland,Export,Tobacco Products,8,197.21331,3148750.0,Malaysia,Switzerland,4.2105,101.9758,46.8182,8.2275,False
+2018,Switzerland,Export,Tobacco Products,8,2803.472,26680386.0,Malaysia,Switzerland,4.2105,101.9758,46.8182,8.2275,False
+2019,Switzerland,Export,Tobacco Products,8,6542.0677,72029244.0,Malaysia,Switzerland,4.2105,101.9758,46.8182,8.2275,False
+2020,Switzerland,Export,Tobacco Products,8,869.5509999999999,10095371.0,Malaysia,Switzerland,4.2105,101.9758,46.8182,8.2275,False
+2010,Turkey,Export,Tobacco Products,9,848.32021,4670583.0,Malaysia,Turkey,4.2105,101.9758,38.9637,35.2433,False
+2011,Turkey,Export,Tobacco Products,9,403.2,2271618.0,Malaysia,Turkey,4.2105,101.9758,38.9637,35.2433,False
+2012,Turkey,Export,Tobacco Products,9,0.0,46.0,Malaysia,Turkey,4.2105,101.9758,38.9637,35.2433,False
+2013,Turkey,Export,Tobacco Products,9,0.0,0.0,Malaysia,Turkey,4.2105,101.9758,38.9637,35.2433,False
+2014,Turkey,Export,Tobacco Products,9,0.00103,220.0,Malaysia,Turkey,4.2105,101.9758,38.9637,35.2433,False
+2015,Turkey,Export,Tobacco Products,9,15.0,296352.0,Malaysia,Turkey,4.2105,101.9758,38.9637,35.2433,False
+2016,Turkey,Export,Tobacco Products,9,18.72,239256.0,Malaysia,Turkey,4.2105,101.9758,38.9637,35.2433,False
+2017,Turkey,Export,Tobacco Products,9,0.0,0.0,Malaysia,Turkey,4.2105,101.9758,38.9637,35.2433,False
+2018,Turkey,Export,Tobacco Products,9,38.906000000000006,398859.0,Malaysia,Turkey,4.2105,101.9758,38.9637,35.2433,False
+2019,Turkey,Export,Tobacco Products,9,126.55000000000001,1363576.0,Malaysia,Turkey,4.2105,101.9758,38.9637,35.2433,False
+2020,Turkey,Export,Tobacco Products,9,537.7536,6334480.0,Malaysia,Turkey,4.2105,101.9758,38.9637,35.2433,False
+2010,China,Export,Tobacco Products,10,12.14802,971591.0,Malaysia,China,4.2105,101.9758,35.8617,104.1954,False
+2011,China,Export,Tobacco Products,10,18.913220000000003,838171.0,Malaysia,China,4.2105,101.9758,35.8617,104.1954,False
+2012,China,Export,Tobacco Products,10,120.48724,4041398.0,Malaysia,China,4.2105,101.9758,35.8617,104.1954,False
+2013,China,Export,Tobacco Products,10,33.33299,1293128.0,Malaysia,China,4.2105,101.9758,35.8617,104.1954,False
+2014,China,Export,Tobacco Products,10,251.27961000000002,19731034.0,Malaysia,China,4.2105,101.9758,35.8617,104.1954,False
+2015,China,Export,Tobacco Products,10,84.20205,5616114.0,Malaysia,China,4.2105,101.9758,35.8617,104.1954,False
+2016,China,Export,Tobacco Products,10,128.06674999999998,7746626.0,Malaysia,China,4.2105,101.9758,35.8617,104.1954,False
+2017,China,Export,Tobacco Products,10,117.85852999999997,10043963.0,Malaysia,China,4.2105,101.9758,35.8617,104.1954,False
+2018,China,Export,Tobacco Products,10,173.64521,19552579.0,Malaysia,China,4.2105,101.9758,35.8617,104.1954,False
+2019,China,Export,Tobacco Products,10,322.81040999999993,36807329.0,Malaysia,China,4.2105,101.9758,35.8617,104.1954,False
+2020,China,Export,Tobacco Products,10,46.442679999999996,4547424.0,Malaysia,China,4.2105,101.9758,35.8617,104.1954,False
+2010,South Korea,Export,Tobacco Products,11,705.44689,15666901.0,Malaysia,South Korea,4.2105,101.9758,35.9078,127.7669,False
+2011,South Korea,Export,Tobacco Products,11,708.71661,19259834.0,Malaysia,South Korea,4.2105,101.9758,35.9078,127.7669,False
+2012,South Korea,Export,Tobacco Products,11,652.2975700000001,9858966.0,Malaysia,South Korea,4.2105,101.9758,35.9078,127.7669,False
+2013,South Korea,Export,Tobacco Products,11,1955.91967,44282267.0,Malaysia,South Korea,4.2105,101.9758,35.9078,127.7669,False
+2014,South Korea,Export,Tobacco Products,11,1227.57332,37559773.0,Malaysia,South Korea,4.2105,101.9758,35.9078,127.7669,False
+2015,South Korea,Export,Tobacco Products,11,1137.6711799999998,39879569.0,Malaysia,South Korea,4.2105,101.9758,35.9078,127.7669,False
+2016,South Korea,Export,Tobacco Products,11,611.72786,16471748.0,Malaysia,South Korea,4.2105,101.9758,35.9078,127.7669,False
+2017,South Korea,Export,Tobacco Products,11,238.17430000000004,2660230.0,Malaysia,South Korea,4.2105,101.9758,35.9078,127.7669,False
+2018,South Korea,Export,Tobacco Products,11,47.58736,2119116.0,Malaysia,South Korea,4.2105,101.9758,35.9078,127.7669,False
+2019,South Korea,Export,Tobacco Products,11,177.79058999999998,6293286.0,Malaysia,South Korea,4.2105,101.9758,35.9078,127.7669,False
+2020,South Korea,Export,Tobacco Products,11,122.66778,1539591.0,Malaysia,South Korea,4.2105,101.9758,35.9078,127.7669,False
+2010,Belgium,Export,Tobacco Products,12,115.49732,844530.0,Malaysia,Belgium,4.2105,101.9758,50.5039,4.4699,False
+2011,Belgium,Export,Tobacco Products,12,751.94358,5649297.0,Malaysia,Belgium,4.2105,101.9758,50.5039,4.4699,False
+2012,Belgium,Export,Tobacco Products,12,2.43222,99667.0,Malaysia,Belgium,4.2105,101.9758,50.5039,4.4699,False
+2013,Belgium,Export,Tobacco Products,12,2466.36902,22768991.0,Malaysia,Belgium,4.2105,101.9758,50.5039,4.4699,False
+2014,Belgium,Export,Tobacco Products,12,1171.20119,9517213.0,Malaysia,Belgium,4.2105,101.9758,50.5039,4.4699,False
+2015,Belgium,Export,Tobacco Products,12,1556.06228,11845067.0,Malaysia,Belgium,4.2105,101.9758,50.5039,4.4699,False
+2016,Belgium,Export,Tobacco Products,12,4256.2155,32142232.0,Malaysia,Belgium,4.2105,101.9758,50.5039,4.4699,False
+2017,Belgium,Export,Tobacco Products,12,4703.4406500000005,37827006.0,Malaysia,Belgium,4.2105,101.9758,50.5039,4.4699,False
+2018,Belgium,Export,Tobacco Products,12,2333.97221,21723790.0,Malaysia,Belgium,4.2105,101.9758,50.5039,4.4699,False
+2019,Belgium,Export,Tobacco Products,12,254.43,2948443.0,Malaysia,Belgium,4.2105,101.9758,50.5039,4.4699,False
+2020,Belgium,Export,Tobacco Products,12,112.0,1328384.0,Malaysia,Belgium,4.2105,101.9758,50.5039,4.4699,False
+2010,Hong Kong,Export,Tobacco Products,13,3695.8707999999997,114127411.0,Malaysia,Hong Kong,4.2105,101.9758,22.3193,114.1694,False
+2011,Hong Kong,Export,Tobacco Products,13,3623.78306,112779051.0,Malaysia,Hong Kong,4.2105,101.9758,22.3193,114.1694,False
+2012,Hong Kong,Export,Tobacco Products,13,4018.4072700000006,115378868.0,Malaysia,Hong Kong,4.2105,101.9758,22.3193,114.1694,False
+2013,Hong Kong,Export,Tobacco Products,13,2521.6869400000005,73946558.0,Malaysia,Hong Kong,4.2105,101.9758,22.3193,114.1694,False
+2014,Hong Kong,Export,Tobacco Products,13,2120.51499,63258336.0,Malaysia,Hong Kong,4.2105,101.9758,22.3193,114.1694,False
+2015,Hong Kong,Export,Tobacco Products,13,2104.23695,80978336.0,Malaysia,Hong Kong,4.2105,101.9758,22.3193,114.1694,False
+2016,Hong Kong,Export,Tobacco Products,13,1712.4292299999997,62915818.0,Malaysia,Hong Kong,4.2105,101.9758,22.3193,114.1694,False
+2017,Hong Kong,Export,Tobacco Products,13,53.10571999999999,3302352.0,Malaysia,Hong Kong,4.2105,101.9758,22.3193,114.1694,False
+2018,Hong Kong,Export,Tobacco Products,13,9.217439999999998,185121.0,Malaysia,Hong Kong,4.2105,101.9758,22.3193,114.1694,False
+2019,Hong Kong,Export,Tobacco Products,13,32.138600000000004,2558786.0,Malaysia,Hong Kong,4.2105,101.9758,22.3193,114.1694,False
+2020,Hong Kong,Export,Tobacco Products,13,15.446169999999999,1287610.0,Malaysia,Hong Kong,4.2105,101.9758,22.3193,114.1694,False
+2010,India,Export,Tobacco Products,14,713.46875,19114033.0,Malaysia,India,4.2105,101.9758,20.5937,78.9629,False
+2011,India,Export,Tobacco Products,14,663.4346200000001,17416358.0,Malaysia,India,4.2105,101.9758,20.5937,78.9629,False
+2012,India,Export,Tobacco Products,14,724.3331800000001,24451276.0,Malaysia,India,4.2105,101.9758,20.5937,78.9629,False
+2013,India,Export,Tobacco Products,14,169.20572,7318488.0,Malaysia,India,4.2105,101.9758,20.5937,78.9629,False
+2014,India,Export,Tobacco Products,14,60.860279999999996,2147426.0,Malaysia,India,4.2105,101.9758,20.5937,78.9629,False
+2015,India,Export,Tobacco Products,14,28.945439999999998,1147524.0,Malaysia,India,4.2105,101.9758,20.5937,78.9629,False
+2016,India,Export,Tobacco Products,14,21.98321,1334947.0,Malaysia,India,4.2105,101.9758,20.5937,78.9629,False
+2017,India,Export,Tobacco Products,14,0.76276,372636.0,Malaysia,India,4.2105,101.9758,20.5937,78.9629,False
+2018,India,Export,Tobacco Products,14,18.414419999999996,2016770.0,Malaysia,India,4.2105,101.9758,20.5937,78.9629,False
+2019,India,Export,Tobacco Products,14,0.18996,16111.0,Malaysia,India,4.2105,101.9758,20.5937,78.9629,False
+2020,India,Export,Tobacco Products,14,21.91075,956679.0,Malaysia,India,4.2105,101.9758,20.5937,78.9629,False
+2010,Myanmar,Export,Tobacco Products,15,0.41948,47737.0,Malaysia,Myanmar,4.2105,101.9758,21.9162,95.956,False
+2011,Myanmar,Export,Tobacco Products,15,0.7454899999999999,23931.0,Malaysia,Myanmar,4.2105,101.9758,21.9162,95.956,False
+2012,Myanmar,Export,Tobacco Products,15,0.060289999999999996,14962.0,Malaysia,Myanmar,4.2105,101.9758,21.9162,95.956,False
+2013,Myanmar,Export,Tobacco Products,15,0.00418,1440.0,Malaysia,Myanmar,4.2105,101.9758,21.9162,95.956,False
+2014,Myanmar,Export,Tobacco Products,15,473.35555000000005,10914632.0,Malaysia,Myanmar,4.2105,101.9758,21.9162,95.956,False
+2015,Myanmar,Export,Tobacco Products,15,458.74931000000004,13034580.0,Malaysia,Myanmar,4.2105,101.9758,21.9162,95.956,False
+2016,Myanmar,Export,Tobacco Products,15,955.98625,30799717.0,Malaysia,Myanmar,4.2105,101.9758,21.9162,95.956,False
+2017,Myanmar,Export,Tobacco Products,15,1129.0533,37187225.0,Malaysia,Myanmar,4.2105,101.9758,21.9162,95.956,False
+2018,Myanmar,Export,Tobacco Products,15,41.093599999999995,3442500.0,Malaysia,Myanmar,4.2105,101.9758,21.9162,95.956,False
+2019,Myanmar,Export,Tobacco Products,15,36.645149999999994,3066434.0,Malaysia,Myanmar,4.2105,101.9758,21.9162,95.956,False
+2020,Myanmar,Export,Tobacco Products,15,11.5644,875920.0,Malaysia,Myanmar,4.2105,101.9758,21.9162,95.956,False
+2010,Iran,Export,Tobacco Products,16,52.79003,1747652.0,Malaysia,Iran,4.2105,101.9758,32.4279,53.688,False
+2011,Iran,Export,Tobacco Products,16,43.8859,1908939.0,Malaysia,Iran,4.2105,101.9758,32.4279,53.688,False
+2012,Iran,Export,Tobacco Products,16,68.08484,2091689.0,Malaysia,Iran,4.2105,101.9758,32.4279,53.688,False
+2013,Iran,Export,Tobacco Products,16,84.79284,1761884.0,Malaysia,Iran,4.2105,101.9758,32.4279,53.688,False
+2014,Iran,Export,Tobacco Products,16,127.09223,2690699.0,Malaysia,Iran,4.2105,101.9758,32.4279,53.688,False
+2015,Iran,Export,Tobacco Products,16,72.62522,1894275.0,Malaysia,Iran,4.2105,101.9758,32.4279,53.688,False
+2016,Iran,Export,Tobacco Products,16,81.79601,2185337.0,Malaysia,Iran,4.2105,101.9758,32.4279,53.688,False
+2017,Iran,Export,Tobacco Products,16,119.13699000000001,3420858.0,Malaysia,Iran,4.2105,101.9758,32.4279,53.688,False
+2018,Iran,Export,Tobacco Products,16,83.08915999999999,2406461.0,Malaysia,Iran,4.2105,101.9758,32.4279,53.688,False
+2019,Iran,Export,Tobacco Products,16,63.565999999999995,1700650.0,Malaysia,Iran,4.2105,101.9758,32.4279,53.688,False
+2020,Iran,Export,Tobacco Products,16,27.36779,815240.0,Malaysia,Iran,4.2105,101.9758,32.4279,53.688,False
+2010,Pakistan,Export,Tobacco Products,17,0.00054,139.0,Malaysia,Pakistan,4.2105,101.9758,30.3753,69.3451,False
+2011,Pakistan,Export,Tobacco Products,17,0.0,0.0,Malaysia,Pakistan,4.2105,101.9758,30.3753,69.3451,False
+2012,Pakistan,Export,Tobacco Products,17,0.0,0.0,Malaysia,Pakistan,4.2105,101.9758,30.3753,69.3451,False
+2013,Pakistan,Export,Tobacco Products,17,0.9848,126902.0,Malaysia,Pakistan,4.2105,101.9758,30.3753,69.3451,False
+2014,Pakistan,Export,Tobacco Products,17,0.22025,6665.0,Malaysia,Pakistan,4.2105,101.9758,30.3753,69.3451,False
+2015,Pakistan,Export,Tobacco Products,17,0.0,0.0,Malaysia,Pakistan,4.2105,101.9758,30.3753,69.3451,False
+2016,Pakistan,Export,Tobacco Products,17,41.99624000000001,1357667.0,Malaysia,Pakistan,4.2105,101.9758,30.3753,69.3451,False
+2017,Pakistan,Export,Tobacco Products,17,40.76038,258363.0,Malaysia,Pakistan,4.2105,101.9758,30.3753,69.3451,False
+2018,Pakistan,Export,Tobacco Products,17,14.38786,277883.0,Malaysia,Pakistan,4.2105,101.9758,30.3753,69.3451,False
+2019,Pakistan,Export,Tobacco Products,17,11.575819999999998,154661.0,Malaysia,Pakistan,4.2105,101.9758,30.3753,69.3451,False
+2020,Pakistan,Export,Tobacco Products,17,15.78097,583637.0,Malaysia,Pakistan,4.2105,101.9758,30.3753,69.3451,False
+2010,United Kingdom,Export,Tobacco Products,18,6.706009999999999,486002.0,Malaysia,United Kingdom,4.2105,101.9758,55.3781,-3.436,False
+2011,United Kingdom,Export,Tobacco Products,18,34.50241,1504408.0,Malaysia,United Kingdom,4.2105,101.9758,55.3781,-3.436,False
+2012,United Kingdom,Export,Tobacco Products,18,18.17707,1041835.0,Malaysia,United Kingdom,4.2105,101.9758,55.3781,-3.436,False
+2013,United Kingdom,Export,Tobacco Products,18,1.62761,102093.0,Malaysia,United Kingdom,4.2105,101.9758,55.3781,-3.436,False
+2014,United Kingdom,Export,Tobacco Products,18,13.36402,652797.0,Malaysia,United Kingdom,4.2105,101.9758,55.3781,-3.436,False
+2015,United Kingdom,Export,Tobacco Products,18,14.00325,1793244.0,Malaysia,United Kingdom,4.2105,101.9758,55.3781,-3.436,False
+2016,United Kingdom,Export,Tobacco Products,18,12.535630000000001,896772.0,Malaysia,United Kingdom,4.2105,101.9758,55.3781,-3.436,False
+2017,United Kingdom,Export,Tobacco Products,18,3.2623999999999995,480834.0,Malaysia,United Kingdom,4.2105,101.9758,55.3781,-3.436,False
+2018,United Kingdom,Export,Tobacco Products,18,12.552869999999999,1522298.0,Malaysia,United Kingdom,4.2105,101.9758,55.3781,-3.436,False
+2019,United Kingdom,Export,Tobacco Products,18,29.26466,2239846.0,Malaysia,United Kingdom,4.2105,101.9758,55.3781,-3.436,False
+2020,United Kingdom,Export,Tobacco Products,18,4.5280000000000005,551725.0,Malaysia,United Kingdom,4.2105,101.9758,55.3781,-3.436,False
+2010,Bangladesh,Export,Tobacco Products,19,3.60341,90896.0,Malaysia,Bangladesh,4.2105,101.9758,23.685,90.3563,False
+2011,Bangladesh,Export,Tobacco Products,19,0.00020999999999999998,64.0,Malaysia,Bangladesh,4.2105,101.9758,23.685,90.3563,False
+2012,Bangladesh,Export,Tobacco Products,19,0.00063,192.0,Malaysia,Bangladesh,4.2105,101.9758,23.685,90.3563,False
+2013,Bangladesh,Export,Tobacco Products,19,0.0,0.0,Malaysia,Bangladesh,4.2105,101.9758,23.685,90.3563,False
+2014,Bangladesh,Export,Tobacco Products,19,0.24380999999999997,44005.0,Malaysia,Bangladesh,4.2105,101.9758,23.685,90.3563,False
+2015,Bangladesh,Export,Tobacco Products,19,0.15914999999999999,41660.0,Malaysia,Bangladesh,4.2105,101.9758,23.685,90.3563,False
+2016,Bangladesh,Export,Tobacco Products,19,6.62756,636880.0,Malaysia,Bangladesh,4.2105,101.9758,23.685,90.3563,False
+2017,Bangladesh,Export,Tobacco Products,19,0.48047,97243.0,Malaysia,Bangladesh,4.2105,101.9758,23.685,90.3563,False
+2018,Bangladesh,Export,Tobacco Products,19,6.21455,816388.0,Malaysia,Bangladesh,4.2105,101.9758,23.685,90.3563,False
+2019,Bangladesh,Export,Tobacco Products,19,10.704170000000001,1132702.0,Malaysia,Bangladesh,4.2105,101.9758,23.685,90.3563,False
+2020,Bangladesh,Export,Tobacco Products,19,3.19506,393716.0,Malaysia,Bangladesh,4.2105,101.9758,23.685,90.3563,False
+2010,Brunei Darussalam,Export,Tobacco Products,20,310.69784999999996,50336641.0,Malaysia,Brunei Darussalam,4.2105,101.9758,4.5353,114.7277,False
+2011,Brunei Darussalam,Export,Tobacco Products,20,97.41224000000001,10419488.0,Malaysia,Brunei Darussalam,4.2105,101.9758,4.5353,114.7277,False
+2012,Brunei Darussalam,Export,Tobacco Products,20,65.74126999999999,8488052.0,Malaysia,Brunei Darussalam,4.2105,101.9758,4.5353,114.7277,False
+2013,Brunei Darussalam,Export,Tobacco Products,20,18.815350000000002,5725964.0,Malaysia,Brunei Darussalam,4.2105,101.9758,4.5353,114.7277,False
+2014,Brunei Darussalam,Export,Tobacco Products,20,23.37383,7069316.0,Malaysia,Brunei Darussalam,4.2105,101.9758,4.5353,114.7277,False
+2015,Brunei Darussalam,Export,Tobacco Products,20,11.14607,3415813.0,Malaysia,Brunei Darussalam,4.2105,101.9758,4.5353,114.7277,False
+2016,Brunei Darussalam,Export,Tobacco Products,20,13.80826,4224799.0,Malaysia,Brunei Darussalam,4.2105,101.9758,4.5353,114.7277,False
+2017,Brunei Darussalam,Export,Tobacco Products,20,12.325579999999999,3766149.0,Malaysia,Brunei Darussalam,4.2105,101.9758,4.5353,114.7277,False
+2018,Brunei Darussalam,Export,Tobacco Products,20,10.13506,3053408.0,Malaysia,Brunei Darussalam,4.2105,101.9758,4.5353,114.7277,False
+2019,Brunei Darussalam,Export,Tobacco Products,20,8.75198,2124725.0,Malaysia,Brunei Darussalam,4.2105,101.9758,4.5353,114.7277,False
+2020,Brunei Darussalam,Export,Tobacco Products,20,1.58821,390357.0,Malaysia,Brunei Darussalam,4.2105,101.9758,4.5353,114.7277,False

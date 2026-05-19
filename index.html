@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoking in Malaysia</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Smoking in <em>Malaysia</em></h1>
+        <p>Behaviour, perception, health impact and tobacco trade.</p>
+    </header>
+
+    <main>
+        <section id="section-health">
+            <h2>Section 1 — The Health Burden of Smoking</h2>
+            <p>Smoking harms both smokers and non-smokers.</p>
+
+            <article class="chart-block">
+                <div id="chart1"></div>
+                <div class="chart-legend">
+                    <span class="legend-item">
+                        <span class="legend-line smoking-line"></span>
+                        Smoking-related deaths
+                    </span>
+
+                    <span class="legend-item">
+                        <span class="legend-line secondhand-line"></span>
+                        Secondhand smoke deaths
+                    </span>
+                </div>
+            </article>
+
+            <article>
+                <div id="chart2"> </div>
+            </article>
+        </section>
+
+        <section id="section-tax,prices">
+            <h2>Section 2 — Smoking Behaviour</h2>
+            <p>Why has smoking not declined faster?</p>
+
+            <article>
+                <div id="chart3"> </div>
+            </article>
+
+            <article>
+                <div id="chart4_1"> </div>
+            </article>
+        </section>
+
+        <section id="section-behaviour">
+            <h2>Section 3 — Who smokes in Malaysia?</h2>
+            <p>Understanding the factors that influence smoking behaviour.</p>
+
+            <article>
+                <div id="chart5"> </div>
+            </article>
+
+            <article>
+                <div id="chart6"> </div>
+            </article>
+
+            <br>
+            <br>
+
+            <article>
+                <div id="chart6_1"> </div>
+            </article>
+        </section>
+
+        <section id="section-trade">
+            <h2>Section 4 — Perception on E-Cigarettes</h2>
+            <p>How do smokers and non-smokers view e-cigarettes?</p>
+
+            <article>
+                <div id="chart7"> </div>
+            </article>
+
+            <article>
+                <div id="chart8"> </div>
+            </article>
+
+            <article>
+                <div id="chart9"> </div>
+            </article>
+
+        </section>
+    </main>
+
+    <script src="js/vega_lite_vis.js"></script>
+</body>
+
+</html>
