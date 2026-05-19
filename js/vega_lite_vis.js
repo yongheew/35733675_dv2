@@ -1,6 +1,7 @@
 vegaEmbed("#chart1", "js/chart1_smoking_deaths.vg.json", { actions: false }).catch(console.error);
 vegaEmbed("#chart2", "js/chart2_smoking_disease.vg.json", { actions: false }).catch(console.error);
 vegaEmbed("#chart3", "js/chart3_cig_consumption.vg.json", { actions: false }).catch(console.error);
+vegaEmbed("#chart4", "js/chart4_1_sea_map.vg.json", { actions: false }).catch(console.error);
 vegaEmbed("#chart4_1", "js/chart4_taxes_consumption.vg.json", { actions: false }).catch(console.error);
 vegaEmbed("#chart5", "js/chart5_social.vg.json", { actions: false }).catch(console.error);
 vegaEmbed("#chart6", "js/chart6_1_ecigs.vg.json", { actions: false }).catch(console.error);
