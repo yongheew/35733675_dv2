@@ -82,3 +82,17 @@ section p {
     border-color: #2A6B72;
     border-top-style: dashed;
 }
+
+.chart-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.vega-embed {
+    width: 100% !important;
+}
+
+.vega-embed svg {
+    width: 100% !important;
+}
