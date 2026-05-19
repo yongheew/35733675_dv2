@@ -7,14 +7,8 @@
         "fontSize": 22,
         "subtitleFontSize": 14
     },
-    "width": 800,
+    "width": "container",
     "height": 580,
-    "padding": {
-        "left": 100,
-        "right": 30,
-        "top": 30,
-        "bottom": 40
-    },
     "params": [
         {
             "name": "year_selection",

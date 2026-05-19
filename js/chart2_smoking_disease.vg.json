@@ -1,13 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 900,
+    "width": "container",
     "height": 430,
-    "padding": {
-        "left": 100,
-        "right": 30,
-        "top": 30,
-        "bottom": 40
-    },
     "title": {
         "text": "Top 10 Diseases Attributable to Smoking",
         "subtitle": "Estimated smoking-attributable deaths in Malaysia, 2023",

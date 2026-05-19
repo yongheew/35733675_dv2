@@ -1,13 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 850,
+    "width": "container",
     "height": 420,
-    "padding": {
-        "left": 100,
-        "right": 30,
-        "top": 30,
-        "bottom": 40
-    },
     "title": {
         "text": "Daily Cigarette Consumption Fell, Then Plateaued",
         "subtitle": "Cigarettes consumed per smoker per day in Malaysia, 1980–2012",

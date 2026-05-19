@@ -7,7 +7,7 @@
         "fontSize": 22,
         "subtitleFontSize": 14
     },
-    "width": 600,
+    "width": "container",
     "height": 300,
     "padding": {
         "left": 50

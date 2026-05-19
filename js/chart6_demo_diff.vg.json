@@ -1,13 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 750,
+    "width": "container",
     "height": 420,
-    "padding": {
-        "left": 100,
-        "right": 30,
-        "top": 30,
-        "bottom": 40
-    },
     "title": {
         "text": "Where Smokers and Non-Smokers Differ Most",
         "subtitle": "Percentage share by demographic subgroup",

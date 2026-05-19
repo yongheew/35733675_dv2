@@ -9,14 +9,8 @@
     },
     "vconcat": [
         {
-            "width": 850,
+            "width": "container",
             "height": 220,
-            "padding": {
-                "left": 150,
-                "right": 30,
-                "top": 30,
-                "bottom": 40
-            },
             "data": {
                 "url": "data/taxes-as-a-share-of-cigarette-price.csv",
                 "format": {
