@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": "container",
+	"width": 600,
     "height": 430,
     "title": {
         "text": "Top 10 Diseases Attributable to Smoking",

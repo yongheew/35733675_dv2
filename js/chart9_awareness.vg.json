@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": "container",
+	"width": 600,
     "title": {
         "text": "Awareness of E-Cigarette Facts Remains Low",
         "subtitle": "Percentage of ever-smokers by response to each awareness question",

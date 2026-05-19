@@ -1,6 +1,6 @@
 {
 	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-	"width": "container",
+	"width": 600,
 	"height": 420,
 	"title": {
 		"text": "Secondhand Smoke Deaths Are Rising Alongside Smoking Deaths",

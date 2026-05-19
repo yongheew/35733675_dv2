@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": "container",
+	"width": 600,
     "height": 380,
     "title": {
         "text": "Socio-demographic Profile of Ever-Smokers and Non-Smokers",
