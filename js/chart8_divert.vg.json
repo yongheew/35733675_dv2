@@ -53,7 +53,7 @@
             "axis": {
                 "title": null,
                 "labelFontSize": 11,
-                "labelLimit": 200
+                "labelLimit": 350
             }
         },
         "x": {
