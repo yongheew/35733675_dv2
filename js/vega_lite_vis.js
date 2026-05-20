@@ -3,7 +3,6 @@ vegaEmbed("#chart2", "js/chart2_smoking_disease.vg.json", { actions: false }).ca
 vegaEmbed("#chart3", "js/chart3_cig_consumption.vg.json", { actions: false }).catch(console.error);
 vegaEmbed("#chart4_1", "js/chart4_1_sea_map.vg.json", { actions: false }).catch(console.error);
 vegaEmbed("#chart5", "js/chart5_social.vg.json", { actions: false }).catch(console.error);
-vegaEmbed("#chart6", "js/chart6_1_ecigs.vg.json", { actions: false }).catch(console.error);
 vegaEmbed("#chart6_1", "js/chart6_1_ecigs.vg.json", { actions: false }).catch(console.error);
 vegaEmbed("#chart7", "js/chart7_perc_heatmap.vg.json", { actions: false }).catch(console.error);
 vegaEmbed("#chart8", "js/chart8_divert.vg.json", { actions: false }).catch(console.error);
