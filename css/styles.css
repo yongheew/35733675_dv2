@@ -33,6 +33,7 @@ section {
     padding: 40px;
     background: white;
     border-radius: 18px;
+    overflow: hidden;
 }
 
 section h2 {

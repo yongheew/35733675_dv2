@@ -58,7 +58,7 @@
             "type": "nominal",
             "axis": {
                 "title": null,
-                "labelLimit": 500,
+                "labelLimit": 200,
                 "labelFontSize": 11
             }
         },

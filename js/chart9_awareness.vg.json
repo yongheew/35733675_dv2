@@ -1,9 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 850,
-    "height": 380,
+    "width": 600,
+    "height": 300,
     "padding": {
-        "left": 180,
+        "left": 20,
         "right": 20,
         "top": 10,
         "bottom": 20
@@ -56,16 +56,16 @@
             "labelExpr": "datum.label == 'E-cig can be used in non-smoking area' ? 'E-cig can be used in non-smoking area' : datum.label == 'E-cig more harmful compare to tobacco cigarette' ? 'E-cig more harmful compare to tobacco cigarette' : datum.label"
         }
     },
-    "spacing": 80,
+    "spacing": 40,
     "spec": {
-        "width": 250,
-        "height": 250,
+        "width": 160,
+        "height": 160,
         "layer": [
             {
                 "mark": {
                     "type": "arc",
-                    "innerRadius": 85,
-                    "outerRadius": 130,
+                    "innerRadius": 55,
+                    "outerRadius": 78,
                     "tooltip": true
                 },
                 "encoding": {
@@ -130,7 +130,7 @@
                 "mark": {
                     "type": "text",
                     "radius": 0,
-                    "fontSize": 28,
+                    "fontSize": 25,
                     "fontWeight": "bold",
                     "color": "#1C1917",
                     "dy": -16,
@@ -173,7 +173,7 @@
                 "mark": {
                     "type": "text",
                     "radius": 0,
-                    "fontSize": 13,
+                    "fontSize": 11,
                     "color": "#7A6E66",
                     "dy": 14,
                     "aria": false

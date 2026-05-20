@@ -1,9 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-	"width": 600,
-    "height": 380,
+	"width": 550,
+    "height": 320,
     "padding": {
-        "left": 100,
+        "left": 20,
         "right": 20,
         "top": 10,
         "bottom": 20
@@ -52,8 +52,8 @@
             "sort": {"field": "div_value", "op": "sum", "order": "descending"},
             "axis": {
                 "title": null,
-                "labelFontSize": 13,
-                "labelLimit": 500
+                "labelFontSize": 11,
+                "labelLimit": 200
             }
         },
         "x": {
