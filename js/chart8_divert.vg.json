@@ -90,6 +90,10 @@
     "config": {
         "background": "white",
         "view": {"stroke": "transparent"},
+        "autosize": {
+            "type": "fit",
+            "contains": "padding"
+        },
         "axis": {
             "labelFontSize": 11,
             "titleFontSize": 13,

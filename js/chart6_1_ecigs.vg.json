@@ -139,39 +139,6 @@
                     "value": ""
                 }
             }
-        },
-        {
-            "data": {
-                "values": [
-                    {
-                        "x": "Uses e-cigarettes",
-                        "y": "Ever Smoker",
-                        "note": "E-cigarette use remains heavily concentrated among smokers."
-                    }
-                ]
-            },
-            "mark": {
-                "type": "text",
-                "align": "left",
-                "dx": 140,
-                "dy": -45,
-                "fontSize": 13,
-                "fontWeight": "bold",
-                "color": "#4A4A4A"
-            },
-            "encoding": {
-                "x": {
-                    "field": "x",
-                    "type": "nominal"
-                },
-                "y": {
-                    "field": "y",
-                    "type": "nominal"
-                },
-                "text": {
-                    "field": "note"
-                }
-            }
         }
     ],
     "config": {

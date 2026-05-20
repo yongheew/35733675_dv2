@@ -116,6 +116,10 @@
         "view": {
             "stroke": "transparent"
         },
+        "autosize": {
+            "type": "fit",
+            "contains": "padding"
+        },
         "axisY": {
             "labelLimit": 400,
             "labelFontSize": 11

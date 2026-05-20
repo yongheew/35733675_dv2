@@ -203,6 +203,10 @@
         "background": "white",
         "view": {
             "stroke": "transparent"
+        },
+        "autosize": {
+            "type": "fit",
+            "contains": "padding"
         }
     }
 }
