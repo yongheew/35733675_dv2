@@ -83,10 +83,8 @@ section p {
     border-top-style: dashed;
 }
 
-.chart-container {
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
+#chart5, #chart6, #chart6_1, #chart7, #chart8, #chart9 {
+    margin-top: 30px;
 }
 
 .vega-embed {

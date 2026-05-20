@@ -1,7 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-	"width": 600,
-    "height": 250,
+	"width": 850,
+    "height": 380,
+    "padding": {
+        "left": 180,
+        "right": 20,
+        "top": 10,
+        "bottom": 20
+    },
     "title": {
         "text": "Smokers Are More Likely to See E-Cigarettes as Helpful",
         "subtitle": "Agreement vs disagreement by smoking status — click legend to highlight",
@@ -90,10 +96,6 @@
     "config": {
         "background": "white",
         "view": {"stroke": "transparent"},
-        "autosize": {
-            "type": "fit",
-            "contains": "padding"
-        },
         "axis": {
             "labelFontSize": 11,
             "titleFontSize": 13,

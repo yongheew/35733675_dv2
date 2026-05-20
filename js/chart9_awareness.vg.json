@@ -1,6 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-	"width": 600,
+    "width": 850,
+    "height": 380,
+    "padding": {
+        "left": 180,
+        "right": 20,
+        "top": 10,
+        "bottom": 20
+    },
     "title": {
         "text": "Awareness of E-Cigarette Facts Remains Low",
         "subtitle": "Percentage of ever-smokers by response to each awareness question",
@@ -51,8 +58,8 @@
     },
     "spacing": 80,
     "spec": {
-        "width": 280,
-        "height": 280,
+        "width": 250,
+        "height": 250,
         "layer": [
             {
                 "mark": {
@@ -203,10 +210,6 @@
         "background": "white",
         "view": {
             "stroke": "transparent"
-        },
-        "autosize": {
-            "type": "fit",
-            "contains": "padding"
         }
     }
 }

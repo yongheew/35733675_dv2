@@ -1,16 +1,19 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 850,
+    "height": 380,
+    "padding": {
+        "left": 180,
+        "right": 20,
+        "top": 10,
+        "bottom": 20
+    },
     "title": {
         "text": "How Do Smokers and Non-Smokers View E-Cigarettes?",
         "subtitle": "Percentage of respondents by response and smoking status",
         "anchor": "start",
         "fontSize": 22,
         "subtitleFontSize": 14
-    },
-	"width": 600,
-    "height": 300,
-    "padding": {
-        "left": 50
     },
     "params": [
         {
@@ -115,10 +118,6 @@
         "background": "white",
         "view": {
             "stroke": "transparent"
-        },
-        "autosize": {
-            "type": "fit",
-            "contains": "padding"
         },
         "axisY": {
             "labelLimit": 400,

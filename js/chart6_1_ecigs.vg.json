@@ -1,11 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-	"width": 600,
+	"width": 800,
     "height": 260,
     "padding": {
-        "left": 250,
-        "top": 50
-    },
+        "top": 10,
+        "left": 20,
+        "right": 20,
+        "bottom": 10
+    }
     "title": {
         "text": "E-Cigarette Use Remains Concentrated Among Smokers",
         "subtitle": "Comparison between ever-smokers and non-smokers",
