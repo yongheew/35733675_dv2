@@ -4,7 +4,7 @@
     "height": 400,
     "title": {
         "text": "High Taxes Don't Always Mean Low Smoking",
-        "subtitle": "Tax share vs cigarettes per smoker per day — 51 countries, 2012. Orange = Malaysia, teal = Southeast Asia.",
+        "subtitle": "Tax share vs cigarettes per smoker per day — 51 countries, 2012. Teal = Malaysia and Southeast Asia.",
         "anchor": "start",
         "fontSize": 19,
         "subtitleFontSize": 13
@@ -448,7 +448,7 @@
                 "dy": -13,
                 "fontSize": 10,
                 "fontWeight": "600",
-                "color": "#2A6B72"
+                "color": "#4A4A4A"
             },
             "encoding": {
                 "x": {
@@ -487,7 +487,7 @@
                     "type": "quantitative"
                 },
                 "color": {
-                    "value": "#C9732F"
+                    "value": "#2A6B72"
                 },
                 "tooltip": [
                     {
@@ -518,7 +518,7 @@
                 "dy": -18,
                 "fontSize": 12,
                 "fontWeight": "bold",
-                "color": "#C9732F"
+                "color": "#2A6B72"
             },
             "encoding": {
                 "x": {

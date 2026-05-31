@@ -7,7 +7,9 @@
         "subtitle": "Deaths vs DALYs (Disability-Adjusted Life Years \u2014 healthy years lost) per disease, Malaysia 2023",
         "anchor": "start",
         "fontSize": 20,
-        "subtitleFontSize": 12
+        "subtitleFontSize": 12,
+        "font": "DM Serif Display, serif",
+        "subtitleFont": "Arial, Helvetica, sans-serif"
     },
     "data": {
         "values": [
@@ -23,7 +25,7 @@
                 "measure": "DALYs (Disability-Adjusted Life Years)",
                 "norm": 100.0,
                 "raw": 184713,
-                "unit": "DALYs (Disability-Adjusted Life Years)"
+                "unit": "DALYs"
             },
             {
                 "cause": "Lung cancer",
@@ -37,7 +39,7 @@
                 "measure": "DALYs (Disability-Adjusted Life Years)",
                 "norm": 41.4,
                 "raw": 76525,
-                "unit": "DALYs (Disability-Adjusted Life Years)"
+                "unit": "DALYs"
             },
             {
                 "cause": "Lower respiratory infections",
@@ -51,7 +53,7 @@
                 "measure": "DALYs (Disability-Adjusted Life Years)",
                 "norm": 33.8,
                 "raw": 62396,
-                "unit": "DALYs (Disability-Adjusted Life Years)"
+                "unit": "DALYs"
             },
             {
                 "cause": "Stroke",
@@ -65,7 +67,7 @@
                 "measure": "DALYs (Disability-Adjusted Life Years)",
                 "norm": 36.9,
                 "raw": 68237,
-                "unit": "DALYs (Disability-Adjusted Life Years)"
+                "unit": "DALYs"
             },
             {
                 "cause": "Chronic obstructive pulmonary disease",
@@ -79,7 +81,7 @@
                 "measure": "DALYs (Disability-Adjusted Life Years)",
                 "norm": 25.9,
                 "raw": 47929,
-                "unit": "DALYs (Disability-Adjusted Life Years)"
+                "unit": "DALYs"
             },
             {
                 "cause": "Diabetes mellitus",
@@ -93,7 +95,7 @@
                 "measure": "DALYs (Disability-Adjusted Life Years)",
                 "norm": 11.2,
                 "raw": 20719,
-                "unit": "DALYs (Disability-Adjusted Life Years)"
+                "unit": "DALYs"
             },
             {
                 "cause": "Liver cancer",
@@ -107,7 +109,7 @@
                 "measure": "DALYs (Disability-Adjusted Life Years)",
                 "norm": 4.5,
                 "raw": 8264,
-                "unit": "DALYs (Disability-Adjusted Life Years)"
+                "unit": "DALYs"
             },
             {
                 "cause": "Aortic aneurysm",
@@ -121,7 +123,7 @@
                 "measure": "DALYs (Disability-Adjusted Life Years)",
                 "norm": 3.8,
                 "raw": 7031,
-                "unit": "DALYs (Disability-Adjusted Life Years)"
+                "unit": "DALYs"
             }
         ]
     },
@@ -155,7 +157,8 @@
                     "axis": {
                         "title": null,
                         "labelFontSize": 12,
-                        "labelLimit": 280
+                        "labelLimit": 280,
+                        "labelFont": "Arial, Helvetica, sans-serif"
                     }
                 },
                 "x": {
@@ -176,7 +179,9 @@
                         "gridDash": [
                             2,
                             3
-                        ]
+                        ],
+                        "labelFont": "Arial, Helvetica, sans-serif",
+                        "titleFont": "Arial, Helvetica, sans-serif"
                     }
                 },
                 "detail": {
@@ -194,7 +199,7 @@
                 "type": "circle",
                 "size": 200,
                 "opacity": 0.95,
-                "color": "#2A6B72"
+                "color": "#4A7FB5"
             },
             "encoding": {
                 "y": {
@@ -214,6 +219,30 @@
                 "x": {
                     "field": "norm",
                     "type": "quantitative"
+                },
+                "color": {
+                    "field": "measure",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "Deaths",
+                            "DALYs (Disability-Adjusted Life Years)"
+                        ],
+                        "range": [
+                            "#5C3D1E",
+                            "#4A7FB5"
+                        ]
+                    },
+                    "legend": {
+                        "title": "Measure",
+                        "orient": "top",
+                        "labelFontSize": 12,
+                        "titleFontSize": 12,
+                        "labelFont": "Arial, Helvetica, sans-serif",
+                        "titleFont": "Arial, Helvetica, sans-serif",
+                        "labelExpr": "datum.label === 'DALYs (Disability-Adjusted Life Years)' ? 'DALYs (Disability-Adjusted Life Years)' : datum.label",
+                        "labelLimit": 400
+                    }
                 },
                 "tooltip": [
                     {
@@ -247,7 +276,7 @@
                 "type": "circle",
                 "size": 200,
                 "opacity": 0.95,
-                "color": "#C9732F"
+                "color": "#5C3D1E"
             },
             "encoding": {
                 "y": {
@@ -267,6 +296,30 @@
                 "x": {
                     "field": "norm",
                     "type": "quantitative"
+                },
+                "color": {
+                    "field": "measure",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "Deaths",
+                            "DALYs (Disability-Adjusted Life Years)"
+                        ],
+                        "range": [
+                            "#5C3D1E",
+                            "#4A7FB5"
+                        ]
+                    },
+                    "legend": {
+                        "title": "Measure",
+                        "orient": "top",
+                        "labelFontSize": 12,
+                        "titleFontSize": 12,
+                        "labelFont": "Arial, Helvetica, sans-serif",
+                        "titleFont": "Arial, Helvetica, sans-serif",
+                        "labelExpr": "datum.label === 'DALYs (Disability-Adjusted Life Years)' ? 'DALYs (Disability-Adjusted Life Years)' : datum.label",
+                        "labelLimit": 400
+                    }
                 },
                 "tooltip": [
                     {
@@ -307,7 +360,8 @@
                 "dy": -12,
                 "fontSize": 10,
                 "fontStyle": "italic",
-                "color": "#555"
+                "color": "#555",
+                "font": "Arial, Helvetica, sans-serif"
             },
             "encoding": {
                 "y": {
@@ -355,7 +409,8 @@
                 "dy": -12,
                 "fontSize": 10,
                 "fontStyle": "italic",
-                "color": "#555"
+                "color": "#555",
+                "font": "Arial, Helvetica, sans-serif"
             },
             "encoding": {
                 "y": {
@@ -384,12 +439,19 @@
     ],
     "config": {
         "background": "white",
+        "font": "Arial, Helvetica, sans-serif",
         "view": {
             "stroke": "transparent"
         },
         "axis": {
             "labelFontSize": 11,
-            "titleFontSize": 12
+            "titleFontSize": 12,
+            "labelFont": "Arial, Helvetica, sans-serif",
+            "titleFont": "Arial, Helvetica, sans-serif"
+        },
+        "legend": {
+            "labelFont": "Arial, Helvetica, sans-serif",
+            "titleFont": "Arial, Helvetica, sans-serif"
         }
     }
 }
