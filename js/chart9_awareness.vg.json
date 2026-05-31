@@ -14,7 +14,7 @@
         "anchor": "start",
         "fontSize": 22,
         "subtitleFontSize": 14,
-        "font": "DM Serif Display, serif",
+        "font": "Arial, Helvetica, sans-serif",
         "subtitleFont": "Arial, Helvetica, sans-serif"
     },
     "data": {
