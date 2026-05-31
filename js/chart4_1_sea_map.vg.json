@@ -7,8 +7,8 @@
         "fontSize": 22,
         "subtitleFontSize": 14
     },
-	"width": 600,
-    "height": 580,
+    "width": 560,
+    "height": 480,
     "params": [
         {
             "name": "year_selection",
@@ -24,28 +24,50 @@
     ],
     "projection": {
         "type": "mercator",
-        "center": [115, 5],
+        "center": [
+            115,
+            5
+        ],
         "scale": 1000
     },
     "layer": [
         {
-            "data": {"sphere": true},
-            "mark": {"type": "geoshape", "fill": "#D6E8F0", "stroke": "none"}
+            "data": {
+                "sphere": true
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "#D6E8F0",
+                "stroke": "none"
+            }
         },
         {
-            "data": {"graticule": {"step": [10, 10]}},
+            "data": {
+                "graticule": {
+                    "step": [
+                        10,
+                        10
+                    ]
+                }
+            },
             "mark": {
                 "type": "geoshape",
                 "filled": false,
                 "stroke": "#B8D4E0",
                 "strokeWidth": 0.4,
-                "strokeDash": [3, 3]
+                "strokeDash": [
+                    3,
+                    3
+                ]
             }
         },
         {
             "data": {
                 "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
-                "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_110m_admin_0_countries"
+                }
             },
             "transform": [
                 {
@@ -59,12 +81,18 @@
                 "stroke": "#C4B8AC",
                 "strokeWidth": 0.5
             },
-            "encoding": {"tooltip": {"field": "note"}}
+            "encoding": {
+                "tooltip": {
+                    "field": "note"
+                }
+            }
         },
         {
             "data": {
                 "url": "data/sea_consumption.csv",
-                "format": {"type": "csv"}
+                "format": {
+                    "type": "csv"
+                }
             },
             "transform": [
                 {
@@ -72,7 +100,10 @@
                     "from": {
                         "data": {
                             "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
-                            "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+                            "format": {
+                                "type": "topojson",
+                                "feature": "ne_110m_admin_0_countries"
+                            }
                         },
                         "key": "properties.NAME"
                     },
@@ -86,15 +117,25 @@
                     "as": "consumption_num"
                 }
             ],
-            "mark": {"type": "geoshape", "stroke": "#7A6E66", "strokeWidth": 0.8},
+            "mark": {
+                "type": "geoshape",
+                "stroke": "#7A6E66",
+                "strokeWidth": 0.8
+            },
             "encoding": {
-                "shape": {"field": "geo", "type": "geojson"},
+                "shape": {
+                    "field": "geo",
+                    "type": "geojson"
+                },
                 "color": {
                     "field": "consumption_num",
                     "type": "quantitative",
                     "scale": {
                         "scheme": "orangered",
-                        "domain": [5, 30]
+                        "domain": [
+                            5,
+                            30
+                        ]
                     },
                     "legend": {
                         "title": "Cigarettes per smoker/day",
@@ -103,7 +144,7 @@
                     }
                 },
                 "stroke": {
-                    "test": "datum.country == Malaysia",
+                    "test": "datum.country == 'Malaysia'",
                     "value": "#7A3F10"
                 },
                 "strokeWidth": {
@@ -114,15 +155,27 @@
                     "value": 0.5
                 },
                 "tooltip": [
-                    {"field": "country", "title": "Country"},
-                    {"field": "consumption_num", "title": "Cigarettes per smoker/day", "format": ".1f"},
-                    {"field": "year", "title": "Year"}
+                    {
+                        "field": "country",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "consumption_num",
+                        "title": "Cigarettes per smoker/day",
+                        "format": ".1f"
+                    },
+                    {
+                        "field": "year",
+                        "title": "Year"
+                    }
                 ]
             }
         }
     ],
     "config": {
         "background": "white",
-        "view": {"stroke": "transparent"}
+        "view": {
+            "stroke": "transparent"
+        }
     }
 }

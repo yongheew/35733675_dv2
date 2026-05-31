@@ -1,18 +1,21 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 400,
-    "height": 380,
+    "width": 470,
+    "height": 330,
     "padding": {
-        "right": 50,
-        "top": 10,
-        "bottom": 20
+        "left": 0,
+        "right": 95,
+        "top": 30,
+        "bottom": 95
     },
     "title": {
         "text": "How Do Smokers and Non-Smokers View E-Cigarettes?",
         "subtitle": "Percentage of respondents by response and smoking status",
         "anchor": "start",
-        "fontSize": 22,
-        "subtitleFontSize": 14
+        "fontSize": 20,
+        "subtitleFontSize": 12,
+        "offset": 12,
+        "subtitlePadding": 5
     },
     "params": [
         {
@@ -44,7 +47,7 @@
             "filter": "datum.smoking_status == 'Ever Smoker' || datum.smoking_status == 'Non-Smoker'"
         },
         {
-            "calculate": "datum.smoking_status + '  ·  ' + datum.response",
+            "calculate": "datum.smoking_status + '  \u00b7  ' + datum.response",
             "as": "col_label"
         }
     ],
@@ -58,8 +61,9 @@
             "type": "nominal",
             "axis": {
                 "title": null,
-                "labelLimit": 200,
-                "labelFontSize": 11
+                "labelLimit": 900,
+                "labelFontSize": 10,
+                "labelPadding": 8
             }
         },
         "x": {
@@ -68,9 +72,10 @@
             "sort": null,
             "axis": {
                 "title": null,
-                "labelAngle": -30,
+                "labelAngle": -38,
                 "labelFontSize": 10,
-                "labelLimit": 450
+                "labelLimit": 260,
+                "labelPadding": 8
             }
         },
         "color": {
@@ -85,7 +90,11 @@
             },
             "legend": {
                 "title": "Respondents (%)",
-                "gradientLength": 150
+                "gradientLength": 120,
+                "gradientThickness": 14,
+                "orient": "right",
+                "labelFontSize": 10,
+                "titleFontSize": 11
             }
         },
         "tooltip": [
@@ -119,13 +128,13 @@
             "stroke": "transparent"
         },
         "axisY": {
-            "labelLimit": 400,
-            "labelFontSize": 11
+            "labelLimit": 900,
+            "labelFontSize": 10
         },
         "axisX": {
-            "labelAngle": -25,
-            "labelFontSize": 11,
-            "labelLimit": 150
+            "labelAngle": -38,
+            "labelFontSize": 10,
+            "labelLimit": 260
         }
     }
 }

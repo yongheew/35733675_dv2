@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 600,
-    "height": 300,
+    "width": 700,
+    "height": 320,
     "padding": {
         "left": 20,
         "right": 20,
@@ -13,7 +13,9 @@
         "subtitle": "Percentage of ever-smokers by response to each awareness question",
         "anchor": "start",
         "fontSize": 22,
-        "subtitleFontSize": 14
+        "subtitleFontSize": 14,
+        "font": "DM Serif Display, serif",
+        "subtitleFont": "Arial, Helvetica, sans-serif"
     },
     "data": {
         "url": "data/awareness_ecig_ever_used_cleaned.csv",
@@ -41,19 +43,24 @@
         {
             "calculate": "round(datum.count / datum.total_count * 100 * 10) / 10",
             "as": "pct"
+        },
+        {
+            "calculate": "replace(replace(replace(datum.question, 'E-cig more harmful compare to tobacco cigarette', 'E-cigarette more harmful than tobacco cigarette'), 'E-cig contain nicotine', 'E-cigarette contain nicotine'), 'E-cig can be used in non-smoking area', 'E-cigarette can be used in non-smoking area')",
+            "as": "question_full"
         }
     ],
     "facet": {
-        "field": "question",
+        "field": "question_full",
         "type": "nominal",
         "columns": 3,
         "header": {
             "title": null,
             "labelFontSize": 12,
-            "labelLimit": 400,
+            "labelLimit": 420,
             "labelAngle": 0,
             "labelAlign": "center",
-            "labelExpr": "datum.label == 'E-cig can be used in non-smoking area' ? 'E-cig can be used in non-smoking area' : datum.label == 'E-cig more harmful compare to tobacco cigarette' ? 'E-cig more harmful compare to tobacco cigarette' : datum.label"
+            "labelFont": "Arial, Helvetica, sans-serif",
+            "labelPadding": 12
         }
     },
     "spacing": 40,
@@ -96,12 +103,16 @@
                             "orient": "bottom",
                             "labelFontSize": 12,
                             "titleFontSize": 12,
-                            "symbolSize": 120
+                            "symbolSize": 120,
+                            "labelFont": "Arial, Helvetica, sans-serif",
+                            "titleFont": "Arial, Helvetica, sans-serif",
+                            "labelExpr": "datum.label == 'Same' ? 'Same (equally harmful as tobacco)' : datum.label == \"Don't know\" ? \"Don't know (uncertain)\" : datum.label",
+                            "labelLimit": 400
                         }
                     },
                     "tooltip": [
                         {
-                            "field": "question",
+                            "field": "question_full",
                             "title": "Question"
                         },
                         {
@@ -132,6 +143,7 @@
                     "radius": 0,
                     "fontSize": 25,
                     "fontWeight": "bold",
+                    "font": "Arial, Helvetica, sans-serif",
                     "color": "#1C1917",
                     "dy": -16,
                     "aria": false
@@ -144,7 +156,7 @@
                     },
                     "tooltip": [
                         {
-                            "field": "question",
+                            "field": "question_full",
                             "title": "Question"
                         },
                         {
@@ -174,6 +186,7 @@
                     "type": "text",
                     "radius": 0,
                     "fontSize": 11,
+                    "font": "Arial, Helvetica, sans-serif",
                     "color": "#7A6E66",
                     "dy": 14,
                     "aria": false
@@ -184,7 +197,7 @@
                     },
                     "tooltip": [
                         {
-                            "field": "question",
+                            "field": "question_full",
                             "title": "Question"
                         },
                         {
@@ -208,8 +221,13 @@
     },
     "config": {
         "background": "white",
+        "font": "Arial, Helvetica, sans-serif",
         "view": {
             "stroke": "transparent"
+        },
+        "legend": {
+            "labelFont": "Arial, Helvetica, sans-serif",
+            "titleFont": "Arial, Helvetica, sans-serif"
         }
     }
 }

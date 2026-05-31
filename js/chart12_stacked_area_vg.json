@@ -1,0 +1,343 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 650,
+    "height": 380,
+    "title": {
+        "text": "Malaysia's Tobacco Trade: From Net Exporter to Net Importer",
+        "subtitle": "Trade surplus (Export − Import) in RM million — above zero = net exporter, below = net importer",
+        "anchor": "start",
+        "fontSize": 20,
+        "subtitleFontSize": 13
+    },
+    "data": {
+        "url": "data/6-1_cleaned.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "transform": [
+        {
+            "filter": "datum.product_type !== 'Total'"
+        },
+        {
+            "filter": "datum.metric === 'Value (RM Million)'"
+        },
+        {
+            "calculate": "toNumber(datum.value)",
+            "as": "val"
+        },
+        {
+            "pivot": "trade_type",
+            "value": "val",
+            "groupby": [
+                "year",
+                "product_type"
+            ]
+        },
+        {
+            "calculate": "datum.Export - datum.Import",
+            "as": "surplus"
+        },
+        {
+            "calculate": "toNumber(datum.year)",
+            "as": "yr"
+        },
+        {
+            "calculate": "datum.surplus >= 0 ? datum.surplus : 0",
+            "as": "surplus_pos"
+        },
+        {
+            "calculate": "datum.surplus < 0 ? datum.surplus : 0",
+            "as": "surplus_neg"
+        }
+    ],
+    "layer": [
+        {
+            "mark": {
+                "type": "rule",
+                "color": "#888",
+                "strokeWidth": 1.5,
+                "strokeDash": [
+                    4,
+                    3
+                ]
+            },
+            "encoding": {
+                "y": {
+                    "datum": 0,
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "area",
+                "interpolate": "monotone",
+                "opacity": 0.85,
+                "color": "#2A6B72"
+            },
+            "encoding": {
+                "x": {
+                    "field": "yr",
+                    "type": "quantitative",
+                    "axis": {
+                        "format": "d",
+                        "grid": false,
+                        "title": null,
+                        "labelFontSize": 12
+                    },
+                    "scale": {
+                        "domain": [
+                            2010,
+                            2020
+                        ]
+                    }
+                },
+                "y": {
+                    "field": "surplus_pos",
+                    "type": "quantitative",
+                    "title": "Trade surplus (RM million)",
+                    "axis": {
+                        "format": ",.0f",
+                        "labelFontSize": 12,
+                        "titleFontSize": 12
+                    }
+                },
+                "y2": {
+                    "datum": 0
+                },
+                "detail": {
+                    "field": "product_type"
+                },
+                "tooltip": [
+                    {
+                        "field": "year",
+                        "title": "Year"
+                    },
+                    {
+                        "field": "product_type",
+                        "title": "Product"
+                    },
+                    {
+                        "field": "Export",
+                        "title": "Export (RM million)",
+                        "format": ",.1f"
+                    },
+                    {
+                        "field": "Import",
+                        "title": "Import (RM million)",
+                        "format": ",.1f"
+                    },
+                    {
+                        "field": "surplus",
+                        "title": "Surplus (RM million)",
+                        "format": ",.1f"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "area",
+                "interpolate": "monotone",
+                "opacity": 0.85,
+                "color": "#C9732F"
+            },
+            "encoding": {
+                "x": {
+                    "field": "yr",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            2010,
+                            2020
+                        ]
+                    }
+                },
+                "y": {
+                    "field": "surplus_neg",
+                    "type": "quantitative"
+                },
+                "y2": {
+                    "datum": 0
+                },
+                "detail": {
+                    "field": "product_type"
+                },
+                "tooltip": [
+                    {
+                        "field": "year",
+                        "title": "Year"
+                    },
+                    {
+                        "field": "product_type",
+                        "title": "Product"
+                    },
+                    {
+                        "field": "Export",
+                        "title": "Export (RM million)",
+                        "format": ",.1f"
+                    },
+                    {
+                        "field": "Import",
+                        "title": "Import (RM million)",
+                        "format": ",.1f"
+                    },
+                    {
+                        "field": "surplus",
+                        "title": "Deficit (RM million)",
+                        "format": ",.1f"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "line",
+                "interpolate": "monotone",
+                "strokeWidth": 2.5
+            },
+            "encoding": {
+                "x": {
+                    "field": "yr",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            2010,
+                            2020
+                        ]
+                    }
+                },
+                "y": {
+                    "field": "surplus",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "product_type",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "Tobacco Products",
+                            "Tobacco Raw"
+                        ],
+                        "range": [
+                            "#1a4a50",
+                            "#8B3A1A"
+                        ]
+                    },
+                    "legend": {
+                        "title": "Product Type",
+                        "orient": "top",
+                        "labelFontSize": 12,
+                        "titleFontSize": 12
+                    }
+                },
+                "detail": {
+                    "field": "product_type"
+                }
+            }
+        },
+        {
+            "data": {
+                "values": [
+                    {
+                        "yr": 2012,
+                        "surplus": 760,
+                        "note": "Peak surplus: RM 724M"
+                    },
+                    {
+                        "yr": 2017,
+                        "surplus": -30,
+                        "note": "Tipping point — exports < imports"
+                    }
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "align": "center",
+                "dy": -14,
+                "fontSize": 10,
+                "fontWeight": "bold",
+                "color": "#3A332D"
+            },
+            "encoding": {
+                "x": {
+                    "field": "yr",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "surplus",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "note"
+                }
+            }
+        },
+        {
+            "data": {
+                "values": [
+                    {
+                        "yr": 2013.5,
+                        "surplus": 400,
+                        "label": "Net Exporter ↑"
+                    },
+                    {
+                        "yr": 2018.5,
+                        "surplus": -200,
+                        "label": "↓ Net Importer"
+                    }
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "fontSize": 13,
+                "fontWeight": "bold",
+                "opacity": 0.5
+            },
+            "encoding": {
+                "x": {
+                    "field": "yr",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "surplus",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "label"
+                },
+                "color": {
+                    "field": "label",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "Net Exporter ↑",
+                            "↓ Net Importer"
+                        ],
+                        "range": [
+                            "#2A6B72",
+                            "#C9732F"
+                        ]
+                    },
+                    "legend": null
+                }
+            }
+        }
+    ],
+    "config": {
+        "background": "white",
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 12,
+            "gridColor": "#E8E0D5",
+            "gridDash": [
+                2,
+                3
+            ]
+        }
+    }
+}

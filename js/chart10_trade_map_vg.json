@@ -1,0 +1,1934 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Malaysia's Tobacco Trade Flows",
+        "subtitle": "Select a region below to reveal country labels",
+        "anchor": "start",
+        "fontSize": 20,
+        "subtitleFontSize": 13,
+        "font": "DM Serif Display, serif",
+        "subtitleFont": "Arial, Helvetica, sans-serif"
+    },
+    "width": 760,
+    "height": 430,
+    "padding": {
+        "left": 5,
+        "right": 20,
+        "top": 10,
+        "bottom": 10
+    },
+    "params": [
+        {
+            "name": "trade_type_select",
+            "value": "Export",
+            "bind": {
+                "input": "radio",
+                "options": [
+                    "Export",
+                    "Import"
+                ],
+                "name": "Trade direction: "
+            }
+        },
+        {
+            "name": "year_select",
+            "value": 2012,
+            "bind": {
+                "input": "range",
+                "min": 2010,
+                "max": 2020,
+                "step": 1,
+                "name": "Year: "
+            }
+        },
+        {
+            "name": "region_select",
+            "value": "World",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "World",
+                    "Southeast Asia",
+                    "Asia-Pacific",
+                    "Europe",
+                    "North America"
+                ],
+                "name": "Label focus: "
+            }
+        }
+    ],
+    "projection": {
+        "type": "equalEarth"
+    },
+    "layer": [
+        {
+            "data": {
+                "sphere": true
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "#D6E8F0",
+                "stroke": "#B8D4E0",
+                "strokeWidth": 0.5
+            }
+        },
+        {
+            "data": {
+                "graticule": {
+                    "step": [
+                        30,
+                        30
+                    ]
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "filled": false,
+                "stroke": "#9EC4D0",
+                "strokeWidth": 0.45,
+                "strokeDash": [
+                    3,
+                    3
+                ],
+                "opacity": 0.65
+            }
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_110m_admin_0_countries"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "#EDE8DF",
+                "stroke": "#C4B8AC",
+                "strokeWidth": 0.45
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "toNumber(datum.origin_lon)",
+                    "as": "olon"
+                },
+                {
+                    "calculate": "toNumber(datum.origin_lat)",
+                    "as": "olat"
+                },
+                {
+                    "calculate": "toNumber(datum.destination_lon)",
+                    "as": "dlon"
+                },
+                {
+                    "calculate": "toNumber(datum.destination_lat)",
+                    "as": "dlat"
+                }
+            ],
+            "mark": {
+                "type": "rule",
+                "opacity": 0.5
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "olon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "olat",
+                    "type": "quantitative"
+                },
+                "longitude2": {
+                    "field": "dlon"
+                },
+                "latitude2": {
+                    "field": "dlat"
+                },
+                "strokeWidth": {
+                    "field": "vol",
+                    "type": "quantitative",
+                    "scale": {
+                        "range": [
+                            1.5,
+                            8
+                        ]
+                    },
+                    "legend": null
+                },
+                "color": {
+                    "field": "vol",
+                    "type": "quantitative",
+                    "scale": {
+                        "scheme": "orangered",
+                        "domain": [
+                            0,
+                            10000
+                        ]
+                    },
+                    "legend": {
+                        "title": "Volume (tonnes)",
+                        "orient": "bottom-right",
+                        "gradientLength": 120,
+                        "labelFont": "Arial, Helvetica, sans-serif",
+                        "titleFont": "Arial, Helvetica, sans-serif"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "country",
+                        "title": "Partner country"
+                    },
+                    {
+                        "field": "trade_type",
+                        "title": "Trade type"
+                    },
+                    {
+                        "field": "year",
+                        "title": "Year"
+                    },
+                    {
+                        "field": "vol",
+                        "title": "Volume (tonnes)",
+                        "format": ",.0f"
+                    }
+                ]
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                }
+            ],
+            "mark": {
+                "type": "circle",
+                "opacity": 0.9,
+                "stroke": "white",
+                "strokeWidth": 1.2
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "vol",
+                    "type": "quantitative",
+                    "scale": {
+                        "range": [
+                            30,
+                            900
+                        ]
+                    },
+                    "legend": null
+                },
+                "color": {
+                    "value": "#C9732F"
+                },
+                "tooltip": [
+                    {
+                        "field": "country",
+                        "title": "Partner country"
+                    },
+                    {
+                        "field": "trade_type",
+                        "title": "Trade type"
+                    },
+                    {
+                        "field": "year",
+                        "title": "Year"
+                    },
+                    {
+                        "field": "vol",
+                        "title": "Volume (tonnes)",
+                        "format": ",.0f"
+                    }
+                ]
+            }
+        },
+        {
+            "data": {
+                "values": [
+                    {
+                        "country": "Malaysia",
+                        "lon": 101.9758,
+                        "lat": 4.2105
+                    }
+                ]
+            },
+            "mark": {
+                "type": "circle",
+                "color": "#2A6B72",
+                "size": 160,
+                "opacity": 1,
+                "stroke": "white",
+                "strokeWidth": 2
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "lon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "lat",
+                    "type": "quantitative"
+                },
+                "tooltip": [
+                    {
+                        "field": "country",
+                        "title": "Country"
+                    }
+                ]
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Singapore'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": -10
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Indonesia'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": 12
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Thailand'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": -8
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Viet Nam'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": 6
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Philippines'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": -8
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Myanmar'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": -60,
+                "dy": -10
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Brunei Darussalam'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": 10
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'United Kingdom'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": -70,
+                "dy": -8
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Netherlands'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": -6
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Belgium'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": 6
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Germany'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": 14
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Switzerland'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": 20
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Turkey'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": -8
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'China'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": -45,
+                "dy": -8
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'South Korea'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": -8
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Hong Kong'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": 8
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'India'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": -50,
+                "dy": -8
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Bangladesh'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": 8
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Iran'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": -40,
+                "dy": -10
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'United Arab Emirates'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": -80,
+                "dy": 10
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Brazil'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": -8
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Malawi'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": -8
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'United States'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": -8
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "data/trade_flows_6-2_6-3_combined_cleaned.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.trade_type == trade_type_select"
+                },
+                {
+                    "filter": "datum.is_summary_row == 'False' || datum.is_summary_row == false"
+                },
+                {
+                    "filter": "toNumber(datum.year) == year_select"
+                },
+                {
+                    "filter": "toNumber(datum.volume_tonnes) > 0"
+                },
+                {
+                    "calculate": "toNumber(datum.volume_tonnes)",
+                    "as": "vol"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lon) : toNumber(datum.origin_lon)",
+                    "as": "plon"
+                },
+                {
+                    "calculate": "trade_type_select == 'Export' ? toNumber(datum.destination_lat) : toNumber(datum.origin_lat)",
+                    "as": "plat"
+                },
+                {
+                    "calculate": "datum.country == 'United States' || datum.country == 'Mexico' ? 'North America' : datum.country == 'United Kingdom' || datum.country == 'Netherlands' || datum.country == 'Belgium' || datum.country == 'Germany' || datum.country == 'Switzerland' || datum.country == 'Turkey' ? 'Europe' : datum.country == 'Singapore' || datum.country == 'Thailand' || datum.country == 'Philippines' || datum.country == 'Viet Nam' || datum.country == 'Indonesia' || datum.country == 'Myanmar' || datum.country == 'Brunei Darussalam' ? 'Southeast Asia' : 'Asia-Pacific'",
+                    "as": "map_region"
+                },
+                {
+                    "filter": "region_select != 'World' && datum.map_region == region_select"
+                },
+                {
+                    "filter": "datum.country == 'Mexico'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "font": "Arial, Helvetica, sans-serif",
+                "color": "#1a1a1a",
+                "dx": 8,
+                "dy": 8
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "plon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "plat",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        }
+    ],
+    "config": {
+        "background": "white",
+        "view": {
+            "stroke": "transparent"
+        },
+        "legend": {
+            "labelFont": "Arial, Helvetica, sans-serif",
+            "titleFont": "Arial, Helvetica, sans-serif"
+        }
+    }
+}

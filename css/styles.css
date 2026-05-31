@@ -1,65 +1,178 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:wght@300;400;600&display=swap');
+
+/* ── Variables ── */
+:root {
+    --bg: #f7f3ee;
+    --bg-card: #ffffff;
+    --amber: #C9732F;
+    --teal: #2A6B72;
+    --charcoal: #231f20;
+    --text: #2d2926;
+    --muted: #6b5f58;
+    --border: #e4ddd6;
+    --font-head: 'DM Serif Display', Georgia, serif;
+    --font-body: 'Source Serif 4', Georgia, serif;
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f7f3ee;
-    color: #1f1f1f;
-    text-align: left;
+    padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* ── Base ── */
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ── Header ── */
 header {
-    padding: 70px 12%;
-    background: #231f20;
+    padding: 80px 12% 70px;
+    background: var(--charcoal);
     color: white;
-}
-
-header h1 {
-    font-size: 52px;
-    margin-bottom: 10px;
-    font-family: 'DM Serif Display', serif;
-}
-
-header p {
-    font-size: 20px;
-    max-width: 700px;
-}
-
-main {
-    width: 76%;
-    margin: auto;
-}
-
-section {
-    margin: 80px auto;
-    padding: 40px;
-    background: white;
-    border-radius: 18px;
+    position: relative;
     overflow: hidden;
 }
 
+header::after {
+    content: 'SMOKE';
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-head);
+    font-size: clamp(100px, 16vw, 220px);
+    color: rgba(255, 255, 255, 0.04);
+    letter-spacing: -0.04em;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+}
+
+header h1 {
+    font-family: var(--font-head);
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
+header h1 em {
+    font-style: italic;
+    color: #E8A96A;
+}
+
+header p {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: #b0a89e;
+    max-width: 600px;
+    font-weight: 300;
+}
+
+/* ── Sticky section label strip ── */
+.section-label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--amber);
+    border-left: 3px solid var(--amber);
+    padding-left: 10px;
+    margin-bottom: 14px;
+}
+
+/* ── Main layout ── */
+main {
+    width: min(78%, 1200px);
+    margin: 0 auto;
+}
+
+/* ── Section cards ── */
+section {
+    margin: 72px auto;
+    padding: 48px 52px;
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+
+    /* Scroll-in animation */
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 section h2 {
+    font-family: var(--font-head);
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    color: var(--charcoal);
     margin-top: 0;
-    font-size: 28px;
+    margin-bottom: 12px;
+    line-height: 1.2;
 }
 
-section p {
-    color: #555;
-    line-height: 1.6;
+section>p {
+    font-family: var(--font-body);
+    font-size: 0.96rem;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 72ch;
+    margin-bottom: 8px;
 }
 
-#chart1,
-#chart2,
-#chart3,
-#chart4 {
-    margin-top: 30px;
+/* ── Article spacing ── */
+article {
+    margin-top: 36px;
+    margin-bottom: 8px;
+
+    /* Scroll-in for charts */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s ease 0.15s, transform 0.55s ease 0.15s;
 }
 
+article.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Divider between charts ── */
+section hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 40px 0;
+}
+
+/* ── Chart legend (chart1) ── */
 .chart-legend {
     display: flex;
     gap: 24px;
     align-items: center;
-    margin: 10px 0 8px 0;
-    font-size: 14px;
+    margin: 12px 0 6px;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
     font-weight: 600;
+    color: var(--muted);
 }
 
 .legend-item {
@@ -72,7 +185,7 @@ section p {
     display: inline-block;
     width: 34px;
     height: 0;
-    border-top: 4px solid;
+    border-top: 3px solid;
 }
 
 .smoking-line {
@@ -84,14 +197,91 @@ section p {
     border-top-style: dashed;
 }
 
-#chart5, #chart6, #chart6_1, #chart7, #chart8, #chart9 {
-    margin-top: 30px;
+/* ── Insight callout box ── */
+.callout {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: #fdf6ee;
+    border-left: 4px solid var(--amber);
+    border-radius: 0 8px 8px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.65;
+    max-width: 72ch;
 }
 
+.callout strong {
+    color: var(--amber);
+}
+
+/* ── Vega-Lite overrides ── */
 .vega-embed {
     width: 100% !important;
 }
 
 .vega-embed svg {
     width: 100% !important;
+}
+
+.vega-embed .vega-actions {
+    display: none !important;
+}
+
+/* ── Footer ── */
+footer {
+    background: var(--charcoal);
+    color: #6b5f58;
+    padding: 48px 12%;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    line-height: 2;
+    margin-top: 60px;
+}
+
+footer a {
+    color: #9b8f85;
+    text-decoration: none;
+}
+
+/* ── Scroll observer JS hook ── */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Chart stability + sans-serif explanations */
+.chart-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: visible;
+}
+
+.chart-holder .vega-embed {
+    flex: 0 0 auto;
+    width: auto !important;
+    max-width: 100%;
+}
+
+.chart-holder .vega-embed svg {
+    width: auto !important;
+    max-width: 100%;
+}
+
+.chart-note {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--text);
+    max-width: 72ch;
+    margin-top: 16px;
 }

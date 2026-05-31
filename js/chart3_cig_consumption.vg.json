@@ -1,107 +1,564 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-	"width": 600,
-    "height": 420,
+    "width": 620,
+    "height": 400,
     "title": {
-        "text": "Daily Cigarette Consumption Fell, Then Plateaued",
-        "subtitle": "Cigarettes consumed per smoker per day in Malaysia, 1980–2012",
+        "text": "High Taxes Don't Always Mean Low Smoking",
+        "subtitle": "Tax share vs cigarettes per smoker per day — 51 countries, 2012. Orange = Malaysia, teal = Southeast Asia.",
         "anchor": "start",
-        "fontSize": 22,
-        "subtitleFontSize": 14
+        "fontSize": 19,
+        "subtitleFontSize": 13
     },
     "data": {
-        "url": "data/consumption-per-smoker-per-day.csv",
-        "format": {
-            "type": "csv"
-        }
+        "values": [
+            {
+                "country": "Indonesia",
+                "tax": 51.0,
+                "consumption": 11.0,
+                "group": "Southeast Asia"
+            },
+            {
+                "country": "Greece",
+                "tax": 82.2,
+                "consumption": 21.0,
+                "group": "Other countries"
+            },
+            {
+                "country": "Austria",
+                "tax": 74.2,
+                "consumption": 18.8,
+                "group": "Other countries"
+            },
+            {
+                "country": "Romania",
+                "tax": 73.2,
+                "consumption": 19.6,
+                "group": "Other countries"
+            },
+            {
+                "country": "Argentina",
+                "tax": 69.9,
+                "consumption": 19.7,
+                "group": "Other countries"
+            },
+            {
+                "country": "Israel",
+                "tax": 77.1,
+                "consumption": 18.9,
+                "group": "Other countries"
+            },
+            {
+                "country": "Sweden",
+                "tax": 73.8,
+                "consumption": 22.5,
+                "group": "Other countries"
+            },
+            {
+                "country": "Switzerland",
+                "tax": 62.2,
+                "consumption": 22.5,
+                "group": "Other countries"
+            },
+            {
+                "country": "Norway",
+                "tax": 72.8,
+                "consumption": 11.2,
+                "group": "Other countries"
+            },
+            {
+                "country": "Turkey",
+                "tax": 80.2,
+                "consumption": 19.4,
+                "group": "Other countries"
+            },
+            {
+                "country": "China",
+                "tax": 49.8,
+                "consumption": 22.3,
+                "group": "Other countries"
+            },
+            {
+                "country": "Portugal",
+                "tax": 76.0,
+                "consumption": 14.7,
+                "group": "Other countries"
+            },
+            {
+                "country": "Bangladesh",
+                "tax": 54.0,
+                "consumption": 3.0,
+                "group": "Other countries"
+            },
+            {
+                "country": "United Kingdom",
+                "tax": 80.1,
+                "consumption": 13.6,
+                "group": "Other countries"
+            },
+            {
+                "country": "Russia",
+                "tax": 40.5,
+                "consumption": 24.4,
+                "group": "Other countries"
+            },
+            {
+                "country": "Belgium",
+                "tax": 76.1,
+                "consumption": 14.3,
+                "group": "Other countries"
+            },
+            {
+                "country": "Singapore",
+                "tax": 65.7,
+                "consumption": 18.1,
+                "group": "Southeast Asia"
+            },
+            {
+                "country": "Germany",
+                "tax": 73.0,
+                "consumption": 15.1,
+                "group": "Other countries"
+            },
+            {
+                "country": "South Korea",
+                "tax": 62.0,
+                "consumption": 25.0,
+                "group": "Other countries"
+            },
+            {
+                "country": "India",
+                "tax": 41.8,
+                "consumption": 8.2,
+                "group": "Other countries"
+            },
+            {
+                "country": "Poland",
+                "tax": 79.6,
+                "consumption": 17.4,
+                "group": "Other countries"
+            },
+            {
+                "country": "Cambodia",
+                "tax": 17.1,
+                "consumption": 10.4,
+                "group": "Southeast Asia"
+            },
+            {
+                "country": "Australia",
+                "tax": 60.3,
+                "consumption": 20.1,
+                "group": "Other countries"
+            },
+            {
+                "country": "Italy",
+                "tax": 75.2,
+                "consumption": 20.0,
+                "group": "Other countries"
+            },
+            {
+                "country": "Malaysia",
+                "tax": 57.3,
+                "consumption": 15.2,
+                "group": "Malaysia"
+            },
+            {
+                "country": "Hungary",
+                "tax": 83.7,
+                "consumption": 16.0,
+                "group": "Other countries"
+            },
+            {
+                "country": "Finland",
+                "tax": 79.9,
+                "consumption": 17.8,
+                "group": "Other countries"
+            },
+            {
+                "country": "Myanmar",
+                "tax": 50.0,
+                "consumption": 10.0,
+                "group": "Southeast Asia"
+            },
+            {
+                "country": "Pakistan",
+                "tax": 60.0,
+                "consumption": 15.8,
+                "group": "Other countries"
+            },
+            {
+                "country": "South Africa",
+                "tax": 49.4,
+                "consumption": 11.8,
+                "group": "Other countries"
+            },
+            {
+                "country": "Colombia",
+                "tax": 50.6,
+                "consumption": 10.1,
+                "group": "Other countries"
+            },
+            {
+                "country": "Iran",
+                "tax": 2.7,
+                "consumption": 20.9,
+                "group": "Other countries"
+            },
+            {
+                "country": "Egypt",
+                "tax": 72.5,
+                "consumption": 19.1,
+                "group": "Other countries"
+            },
+            {
+                "country": "Vietnam",
+                "tax": 31.8,
+                "consumption": 13.9,
+                "group": "Southeast Asia"
+            },
+            {
+                "country": "Denmark",
+                "tax": 79.3,
+                "consumption": 24.6,
+                "group": "Other countries"
+            },
+            {
+                "country": "United States",
+                "tax": 42.9,
+                "consumption": 22.5,
+                "group": "Other countries"
+            },
+            {
+                "country": "Thailand",
+                "tax": 70.2,
+                "consumption": 12.5,
+                "group": "Southeast Asia"
+            },
+            {
+                "country": "Philippines",
+                "tax": 28.9,
+                "consumption": 21.4,
+                "group": "Southeast Asia"
+            },
+            {
+                "country": "Kenya",
+                "tax": 48.8,
+                "consumption": 12.0,
+                "group": "Other countries"
+            },
+            {
+                "country": "Ethiopia",
+                "tax": 38.5,
+                "consumption": 6.2,
+                "group": "Other countries"
+            },
+            {
+                "country": "Mexico",
+                "tax": 68.3,
+                "consumption": 11.8,
+                "group": "Other countries"
+            },
+            {
+                "country": "France",
+                "tax": 79.9,
+                "consumption": 14.4,
+                "group": "Other countries"
+            },
+            {
+                "country": "Ukraine",
+                "tax": 67.0,
+                "consumption": 20.1,
+                "group": "Other countries"
+            },
+            {
+                "country": "Japan",
+                "tax": 64.5,
+                "consumption": 23.8,
+                "group": "Other countries"
+            },
+            {
+                "country": "Canada",
+                "tax": 64.5,
+                "consumption": 27.6,
+                "group": "Other countries"
+            },
+            {
+                "country": "New Zealand",
+                "tax": 74.0,
+                "consumption": 20.1,
+                "group": "Other countries"
+            },
+            {
+                "country": "Spain",
+                "tax": 78.7,
+                "consumption": 20.0,
+                "group": "Other countries"
+            },
+            {
+                "country": "Netherlands",
+                "tax": 72.2,
+                "consumption": 13.4,
+                "group": "Other countries"
+            },
+            {
+                "country": "Chile",
+                "tax": 81.5,
+                "consumption": 9.2,
+                "group": "Other countries"
+            },
+            {
+                "country": "Nigeria",
+                "tax": 20.6,
+                "consumption": 14.7,
+                "group": "Other countries"
+            },
+            {
+                "country": "Brazil",
+                "tax": 63.1,
+                "consumption": 22.8,
+                "group": "Other countries"
+            }
+        ]
     },
-    "transform": [
-        {
-            "filter": "datum.Entity === 'Malaysia'"
-        },
-        {
-            "calculate": "toNumber(datum['Cigarette consumption per smoker per day'])",
-            "as": "consumption"
-        }
-    ],
     "layer": [
         {
+            "transform": [
+                {
+                    "filter": "datum.group === 'Other countries'"
+                }
+            ],
             "mark": {
-                "type": "area",
-                "color": "#C9732F",
-                "opacity": 0.22,
-                "interpolate": "monotone"
+                "type": "circle",
+                "opacity": 0.3,
+                "size": 70
             },
             "encoding": {
                 "x": {
-                    "field": "Year",
+                    "field": "tax",
                     "type": "quantitative",
-                    "axis": {
-                        "format": "d",
-                        "grid": false
+                    "title": "Tax as share of cigarette price (%)",
+                    "scale": {
+                        "domain": [
+                            0,
+                            100
+                        ]
                     },
-                    "title": null
+                    "axis": {
+                        "labelFontSize": 11,
+                        "titleFontSize": 12,
+                        "grid": true,
+                        "gridColor": "#E8E0D5",
+                        "gridDash": [
+                            2,
+                            3
+                        ]
+                    }
                 },
                 "y": {
                     "field": "consumption",
                     "type": "quantitative",
                     "title": "Cigarettes per smoker per day",
                     "scale": {
-                        "zero": true
+                        "domain": [
+                            0,
+                            28
+                        ]
+                    },
+                    "axis": {
+                        "labelFontSize": 11,
+                        "titleFontSize": 12,
+                        "gridColor": "#E8E0D5",
+                        "gridDash": [
+                            2,
+                            3
+                        ]
                     }
-                }
-            }
-        },
-        {
-            "mark": {
-                "type": "line",
-                "color": "#9E4F14",
-                "strokeWidth": 3.5,
-                "interpolate": "monotone"
-            },
-            "encoding": {
-                "x": {
-                    "field": "Year",
-                    "type": "quantitative"
                 },
-                "y": {
-                    "field": "consumption",
-                    "type": "quantitative"
+                "color": {
+                    "value": "#C4B8AC"
                 },
                 "tooltip": [
                     {
-                        "field": "Year",
-                        "title": "Year",
-                        "format": "d"
+                        "field": "country",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "tax",
+                        "title": "Tax share (%)",
+                        "format": ".1f"
                     },
                     {
                         "field": "consumption",
-                        "title": "Cigarettes per smoker/day",
+                        "title": "Cigarettes/day",
                         "format": ".1f"
                     }
                 ]
             }
         },
         {
+            "transform": [
+                {
+                    "filter": "datum.group === 'Southeast Asia'"
+                }
+            ],
+            "mark": {
+                "type": "circle",
+                "opacity": 0.9,
+                "size": 110,
+                "stroke": "white",
+                "strokeWidth": 1.5
+            },
+            "encoding": {
+                "x": {
+                    "field": "tax",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "consumption",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "#2A6B72"
+                },
+                "tooltip": [
+                    {
+                        "field": "country",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "tax",
+                        "title": "Tax share (%)",
+                        "format": ".1f"
+                    },
+                    {
+                        "field": "consumption",
+                        "title": "Cigarettes/day",
+                        "format": ".1f"
+                    }
+                ]
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": "datum.group === 'Southeast Asia'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "dy": -13,
+                "fontSize": 10,
+                "fontWeight": "600",
+                "color": "#2A6B72"
+            },
+            "encoding": {
+                "x": {
+                    "field": "tax",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "consumption",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": "datum.group === 'Malaysia'"
+                }
+            ],
+            "mark": {
+                "type": "circle",
+                "size": 280,
+                "opacity": 1,
+                "stroke": "white",
+                "strokeWidth": 2.5
+            },
+            "encoding": {
+                "x": {
+                    "field": "tax",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "consumption",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "#C9732F"
+                },
+                "tooltip": [
+                    {
+                        "field": "country",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "tax",
+                        "title": "Tax share (%)",
+                        "format": ".1f"
+                    },
+                    {
+                        "field": "consumption",
+                        "title": "Cigarettes/day",
+                        "format": ".1f"
+                    }
+                ]
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": "datum.group === 'Malaysia'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "dy": -18,
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "color": "#C9732F"
+            },
+            "encoding": {
+                "x": {
+                    "field": "tax",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "consumption",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "value": "Malaysia"
+                }
+            }
+        },
+        {
             "data": {
                 "values": [
                     {
-                        "Year": 2001,
-                        "consumption": 17.5,
-                        "note": "After 2000, consumption stayed near 16 cigarettes per smoker per day."
+                        "tax": 42,
+                        "consumption": 26.5,
+                        "note": "High consumption despite high tax →"
+                    },
+                    {
+                        "tax": 72,
+                        "consumption": 7,
+                        "note": "High tax, low consumption (ideal)"
                     }
                 ]
             },
             "mark": {
                 "type": "text",
-                "align": "left",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "color": "#2A2A2A"
+                "fontSize": 9.5,
+                "fontStyle": "italic",
+                "color": "#9A8F87",
+                "align": "left"
             },
             "encoding": {
                 "x": {
-                    "field": "Year",
+                    "field": "tax",
                     "type": "quantitative"
                 },
                 "y": {
@@ -118,15 +575,6 @@
         "background": "white",
         "view": {
             "stroke": "transparent"
-        },
-        "axis": {
-            "labelFontSize": 12,
-            "titleFontSize": 13,
-            "gridColor": "#E8E0D5",
-            "gridDash": [
-                2,
-                3
-            ]
         }
     }
 }

@@ -1,121 +1,395 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-	"width": 600,
-    "height": 430,
+    "width": 560,
+    "height": 380,
     "title": {
-        "text": "Top 10 Diseases Attributable to Smoking",
-        "subtitle": "Estimated smoking-attributable deaths in Malaysia, 2023",
+        "text": "Smoking Kills and Disables \u2014 But Not Always the Same Diseases",
+        "subtitle": "Deaths vs DALYs (Disability-Adjusted Life Years \u2014 healthy years lost) per disease, Malaysia 2023",
         "anchor": "start",
-        "fontSize": 22,
-        "subtitleFontSize": 14
+        "fontSize": 20,
+        "subtitleFontSize": 12
     },
     "data": {
-        "url": "data/IHME-GBD_2023_DATA-bccf9300-1.csv",
-        "format": {"type": "csv"}
+        "values": [
+            {
+                "cause": "Ischemic heart disease",
+                "measure": "Deaths",
+                "norm": 100.0,
+                "raw": 5798,
+                "unit": "deaths"
+            },
+            {
+                "cause": "Ischemic heart disease",
+                "measure": "DALYs (Disability-Adjusted Life Years)",
+                "norm": 100.0,
+                "raw": 184713,
+                "unit": "DALYs (Disability-Adjusted Life Years)"
+            },
+            {
+                "cause": "Lung cancer",
+                "measure": "Deaths",
+                "norm": 54.4,
+                "raw": 3151,
+                "unit": "deaths"
+            },
+            {
+                "cause": "Lung cancer",
+                "measure": "DALYs (Disability-Adjusted Life Years)",
+                "norm": 41.4,
+                "raw": 76525,
+                "unit": "DALYs (Disability-Adjusted Life Years)"
+            },
+            {
+                "cause": "Lower respiratory infections",
+                "measure": "Deaths",
+                "norm": 42.4,
+                "raw": 2461,
+                "unit": "deaths"
+            },
+            {
+                "cause": "Lower respiratory infections",
+                "measure": "DALYs (Disability-Adjusted Life Years)",
+                "norm": 33.8,
+                "raw": 62396,
+                "unit": "DALYs (Disability-Adjusted Life Years)"
+            },
+            {
+                "cause": "Stroke",
+                "measure": "Deaths",
+                "norm": 34.7,
+                "raw": 2010,
+                "unit": "deaths"
+            },
+            {
+                "cause": "Stroke",
+                "measure": "DALYs (Disability-Adjusted Life Years)",
+                "norm": 36.9,
+                "raw": 68237,
+                "unit": "DALYs (Disability-Adjusted Life Years)"
+            },
+            {
+                "cause": "Chronic obstructive pulmonary disease",
+                "measure": "Deaths",
+                "norm": 33.3,
+                "raw": 1930,
+                "unit": "deaths"
+            },
+            {
+                "cause": "Chronic obstructive pulmonary disease",
+                "measure": "DALYs (Disability-Adjusted Life Years)",
+                "norm": 25.9,
+                "raw": 47929,
+                "unit": "DALYs (Disability-Adjusted Life Years)"
+            },
+            {
+                "cause": "Diabetes mellitus",
+                "measure": "Deaths",
+                "norm": 5.1,
+                "raw": 295,
+                "unit": "deaths"
+            },
+            {
+                "cause": "Diabetes mellitus",
+                "measure": "DALYs (Disability-Adjusted Life Years)",
+                "norm": 11.2,
+                "raw": 20719,
+                "unit": "DALYs (Disability-Adjusted Life Years)"
+            },
+            {
+                "cause": "Liver cancer",
+                "measure": "Deaths",
+                "norm": 5.0,
+                "raw": 292,
+                "unit": "deaths"
+            },
+            {
+                "cause": "Liver cancer",
+                "measure": "DALYs (Disability-Adjusted Life Years)",
+                "norm": 4.5,
+                "raw": 8264,
+                "unit": "DALYs (Disability-Adjusted Life Years)"
+            },
+            {
+                "cause": "Aortic aneurysm",
+                "measure": "Deaths",
+                "norm": 5.0,
+                "raw": 289,
+                "unit": "deaths"
+            },
+            {
+                "cause": "Aortic aneurysm",
+                "measure": "DALYs (Disability-Adjusted Life Years)",
+                "norm": 3.8,
+                "raw": 7031,
+                "unit": "DALYs (Disability-Adjusted Life Years)"
+            }
+        ]
     },
     "transform": [
-        {"calculate": "toNumber(datum.year)", "as": "year_num"},
-        {"calculate": "toNumber(datum.val)", "as": "death_num"},
-        {"filter": "datum.measure_name === 'Deaths'"},
-        {"filter": "datum.metric_name === 'Number'"},
-        {"filter": "datum.year_num === 2023"},
-        {"filter": "datum.death_num > 0"},
         {
-        "aggregate": [
-            {"op": "sum", "field": "death_num", "as": "deaths"}
-        ],
-        "groupby": ["cause_name"]
-        },
-        {
-        "window": [
-            {"op": "rank", "as": "rank"}
-        ],
-        "sort": [
-            {"field": "deaths", "order": "descending"}
-        ]
-        },
-        {"filter": "datum.rank <= 10"},
-        {"calculate": "0", "as": "zero"}
+            "calculate": "datum.measure === 'Deaths' ? datum.norm + 0 : datum.norm",
+            "as": "norm_display"
+        }
     ],
     "layer": [
         {
-        "mark": {
-            "type": "bar",
-            "height": 3,
-            "color": "#DDD3C7"
-        },
-        "encoding": {
-            "x": {
-            "field": "zero",
-            "type": "quantitative",
-            "title": "Estimated deaths",
-            "axis": {"format": ",.0f"}
+            "mark": {
+                "type": "line",
+                "strokeWidth": 2.5,
+                "color": "#CFC7BE"
             },
-            "x2": {"field": "deaths"},
-            "y": {
-            "field": "cause_name",
-            "type": "nominal",
-            "sort": {"field": "deaths", "order": "descending"},
-            "title": null,
-            "axis": {"labelLimit": 280}
+            "encoding": {
+                "y": {
+                    "field": "cause",
+                    "type": "nominal",
+                    "sort": [
+                        "Ischemic heart disease",
+                        "Lung cancer",
+                        "Lower respiratory infections",
+                        "Stroke",
+                        "Chronic obstructive pulmonary disease",
+                        "Diabetes mellitus",
+                        "Liver cancer",
+                        "Aortic aneurysm"
+                    ],
+                    "axis": {
+                        "title": null,
+                        "labelFontSize": 12,
+                        "labelLimit": 280
+                    }
+                },
+                "x": {
+                    "field": "norm",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            0,
+                            105
+                        ]
+                    },
+                    "axis": {
+                        "title": "Normalised burden score (100 = highest)",
+                        "labelFontSize": 11,
+                        "titleFontSize": 12,
+                        "grid": true,
+                        "gridColor": "#E8E0D5",
+                        "gridDash": [
+                            2,
+                            3
+                        ]
+                    }
+                },
+                "detail": {
+                    "field": "cause"
+                }
             }
-        }
         },
         {
-        "mark": {
-            "type": "circle",
-            "size": 220,
-            "color": "#C9732F"
-        },
-        "encoding": {
-            "x": {
-            "field": "deaths",
-            "type": "quantitative"
+            "transform": [
+                {
+                    "filter": "datum.measure === 'DALYs (Disability-Adjusted Life Years)'"
+                }
+            ],
+            "mark": {
+                "type": "circle",
+                "size": 200,
+                "opacity": 0.95,
+                "color": "#2A6B72"
             },
-            "y": {
-            "field": "cause_name",
-            "type": "nominal",
-            "sort": {"field": "deaths", "order": "descending"}
-            },
-            "tooltip": [
-            {"field": "rank", "title": "Rank"},
-            {"field": "cause_name", "title": "Disease"},
-            {"field": "deaths", "title": "Estimated deaths", "format": ",.0f"}
-            ]
-        }
+            "encoding": {
+                "y": {
+                    "field": "cause",
+                    "type": "nominal",
+                    "sort": [
+                        "Ischemic heart disease",
+                        "Lung cancer",
+                        "Lower respiratory infections",
+                        "Stroke",
+                        "Chronic obstructive pulmonary disease",
+                        "Diabetes mellitus",
+                        "Liver cancer",
+                        "Aortic aneurysm"
+                    ]
+                },
+                "x": {
+                    "field": "norm",
+                    "type": "quantitative"
+                },
+                "tooltip": [
+                    {
+                        "field": "cause",
+                        "title": "Disease"
+                    },
+                    {
+                        "field": "measure",
+                        "title": "Measure"
+                    },
+                    {
+                        "field": "norm",
+                        "title": "Normalised score",
+                        "format": ".1f"
+                    },
+                    {
+                        "field": "raw",
+                        "title": "DALYs (years lost)",
+                        "format": ",.0f"
+                    }
+                ]
+            }
         },
         {
-        "mark": {
-            "type": "text",
-            "align": "left",
-            "dx": 10,
-            "fontSize": 11,
-            "fontWeight": "bold",
-            "color": "#3A332D"
-        },
-        "encoding": {
-            "x": {"field": "deaths", "type": "quantitative"},
-            "y": {
-            "field": "cause_name",
-            "type": "nominal",
-            "sort": {"field": "deaths", "order": "descending"}
+            "transform": [
+                {
+                    "filter": "datum.measure === 'Deaths'"
+                }
+            ],
+            "mark": {
+                "type": "circle",
+                "size": 200,
+                "opacity": 0.95,
+                "color": "#C9732F"
             },
-            "text": {
-            "field": "deaths",
-            "type": "quantitative",
-            "format": ",.0f"
+            "encoding": {
+                "y": {
+                    "field": "cause",
+                    "type": "nominal",
+                    "sort": [
+                        "Ischemic heart disease",
+                        "Lung cancer",
+                        "Lower respiratory infections",
+                        "Stroke",
+                        "Chronic obstructive pulmonary disease",
+                        "Diabetes mellitus",
+                        "Liver cancer",
+                        "Aortic aneurysm"
+                    ]
+                },
+                "x": {
+                    "field": "norm",
+                    "type": "quantitative"
+                },
+                "tooltip": [
+                    {
+                        "field": "cause",
+                        "title": "Disease"
+                    },
+                    {
+                        "field": "measure",
+                        "title": "Measure"
+                    },
+                    {
+                        "field": "norm",
+                        "title": "Normalised score",
+                        "format": ".1f"
+                    },
+                    {
+                        "field": "raw",
+                        "title": "Deaths",
+                        "format": ",.0f"
+                    }
+                ]
             }
-        }
+        },
+        {
+            "data": {
+                "values": [
+                    {
+                        "cause": "Ischemic heart disease",
+                        "norm": 88,
+                        "note": "Both dots at 100 \u2014 equally deadly and disabling"
+                    }
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 4,
+                "dy": -12,
+                "fontSize": 10,
+                "fontStyle": "italic",
+                "color": "#555"
+            },
+            "encoding": {
+                "y": {
+                    "field": "cause",
+                    "type": "nominal",
+                    "sort": [
+                        "Ischemic heart disease",
+                        "Lung cancer",
+                        "Lower respiratory infections",
+                        "Stroke",
+                        "Chronic obstructive pulmonary disease",
+                        "Diabetes mellitus",
+                        "Liver cancer",
+                        "Aortic aneurysm"
+                    ]
+                },
+                "x": {
+                    "field": "norm",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "note"
+                }
+            }
+        },
+        {
+            "data": {
+                "values": [
+                    {
+                        "cause": "Stroke",
+                        "norm": 38,
+                        "note": "\u2191 Stroke disables more than it kills"
+                    },
+                    {
+                        "cause": "Diabetes mellitus",
+                        "norm": 11,
+                        "note": "\u2191 Diabetes: far more disabling than deadly"
+                    }
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 5,
+                "dy": -12,
+                "fontSize": 10,
+                "fontStyle": "italic",
+                "color": "#555"
+            },
+            "encoding": {
+                "y": {
+                    "field": "cause",
+                    "type": "nominal",
+                    "sort": [
+                        "Ischemic heart disease",
+                        "Lung cancer",
+                        "Lower respiratory infections",
+                        "Stroke",
+                        "Chronic obstructive pulmonary disease",
+                        "Diabetes mellitus",
+                        "Liver cancer",
+                        "Aortic aneurysm"
+                    ]
+                },
+                "x": {
+                    "field": "norm",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "note"
+                }
+            }
         }
     ],
     "config": {
         "background": "white",
-        "view": {"stroke": "transparent"},
+        "view": {
+            "stroke": "transparent"
+        },
         "axis": {
-        "labelFontSize": 12,
-        "titleFontSize": 13,
-        "gridColor": "#ECE4D9",
-        "gridDash": [2, 4]
+            "labelFontSize": 11,
+            "titleFontSize": 12
         }
     }
 }

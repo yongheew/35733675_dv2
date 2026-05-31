@@ -5,34 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smoking in Malaysia</title>
-
     <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
-
     <link rel="stylesheet" href="css/styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:wght@300;400;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+
     <header>
         <h1>Smoking in <em>Malaysia</em></h1>
-        <p>Behaviour, perception, health impact and tobacco trade.</p>
+        <p>A data story on health burden, smoking behaviour, public perception, and the tobacco trade.</p>
     </header>
 
     <main>
+
+        <!-- SECTION 1 -->
         <section id="section-health">
-            <h2>Section 1 — The Health Burden of Smoking</h2>
-            <p>Smoking harms both smokers and non-smokers.</p>
+            <span class="section-label">Section 1</span>
+            <h2>The Health Burden of Smoking</h2>
+            <p>Tobacco use is one of Malaysia's leading preventable causes of death. Between 1990 and 2023,
+                smoking-related deaths have risen steadily — and so have deaths from secondhand smoke, showing that
+                tobacco harm reaches far beyond the individual smoker.</p>
 
             <article>
-                <div id="chart1"></div>
+                <div class="chart-holder">
+                    <div id="chart1"></div>
+                </div>
                 <div class="chart-legend">
                     <span class="legend-item">
                         <span class="legend-line smoking-line"></span>
                         Smoking-related deaths
                     </span>
-
                     <span class="legend-item">
                         <span class="legend-line secondhand-line"></span>
                         Secondhand smoke deaths
@@ -40,57 +47,204 @@
                 </div>
             </article>
 
+            <div class="callout"><strong>Key insight:</strong> The 2020 dip aligns with COVID-19 disruption and
+                competing mortality, while 2022 shows a rebound as Malaysia moved into the endemic phase and activity
+                normalised. The 1999 increase appears in the IHME modelled estimates for both active and
+                secondhand-smoke deaths, so it is safest to label it as a modelled rise rather than a confirmed policy
+                shock.</div>
+
+            <p>The diseases behind these deaths are not evenly spread. Some diseases kill more than they disable; others
+                cripple without killing. Comparing death rank with DALY rank reveals which diseases carry the heaviest
+                hidden burden.</p>
+
             <article>
-                <div id="chart2"></div>
+                <div class="chart-holder">
+                    <div id="chart2"></div>
+                </div>
+                <div class="callout">
+                    <strong>Key insight:</strong> Chronic obstructive pulmonary disease is written in full to avoid
+                    abbreviation confusion. Stroke disables more than it kills — its DALY rank is higher than its
+                    death rank. Diabetes mellitus is even more striking: it ranks 6th in deaths but causes far more
+                    years of healthy life lost, making it a silent epidemic among smokers.
+                </div>
             </article>
         </section>
 
-        <section id="section-tax,prices">
-            <h2>Section 2 — Smoking Behaviour</h2>
-            <p>Why has smoking not declined faster?</p>
-
-            <article>
-                <div id="chart3"></div>
-            </article>
-
-            <article>
-                <div id="chart4_1"></div>
-            </article>
-        </section>
-
+        <!-- SECTION 2 -->
         <section id="section-behaviour">
-            <h2>Section 3 — Who smokes in Malaysia?</h2>
-            <p>Understanding the factors that influence smoking behaviour.</p>
+            <span class="section-label">Section 2</span>
+            <h2>Smoking Behaviour</h2>
+            <p>Why has smoking not declined faster in Malaysia? One answer lies in tax policy. Countries that tax
+                cigarettes heavily tend to see lower consumption — but Malaysia sits in a troubling middle ground:
+                moderate taxes, yet persistently high consumption compared to regional peers.</p>
 
             <article>
-                <div id="chart5"></div>
+                <div class="chart-holder">
+                    <div id="chart3"></div>
+                </div>
+                <div class="callout">
+                    <strong>Malaysia's position:</strong> At 57% tax share and 15 cigarettes per smoker per day,
+                    Malaysia has higher taxes than the Philippines or Indonesia — yet consumption remains well above the
+                    regional average. Thailand, with 70% tax, achieves notably lower consumption.
+                </div>
             </article>
 
+            <p>The regional picture shows how different Southeast Asian countries have changed over time. Use the slider
+                to compare cigarette consumption per smoker across the region from 1980 to 2012.</p>
+
             <article>
-                <div id="chart6_1"></div>
+                <div class="chart-holder">
+                    <div id="chart4_1"></div>
+                </div>
+                <div class="callout"><strong>Key insight:</strong> Malaysia remains in the middle of Southeast Asia:
+                    daily cigarette consumption is lower than the region’s highest-consuming countries but still above
+                    several neighbours, suggesting that regional tobacco control progress is uneven.</div>
             </article>
         </section>
 
+        <!-- SECTION 3 -->
+        <section id="section-who">
+            <span class="section-label">Section 3</span>
+            <h2>Who Smokes in Malaysia?</h2>
+            <p>Smoking in Malaysia is not evenly distributed. Gender, ethnicity, age, and education level all shape who
+                smokes. Use the dropdown to explore how each demographic group compares between ever-smokers and
+                non-smokers.</p>
+
+            <article>
+                <div class="chart-holder">
+                    <div id="chart5"></div>
+                </div>
+                <div class="callout">
+                    <strong>Gender gap:</strong> Over 98% of ever-smokers in Malaysia are male — one of the starkest
+                    gender disparities in smoking rates globally. Malay ethnicity and lower education levels are also
+                    associated with higher smoking rates.
+                </div>
+            </article>
+
+            <p>E-cigarette use tells a separate story. Rather than spreading broadly, vaping remains concentrated among
+                those who already smoke — suggesting it functions as an alternative rather than a gateway to smoking.
+            </p>
+
+            <article>
+                <div class="chart-holder">
+                    <div id="chart6_1"></div>
+                </div>
+                <div class="callout"><strong>Key insight:</strong> E-cigarette use is concentrated among ever-smokers,
+                    supporting the interpretation that vaping is more common as a substitute or complement to smoking
+                    than as a behaviour evenly adopted across all groups.</div>
+            </article>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section id="section-perception">
+            <span class="section-label">Section 4</span>
+            <h2>Perception on E-Cigarettes</h2>
+            <p>How smokers and non-smokers view e-cigarettes differs substantially. Explore four perception categories —
+                harm, regulations, reasons to use, and quitting — using the selector below.</p>
+
+            <article>
+                <div class="chart-holder">
+                    <div id="chart7"></div>
+                </div>
+                <div class="callout"><strong>Key insight:</strong> Smokers and non-smokers diverge most on whether
+                    e-cigarettes are useful for quitting and how harmful they are, showing that personal smoking
+                    experience shapes risk perception.</div>
+            </article>
+
+            <p>The diverging chart below sharpens the picture. Smokers are consistently more likely to agree that
+                e-cigarettes are helpful — click the legend to highlight either group.</p>
+
+            <article>
+                <div class="chart-holder">
+                    <div id="chart8"></div>
+                </div>
+                <div class="callout"><strong>Key insight:</strong> Agreement is generally stronger among ever-smokers,
+                    especially on statements that frame e-cigarettes as helpful or acceptable. This makes the chart
+                    useful for comparing attitude direction, not just response size.</div>
+            </article>
+
+            <p>Despite widespread e-cigarette use among smokers, awareness of basic facts remains surprisingly low. Only
+                56% of ever-smokers correctly knew that e-cigarettes contain nicotine.</p>
+
+            <article>
+                <div class="chart-holder">
+                    <div id="chart9"></div>
+                </div>
+                <div class="callout"><strong>Key insight:</strong> The donut charts show that awareness is incomplete
+                    even among ever-smokers. Only the centre value represents the share answering “Yes”; the remaining
+                    segments show uncertainty, incorrect beliefs, or alternative answers, highlighting gaps in basic
+                    e-cigarette knowledge.</div>
+            </article>
+        </section>
+
+        <!-- SECTION 5 -->
         <section id="section-trade">
-            <h2>Section 4 — Perception on E-Cigarettes</h2>
-            <p>How do smokers and non-smokers view e-cigarettes?</p>
+            <span class="section-label">Section 5</span>
+            <h2>Tobacco Trade Flows</h2>
+            <p>Malaysia is both a significant exporter of manufactured tobacco products and an importer of raw tobacco
+                leaf. Use the controls to explore where Malaysian tobacco goes and where raw tobacco comes from — select
+                a zoom region for detail.</p>
 
             <article>
-                <div id="chart7"></div>
+                <div class="chart-holder">
+                    <div id="chart10"></div>
+                </div>
+                <div class="callout"><strong>Key insight:</strong> Malaysia’s trade network extends beyond Southeast
+                    Asia. The added Europe, North America, and World zoom levels reveal long-distance partners while
+                    graticules and ocean fill make the map read as a complete world-map idiom.</div>
             </article>
+
+            <p>Rankings reveal a deeper story. Singapore has dominated as Malaysia's top export destination since 2012,
+                but Indonesia — once the largest market — has steadily fallen. Click the legend to trace a single
+                country's trajectory.</p>
 
             <article>
-                <div id="chart8"></div>
+                <div class="chart-holder">
+                    <div id="chart11"></div>
+                </div>
             </article>
+
+            <p>Behind the volumes, a structural shift has occurred. Malaysia was a net exporter of finished tobacco
+                products until 2017, when the trade balance flipped — exports collapsed as domestic taxes rose and
+                regional markets tightened.</p>
 
             <article>
-                <div id="chart9"></div>
+                <div class="chart-holder">
+                    <div id="chart12"></div>
+                </div>
+                <div class="callout">
+                    <strong>Tipping point (2017):</strong> For the first time, Malaysia became a net importer of
+                    finished tobacco products — a sign that domestic manufacturing is declining even as raw tobacco
+                    imports remain high.
+                </div>
             </article>
-
         </section>
+
     </main>
 
+    <footer>
+        <strong style="color:#9b8f85; font-family:'DM Serif Display',serif; font-size:1.1rem;">Smoking in
+            Malaysia</strong><br>
+        Data sources: IHME Global Burden of Disease 2023 · Our World in Data · Department of Statistics Malaysia ·
+        National E-Cigarette Survey 2016<br>
+        Visualisation by [Your Name] · FIT2179 Data Visualisation 2 · Monash University Malaysia · 2026
+    </footer>
+
     <script src="js/vega_lite_vis.js"></script>
+
+    <script>
+        /* Scroll-reveal animation */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('section, article').forEach(el => observer.observe(el));
+    </script>
+
 </body>
 
 </html>

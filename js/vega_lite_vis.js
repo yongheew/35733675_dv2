@@ -7,3 +7,6 @@ vegaEmbed("#chart6_1", "js/chart6_1_ecigs.vg.json", { actions: false }).catch(co
 vegaEmbed("#chart7", "js/chart7_perc_heatmap.vg.json", { actions: false }).catch(console.error);
 vegaEmbed("#chart8", "js/chart8_divert.vg.json", { actions: false }).catch(console.error);
 vegaEmbed("#chart9", "js/chart9_awareness.vg.json", { actions: false }).catch(console.error);
+vegaEmbed("#chart10", "js/chart10_trade_map_vg.json", { actions: false }).catch(console.error);
+vegaEmbed("#chart11", "js/chart11_bump_vg.json", { actions: false }).catch(console.error);
+vegaEmbed("#chart12", "js/chart12_stacked_area_vg.json", { actions: false }).catch(console.error);

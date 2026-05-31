@@ -1,0 +1,736 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Export Partner Rankings Have Shifted Over the Decade",
+        "subtitle": "Rank by export value (RM million) — 1 = largest market, click legend to highlight",
+        "anchor": "start",
+        "fontSize": 22,
+        "subtitleFontSize": 14
+    },
+    "width": 650,
+    "height": 380,
+    "padding": {
+        "left": 10,
+        "right": 140,
+        "top": 30,
+        "bottom": 40
+    },
+    "data": {
+        "values": [
+            {
+                "year": 2010,
+                "country": "Indonesia",
+                "rank": 1,
+                "vol": 8822,
+                "val": 222.44
+            },
+            {
+                "year": 2011,
+                "country": "Indonesia",
+                "rank": 1,
+                "vol": 9879,
+                "val": 232.38
+            },
+            {
+                "year": 2012,
+                "country": "Indonesia",
+                "rank": 2,
+                "vol": 10515,
+                "val": 232.28
+            },
+            {
+                "year": 2013,
+                "country": "Indonesia",
+                "rank": 7,
+                "vol": 3165,
+                "val": 42.15
+            },
+            {
+                "year": 2014,
+                "country": "Indonesia",
+                "rank": 6,
+                "vol": 3276,
+                "val": 47.4
+            },
+            {
+                "year": 2015,
+                "country": "Indonesia",
+                "rank": 8,
+                "vol": 1626,
+                "val": 28.31
+            },
+            {
+                "year": 2016,
+                "country": "Indonesia",
+                "rank": 7,
+                "vol": 2070,
+                "val": 34.86
+            },
+            {
+                "year": 2017,
+                "country": "Indonesia",
+                "rank": 6,
+                "vol": 2284,
+                "val": 62.51
+            },
+            {
+                "year": 2018,
+                "country": "Indonesia",
+                "rank": 7,
+                "vol": 2122,
+                "val": 23.47
+            },
+            {
+                "year": 2019,
+                "country": "Indonesia",
+                "rank": 8,
+                "vol": 702,
+                "val": 11.37
+            },
+            {
+                "year": 2020,
+                "country": "Indonesia",
+                "rank": 7,
+                "vol": 1017,
+                "val": 12.37
+            },
+            {
+                "year": 2010,
+                "country": "Philippines",
+                "rank": 8,
+                "vol": 2144,
+                "val": 17.64
+            },
+            {
+                "year": 2011,
+                "country": "Philippines",
+                "rank": 6,
+                "vol": 4819,
+                "val": 40.99
+            },
+            {
+                "year": 2012,
+                "country": "Philippines",
+                "rank": 5,
+                "vol": 6859,
+                "val": 85.41
+            },
+            {
+                "year": 2013,
+                "country": "Philippines",
+                "rank": 3,
+                "vol": 8611,
+                "val": 140.4
+            },
+            {
+                "year": 2014,
+                "country": "Philippines",
+                "rank": 4,
+                "vol": 5675,
+                "val": 80.74
+            },
+            {
+                "year": 2015,
+                "country": "Philippines",
+                "rank": 4,
+                "vol": 4157,
+                "val": 65.89
+            },
+            {
+                "year": 2016,
+                "country": "Philippines",
+                "rank": 3,
+                "vol": 6909,
+                "val": 168.28
+            },
+            {
+                "year": 2017,
+                "country": "Philippines",
+                "rank": 2,
+                "vol": 5413,
+                "val": 164.48
+            },
+            {
+                "year": 2018,
+                "country": "Philippines",
+                "rank": 5,
+                "vol": 2810,
+                "val": 28.34
+            },
+            {
+                "year": 2019,
+                "country": "Philippines",
+                "rank": 5,
+                "vol": 4680,
+                "val": 49.63
+            },
+            {
+                "year": 2020,
+                "country": "Philippines",
+                "rank": 4,
+                "vol": 3275,
+                "val": 37.55
+            },
+            {
+                "year": 2010,
+                "country": "Singapore",
+                "rank": 2,
+                "vol": 7163,
+                "val": 207.83
+            },
+            {
+                "year": 2011,
+                "country": "Singapore",
+                "rank": 2,
+                "vol": 7302,
+                "val": 213.64
+            },
+            {
+                "year": 2012,
+                "country": "Singapore",
+                "rank": 1,
+                "vol": 8212,
+                "val": 242.52
+            },
+            {
+                "year": 2013,
+                "country": "Singapore",
+                "rank": 1,
+                "vol": 5586,
+                "val": 182.78
+            },
+            {
+                "year": 2014,
+                "country": "Singapore",
+                "rank": 1,
+                "vol": 5580,
+                "val": 193.35
+            },
+            {
+                "year": 2015,
+                "country": "Singapore",
+                "rank": 1,
+                "vol": 6793,
+                "val": 254.91
+            },
+            {
+                "year": 2016,
+                "country": "Singapore",
+                "rank": 1,
+                "vol": 5993,
+                "val": 240.56
+            },
+            {
+                "year": 2017,
+                "country": "Singapore",
+                "rank": 1,
+                "vol": 4261,
+                "val": 222.5
+            },
+            {
+                "year": 2018,
+                "country": "Singapore",
+                "rank": 1,
+                "vol": 1946,
+                "val": 151.15
+            },
+            {
+                "year": 2019,
+                "country": "Singapore",
+                "rank": 1,
+                "vol": 1937,
+                "val": 149.9
+            },
+            {
+                "year": 2020,
+                "country": "Singapore",
+                "rank": 1,
+                "vol": 933,
+                "val": 115.33
+            },
+            {
+                "year": 2010,
+                "country": "Thailand",
+                "rank": 4,
+                "vol": 2102,
+                "val": 108.37
+            },
+            {
+                "year": 2011,
+                "country": "Thailand",
+                "rank": 4,
+                "vol": 1626,
+                "val": 102.19
+            },
+            {
+                "year": 2012,
+                "country": "Thailand",
+                "rank": 3,
+                "vol": 2324,
+                "val": 128.44
+            },
+            {
+                "year": 2013,
+                "country": "Thailand",
+                "rank": 2,
+                "vol": 2795,
+                "val": 140.62
+            },
+            {
+                "year": 2014,
+                "country": "Thailand",
+                "rank": 2,
+                "vol": 3267,
+                "val": 161.83
+            },
+            {
+                "year": 2015,
+                "country": "Thailand",
+                "rank": 2,
+                "vol": 3509,
+                "val": 162.6
+            },
+            {
+                "year": 2016,
+                "country": "Thailand",
+                "rank": 2,
+                "vol": 3731,
+                "val": 177.98
+            },
+            {
+                "year": 2017,
+                "country": "Thailand",
+                "rank": 4,
+                "vol": 1317,
+                "val": 72.78
+            },
+            {
+                "year": 2018,
+                "country": "Thailand",
+                "rank": 3,
+                "vol": 1612,
+                "val": 79.32
+            },
+            {
+                "year": 2019,
+                "country": "Thailand",
+                "rank": 3,
+                "vol": 1196,
+                "val": 72.59
+            },
+            {
+                "year": 2020,
+                "country": "Thailand",
+                "rank": 2,
+                "vol": 844,
+                "val": 47.71
+            },
+            {
+                "year": 2010,
+                "country": "United Arab Emirates",
+                "rank": 9,
+                "vol": 632,
+                "val": 16.68
+            },
+            {
+                "year": 2011,
+                "country": "United Arab Emirates",
+                "rank": 9,
+                "vol": 596,
+                "val": 16.47
+            },
+            {
+                "year": 2012,
+                "country": "United Arab Emirates",
+                "rank": 7,
+                "vol": 754,
+                "val": 25.55
+            },
+            {
+                "year": 2013,
+                "country": "United Arab Emirates",
+                "rank": 8,
+                "vol": 387,
+                "val": 23.78
+            },
+            {
+                "year": 2014,
+                "country": "United Arab Emirates",
+                "rank": 7,
+                "vol": 885,
+                "val": 40.72
+            },
+            {
+                "year": 2015,
+                "country": "United Arab Emirates",
+                "rank": 6,
+                "vol": 1209,
+                "val": 54.06
+            },
+            {
+                "year": 2016,
+                "country": "United Arab Emirates",
+                "rank": 6,
+                "vol": 1181,
+                "val": 56.08
+            },
+            {
+                "year": 2017,
+                "country": "United Arab Emirates",
+                "rank": 5,
+                "vol": 828,
+                "val": 62.68
+            },
+            {
+                "year": 2018,
+                "country": "United Arab Emirates",
+                "rank": 4,
+                "vol": 849,
+                "val": 54.9
+            },
+            {
+                "year": 2019,
+                "country": "United Arab Emirates",
+                "rank": 6,
+                "vol": 27454,
+                "val": 43.44
+            },
+            {
+                "year": 2020,
+                "country": "United Arab Emirates",
+                "rank": 5,
+                "vol": 479,
+                "val": 27.73
+            },
+            {
+                "year": 2010,
+                "country": "Viet Nam",
+                "rank": 5,
+                "vol": 2450,
+                "val": 74.53
+            },
+            {
+                "year": 2011,
+                "country": "Viet Nam",
+                "rank": 5,
+                "vol": 1143,
+                "val": 54.99
+            },
+            {
+                "year": 2012,
+                "country": "Viet Nam",
+                "rank": 6,
+                "vol": 1540,
+                "val": 69.92
+            },
+            {
+                "year": 2013,
+                "country": "Viet Nam",
+                "rank": 5,
+                "vol": 1378,
+                "val": 57.15
+            },
+            {
+                "year": 2014,
+                "country": "Viet Nam",
+                "rank": 3,
+                "vol": 2526,
+                "val": 93.84
+            },
+            {
+                "year": 2015,
+                "country": "Viet Nam",
+                "rank": 5,
+                "vol": 1103,
+                "val": 58.53
+            },
+            {
+                "year": 2016,
+                "country": "Viet Nam",
+                "rank": 4,
+                "vol": 1265,
+                "val": 69.5
+            },
+            {
+                "year": 2017,
+                "country": "Viet Nam",
+                "rank": 3,
+                "vol": 1393,
+                "val": 91.79
+            },
+            {
+                "year": 2018,
+                "country": "Viet Nam",
+                "rank": 2,
+                "vol": 1996,
+                "val": 106.34
+            },
+            {
+                "year": 2019,
+                "country": "Viet Nam",
+                "rank": 2,
+                "vol": 1354,
+                "val": 86.2
+            },
+            {
+                "year": 2020,
+                "country": "Viet Nam",
+                "rank": 6,
+                "vol": 226,
+                "val": 14.61
+            }
+        ]
+    },
+    "layer": [
+        {
+            "params": [
+                {
+                    "name": "country_select",
+                    "select": {
+                        "type": "point",
+                        "fields": [
+                            "country"
+                        ]
+                    },
+                    "bind": "legend"
+                }
+            ],
+            "mark": {
+                "type": "line",
+                "strokeWidth": 3
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "axis": {
+                        "labelAngle": 0,
+                        "title": null,
+                        "labelFontSize": 12
+                    }
+                },
+                "y": {
+                    "field": "rank",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            1,
+                            9
+                        ],
+                        "reverse": true
+                    },
+                    "axis": {
+                        "title": "Rank  (1 = largest export market)",
+                        "tickCount": 9,
+                        "values": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8,
+                            9
+                        ],
+                        "labelFontSize": 12,
+                        "titleFontSize": 13
+                    }
+                },
+                "color": {
+                    "field": "country",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "Singapore",
+                            "Indonesia",
+                            "Thailand",
+                            "Philippines",
+                            "United Arab Emirates",
+                            "Viet Nam"
+                        ],
+                        "range": [
+                            "#C9732F",
+                            "#2A6B72",
+                            "#6B5B2A",
+                            "#B54A3A",
+                            "#C8962A",
+                            "#5C7A9E"
+                        ]
+                    },
+                    "legend": {
+                        "title": "Country",
+                        "orient": "top",
+                        "labelFontSize": 11,
+                        "symbolSize": 120
+                    }
+                },
+                "opacity": {
+                    "condition": {
+                        "param": "country_select",
+                        "value": 1
+                    },
+                    "value": 0.15
+                },
+                "detail": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "circle",
+                "size": 90
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "rank",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            1,
+                            9
+                        ],
+                        "reverse": true
+                    }
+                },
+                "color": {
+                    "field": "country",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "Singapore",
+                            "Indonesia",
+                            "Thailand",
+                            "Philippines",
+                            "United Arab Emirates",
+                            "Viet Nam"
+                        ],
+                        "range": [
+                            "#C9732F",
+                            "#2A6B72",
+                            "#6B5B2A",
+                            "#B54A3A",
+                            "#C8962A",
+                            "#5C7A9E"
+                        ]
+                    },
+                    "legend": null
+                },
+                "opacity": {
+                    "condition": {
+                        "param": "country_select",
+                        "value": 1
+                    },
+                    "value": 0.15
+                },
+                "tooltip": [
+                    {
+                        "field": "country",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "year",
+                        "title": "Year"
+                    },
+                    {
+                        "field": "rank",
+                        "title": "Rank"
+                    },
+                    {
+                        "field": "vol",
+                        "title": "Volume (tonnes)",
+                        "format": ",.0f"
+                    },
+                    {
+                        "field": "val",
+                        "title": "Value (RM million)",
+                        "format": ".1f"
+                    }
+                ]
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": "datum.year == 2020"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 8,
+                "fontSize": 11,
+                "fontWeight": "bold"
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "rank",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            1,
+                            9
+                        ],
+                        "reverse": true
+                    }
+                },
+                "text": {
+                    "field": "country"
+                },
+                "color": {
+                    "field": "country",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "Singapore",
+                            "Indonesia",
+                            "Thailand",
+                            "Philippines",
+                            "United Arab Emirates",
+                            "Viet Nam"
+                        ],
+                        "range": [
+                            "#C9732F",
+                            "#2A6B72",
+                            "#6B5B2A",
+                            "#B54A3A",
+                            "#C8962A",
+                            "#5C7A9E"
+                        ]
+                    }
+                },
+                "opacity": {
+                    "condition": {
+                        "param": "country_select",
+                        "value": 1
+                    },
+                    "value": 0.15
+                }
+            }
+        }
+    ],
+    "config": {
+        "background": "white",
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "gridColor": "#E8E0D5",
+            "gridDash": [
+                2,
+                3
+            ]
+        }
+    }
+}

@@ -1,11 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-	"width": 800,
-    "height": 260,
+    "width": 620,
+    "height": 230,
     "padding": {
+        "left": 30,
+        "right": 30,
         "top": 10,
-        "left": 20,
-        "right": 20,
         "bottom": 10
     },
     "title": {
@@ -84,7 +84,7 @@
                         ],
                         "range": [
                             "#B54A3A",
-                            "#D6D6D6"
+                            "#BDBDBD"
                         ]
                     },
                     "legend": {

@@ -1,15 +1,77 @@
 {
 	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-	"width": 600,
+	"width": 640,
 	"height": 420,
 	"title": {
 		"text": "Secondhand Smoke Deaths Are Rising Alongside Smoking Deaths",
-		"subtitle": "Summed disease-level tobacco-attributable deaths in Malaysia, 1990–2023",
+		"subtitle": "Tobacco-attributable deaths in Malaysia, 1990-2023 - hover over dots or lines for details",
 		"anchor": "start",
 		"fontSize": 20,
 		"subtitleFontSize": 14
 	},
 	"layer": [
+		{
+			"data": {
+				"url": "data/IHME-GBD_2023_DATA-bccf9300-1.csv",
+				"format": {
+					"type": "csv"
+				}
+			},
+			"transform": [
+				{
+					"filter": "datum.measure_name === 'Deaths'"
+				},
+				{
+					"filter": "datum.metric_name === 'Number'"
+				},
+				{
+					"aggregate": [
+						{
+							"op": "sum",
+							"field": "val",
+							"as": "total_deaths"
+						}
+					],
+					"groupby": [
+						"year"
+					]
+				}
+			],
+			"mark": {
+				"type": "area",
+				"color": "#C9732F",
+				"opacity": 0.18,
+				"interpolate": "monotone"
+			},
+			"encoding": {
+				"x": {
+					"field": "year",
+					"type": "quantitative",
+					"title": null,
+					"scale": {
+						"domain": [
+							1990,
+							2023
+						]
+					},
+					"axis": {
+						"format": "d",
+						"grid": false
+					}
+				},
+				"y": {
+					"field": "total_deaths",
+					"type": "quantitative",
+					"title": "Number of deaths",
+					"scale": {
+						"domain": [
+							0,
+							22000
+						]
+					}
+				}
+			}
+		},
 		{
 			"data": {
 				"url": "data/IHME-GBD_2023_DATA-bccf9300-1.csv",
@@ -47,262 +109,22 @@
 				"x": {
 					"field": "year",
 					"type": "quantitative",
-					"title": null,
-					"axis": {
-						"format": "d",
-						"grid": false
+					"scale": {
+						"domain": [
+							1990,
+							2023
+						]
 					}
 				},
 				"y": {
 					"field": "total_deaths",
 					"type": "quantitative",
-					"title": "Number of deaths",
 					"scale": {
-						"zero": true
+						"domain": [
+							0,
+							22000
+						]
 					}
-				},
-				"order": {
-					"field": "year",
-					"type": "quantitative"
-				}
-			}
-		},
-		{
-			"data": {
-				"url": "data/IHME-GBD_2023_DATA-09540599-1.csv",
-				"format": {
-					"type": "csv"
-				}
-			},
-			"transform": [
-				{
-					"filter": "datum.measure_name === 'Deaths'"
-				},
-				{
-					"filter": "datum.metric_name === 'Number'"
-				},
-				{
-					"aggregate": [
-						{
-							"op": "sum",
-							"field": "val",
-							"as": "total_deaths"
-						}
-					],
-					"groupby": [
-						"year"
-					]
-				}
-			],
-			"mark": {
-				"type": "line",
-				"color": "#2A6B72",
-				"strokeWidth": 3.2,
-				"strokeDash": [
-					6,
-					4
-				],
-				"interpolate": "monotone"
-			},
-			"encoding": {
-				"x": {
-					"field": "year",
-					"type": "quantitative"
-				},
-				"y": {
-					"field": "total_deaths",
-					"type": "quantitative"
-				},
-				"order": {
-					"field": "year",
-					"type": "quantitative"
-				}
-			}
-		},
-		{
-			"data": {
-				"url": "data/IHME-GBD_2023_DATA-bccf9300-1.csv",
-				"format": {
-					"type": "csv"
-				}
-			},
-			"transform": [
-				{
-					"filter": "datum.measure_name === 'Deaths'"
-				},
-				{
-					"filter": "datum.metric_name === 'Number'"
-				},
-				{
-					"aggregate": [
-						{
-							"op": "sum",
-							"field": "val",
-							"as": "total_deaths"
-						}
-					],
-					"groupby": [
-						"year"
-					]
-				},
-				{
-					"filter": "datum.year === 2023"
-				},
-				{
-					"calculate": "'Smoking-related deaths'",
-					"as": "label"
-				}
-			],
-			"mark": {
-				"type": "text",
-				"align": "left",
-				"dx": 8,
-				"fontSize": 12,
-				"fontWeight": "bold",
-				"color": "#C9732F"
-			},
-			"encoding": {
-				"x": {
-					"field": "year",
-					"type": "quantitative"
-				},
-				"y": {
-					"field": "total_deaths",
-					"type": "quantitative"
-				},
-				"text": {
-					"field": "label"
-				}
-			}
-		},
-		{
-			"data": {
-				"url": "data/IHME-GBD_2023_DATA-09540599-1.csv",
-				"format": {
-					"type": "csv"
-				}
-			},
-			"transform": [
-				{
-					"filter": "datum.measure_name === 'Deaths'"
-				},
-				{
-					"filter": "datum.metric_name === 'Number'"
-				},
-				{
-					"aggregate": [
-						{
-							"op": "sum",
-							"field": "val",
-							"as": "total_deaths"
-						}
-					],
-					"groupby": [
-						"year"
-					]
-				},
-				{
-					"filter": "datum.year === 2023"
-				},
-				{
-					"calculate": "'Secondhand smoke deaths'",
-					"as": "label"
-				}
-			],
-			"mark": {
-				"type": "text",
-				"align": "left",
-				"dx": 8,
-				"fontSize": 12,
-				"fontWeight": "bold",
-				"color": "#2A6B72"
-			},
-			"encoding": {
-				"x": {
-					"field": "year",
-					"type": "quantitative"
-				},
-				"y": {
-					"field": "total_deaths",
-					"type": "quantitative"
-				},
-				"text": {
-					"field": "label"
-				}
-			}
-		},
-		{
-			"data": {
-				"values": [
-					{
-						"year": 2004,
-						"total_deaths": 10000,
-						"note": "Tobacco harm extends beyond smokers."
-					}
-				]
-			},
-			"mark": {
-				"type": "text",
-				"align": "left",
-				"fontSize": 12,
-				"fontWeight": "bold",
-				"color": "#2A2A2A"
-			},
-			"encoding": {
-				"x": {
-					"field": "year",
-					"type": "quantitative"
-				},
-				"y": {
-					"field": "total_deaths",
-					"type": "quantitative"
-				},
-				"text": {
-					"field": "note"
-				}
-			}
-		},
-		{
-			"data": {
-				"url": "data/IHME-GBD_2023_DATA-bccf9300-1.csv",
-				"format": {
-					"type": "csv"
-				}
-			},
-			"transform": [
-				{
-					"filter": "datum.measure_name === 'Deaths'"
-				},
-				{
-					"filter": "datum.metric_name === 'Number'"
-				},
-				{
-					"aggregate": [
-						{
-							"op": "sum",
-							"field": "val",
-							"as": "total_deaths"
-						}
-					],
-					"groupby": [
-						"year"
-					]
-				}
-			],
-			"mark": {
-				"type": "point",
-				"filled": true,
-				"opacity": 0,
-				"size": 500
-			},
-			"encoding": {
-				"x": {
-					"field": "year",
-					"type": "quantitative"
-				},
-				"y": {
-					"field": "total_deaths",
-					"type": "quantitative"
 				},
 				"tooltip": [
 					{
@@ -350,10 +172,230 @@
 				}
 			],
 			"mark": {
-				"type": "point",
-				"filled": true,
-				"opacity": 0,
-				"size": 500
+				"type": "area",
+				"color": "#2A6B72",
+				"opacity": 0.14,
+				"interpolate": "monotone"
+			},
+			"encoding": {
+				"x": {
+					"field": "year",
+					"type": "quantitative",
+					"scale": {
+						"domain": [
+							1990,
+							2023
+						]
+					}
+				},
+				"y": {
+					"field": "total_deaths",
+					"type": "quantitative",
+					"scale": {
+						"domain": [
+							0,
+							22000
+						]
+					}
+				}
+			}
+		},
+		{
+			"data": {
+				"url": "data/IHME-GBD_2023_DATA-09540599-1.csv",
+				"format": {
+					"type": "csv"
+				}
+			},
+			"transform": [
+				{
+					"filter": "datum.measure_name === 'Deaths'"
+				},
+				{
+					"filter": "datum.metric_name === 'Number'"
+				},
+				{
+					"aggregate": [
+						{
+							"op": "sum",
+							"field": "val",
+							"as": "total_deaths"
+						}
+					],
+					"groupby": [
+						"year"
+					]
+				}
+			],
+			"mark": {
+				"type": "line",
+				"color": "#2A6B72",
+				"strokeWidth": 3.2,
+				"strokeDash": [
+					6,
+					4
+				],
+				"interpolate": "monotone"
+			},
+			"encoding": {
+				"x": {
+					"field": "year",
+					"type": "quantitative",
+					"scale": {
+						"domain": [
+							1990,
+							2023
+						]
+					}
+				},
+				"y": {
+					"field": "total_deaths",
+					"type": "quantitative",
+					"scale": {
+						"domain": [
+							0,
+							22000
+						]
+					}
+				},
+				"tooltip": [
+					{
+						"value": "Secondhand smoke deaths",
+						"title": "Type"
+					},
+					{
+						"field": "year",
+						"title": "Year",
+						"format": "d"
+					},
+					{
+						"field": "total_deaths",
+						"title": "Estimated deaths",
+						"format": ",.0f"
+					}
+				]
+			}
+		},
+		{
+			"data": {
+				"values": [
+					{
+						"year": 1999,
+						"y1": 0,
+						"y2": 22000
+					}
+				]
+			},
+			"mark": {
+				"type": "rule",
+				"color": "#6B5F58",
+				"strokeDash": [
+					4,
+					4
+				],
+				"strokeWidth": 1.2,
+				"opacity": 0.7
+			},
+			"encoding": {
+				"x": {
+					"field": "year",
+					"type": "quantitative"
+				},
+				"y": {
+					"field": "y1",
+					"type": "quantitative"
+				},
+				"y2": {
+					"field": "y2"
+				}
+			}
+		},
+		{
+			"data": {
+				"values": [
+					{
+						"year": 2020,
+						"y1": 0,
+						"y2": 22000
+					}
+				]
+			},
+			"mark": {
+				"type": "rule",
+				"color": "#6B5F58",
+				"strokeDash": [
+					4,
+					4
+				],
+				"strokeWidth": 1.2,
+				"opacity": 0.7
+			},
+			"encoding": {
+				"x": {
+					"field": "year",
+					"type": "quantitative"
+				},
+				"y": {
+					"field": "y1",
+					"type": "quantitative"
+				},
+				"y2": {
+					"field": "y2"
+				}
+			}
+		},
+		{
+			"data": {
+				"values": [
+					{
+						"year": 2022,
+						"y1": 0,
+						"y2": 22000
+					}
+				]
+			},
+			"mark": {
+				"type": "rule",
+				"color": "#6B5F58",
+				"strokeDash": [
+					4,
+					4
+				],
+				"strokeWidth": 1.2,
+				"opacity": 0.7
+			},
+			"encoding": {
+				"x": {
+					"field": "year",
+					"type": "quantitative"
+				},
+				"y": {
+					"field": "y1",
+					"type": "quantitative"
+				},
+				"y2": {
+					"field": "y2"
+				}
+			}
+		},
+		{
+			"data": {
+				"values": [
+					{
+						"year": 1999,
+						"total_deaths": 21150,
+						"label": "1999 rise\nmodelled increase"
+					}
+				]
+			},
+			"mark": {
+				"type": "text",
+				"align": "center",
+				"baseline": "top",
+				"dy": 0,
+				"fontSize": 10,
+				"fontWeight": "bold",
+				"color": "#3A332D"
 			},
 			"encoding": {
 				"x": {
@@ -363,6 +405,271 @@
 				"y": {
 					"field": "total_deaths",
 					"type": "quantitative"
+				},
+				"text": {
+					"field": "label"
+				}
+			}
+		},
+		{
+			"data": {
+				"values": [
+					{
+						"year": 2019.55,
+						"total_deaths": 21450,
+						"label": "2020\npandemic dip"
+					}
+				]
+			},
+			"mark": {
+				"type": "text",
+				"align": "right",
+				"baseline": "top",
+				"dy": 0,
+				"fontSize": 10,
+				"fontWeight": "bold",
+				"color": "#3A332D"
+			},
+			"encoding": {
+				"x": {
+					"field": "year",
+					"type": "quantitative"
+				},
+				"y": {
+					"field": "total_deaths",
+					"type": "quantitative"
+				},
+				"text": {
+					"field": "label"
+				}
+			}
+		},
+		{
+			"data": {
+				"values": [
+					{
+						"year": 2022.35,
+						"total_deaths": 20750,
+						"label": "2022\nrebound"
+					}
+				]
+			},
+			"mark": {
+				"type": "text",
+				"align": "left",
+				"baseline": "top",
+				"dy": 0,
+				"fontSize": 10,
+				"fontWeight": "bold",
+				"color": "#3A332D"
+			},
+			"encoding": {
+				"x": {
+					"field": "year",
+					"type": "quantitative"
+				},
+				"y": {
+					"field": "total_deaths",
+					"type": "quantitative"
+				},
+				"text": {
+					"field": "label"
+				}
+			}
+		},
+		{
+			"data": {
+				"values": [
+					{
+						"year": 2023,
+						"total_deaths": 19500,
+						"label": "Smoking-related deaths"
+					}
+				]
+			},
+			"mark": {
+				"type": "text",
+				"align": "left",
+				"dx": 8,
+				"fontSize": 12,
+				"fontWeight": "bold",
+				"color": "#C9732F"
+			},
+			"encoding": {
+				"x": {
+					"field": "year",
+					"type": "quantitative"
+				},
+				"y": {
+					"field": "total_deaths",
+					"type": "quantitative"
+				},
+				"text": {
+					"field": "label"
+				}
+			}
+		},
+		{
+			"data": {
+				"values": [
+					{
+						"year": 2023,
+						"total_deaths": 8500,
+						"label": "Secondhand smoke deaths"
+					}
+				]
+			},
+			"mark": {
+				"type": "text",
+				"align": "left",
+				"dx": 8,
+				"fontSize": 12,
+				"fontWeight": "bold",
+				"color": "#2A6B72"
+			},
+			"encoding": {
+				"x": {
+					"field": "year",
+					"type": "quantitative"
+				},
+				"y": {
+					"field": "total_deaths",
+					"type": "quantitative"
+				},
+				"text": {
+					"field": "label"
+				}
+			}
+		},
+		{
+			"data": {
+				"url": "data/IHME-GBD_2023_DATA-bccf9300-1.csv",
+				"format": {
+					"type": "csv"
+				}
+			},
+			"transform": [
+				{
+					"filter": "datum.measure_name === 'Deaths'"
+				},
+				{
+					"filter": "datum.metric_name === 'Number'"
+				},
+				{
+					"aggregate": [
+						{
+							"op": "sum",
+							"field": "val",
+							"as": "total_deaths"
+						}
+					],
+					"groupby": [
+						"year"
+					]
+				}
+			],
+			"mark": {
+				"type": "circle",
+				"size": 55,
+				"opacity": 0.35,
+				"color": "#C9732F",
+				"stroke": "white",
+				"strokeWidth": 0.5
+			},
+			"encoding": {
+				"x": {
+					"field": "year",
+					"type": "quantitative",
+					"scale": {
+						"domain": [
+							1990,
+							2023
+						]
+					}
+				},
+				"y": {
+					"field": "total_deaths",
+					"type": "quantitative",
+					"scale": {
+						"domain": [
+							0,
+							22000
+						]
+					}
+				},
+				"tooltip": [
+					{
+						"value": "Smoking-related deaths",
+						"title": "Type"
+					},
+					{
+						"field": "year",
+						"title": "Year",
+						"format": "d"
+					},
+					{
+						"field": "total_deaths",
+						"title": "Estimated deaths",
+						"format": ",.0f"
+					}
+				]
+			}
+		},
+		{
+			"data": {
+				"url": "data/IHME-GBD_2023_DATA-09540599-1.csv",
+				"format": {
+					"type": "csv"
+				}
+			},
+			"transform": [
+				{
+					"filter": "datum.measure_name === 'Deaths'"
+				},
+				{
+					"filter": "datum.metric_name === 'Number'"
+				},
+				{
+					"aggregate": [
+						{
+							"op": "sum",
+							"field": "val",
+							"as": "total_deaths"
+						}
+					],
+					"groupby": [
+						"year"
+					]
+				}
+			],
+			"mark": {
+				"type": "circle",
+				"size": 55,
+				"opacity": 0.35,
+				"color": "#2A6B72",
+				"stroke": "white",
+				"strokeWidth": 0.5
+			},
+			"encoding": {
+				"x": {
+					"field": "year",
+					"type": "quantitative",
+					"scale": {
+						"domain": [
+							1990,
+							2023
+						]
+					}
+				},
+				"y": {
+					"field": "total_deaths",
+					"type": "quantitative",
+					"scale": {
+						"domain": [
+							0,
+							22000
+						]
+					}
 				},
 				"tooltip": [
 					{
@@ -396,6 +703,15 @@
 				2,
 				3
 			]
+		},
+		"point": {
+			"filled": true
 		}
+	},
+	"padding": {
+		"left": 10,
+		"right": 115,
+		"top": 18,
+		"bottom": 10
 	}
 }
